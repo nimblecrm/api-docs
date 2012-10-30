@@ -4,7 +4,9 @@ Get contacts list
 
 Request 
 -------
-``GET https://api.nimble.com/api/v1/contacts/list``
+Base endpoint::
+
+    GET https://api.nimble.com/api/v1/contacts/list
 
 Parameters
 ----------
@@ -16,9 +18,9 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
   Specifies a comma separated list of fields to return. If this parameter is excluded, all fields will be returned. 
   For example: ``fields=first%20name,my%20custom%20field``
 
-    .. note:: 
-      If field name contains "," (coma) it should be shielded with "\\". For example: we have some custom field with name 
-      "hello, Jon Doe" it should be HTML-encoded in ``hello%5C%2C%20John%20Doe`` (``hello\, John Doe``).
+  .. note:: 
+    If field name contains "," (coma) it should be shielded with "\\". For example: we have some custom field with name 
+    "hello, Jon Doe" it should be HTML-encoded in ``hello%5C%2C%20John%20Doe`` (``hello\, John Doe``).
 
 * **tags** — default: 1
 
@@ -40,12 +42,12 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
   In addition to sorting on default and custom fields, there are the special sorts: recently viewed by the authenticated 
   user (as ``recently%20viewed``), first + last name (as ``name``), and record created date (as ``create``).
 
-    .. note:: 
-      Only fields that have been indexed by our search engine are sortable. These include all custom fields and most standard fields.
+  .. note:: 
+    Only fields that have been indexed by our search engine are sortable. These include all custom fields and most standard fields.
 
-    .. note::
-      When sorting by recently viewed, these parameters are disabled: **keyword**, **record type**, **page** and **per_page**. 
-      Nimble stores only the 30 most recently viewed records.
+  .. note::
+    When sorting by recently viewed, these parameters are disabled: **keyword**, **record type**, **page** and **per_page**. 
+    Nimble stores only the 30 most recently viewed records.
 
 * **record_type** — default: all
 
@@ -61,7 +63,7 @@ Response: OK
 
 List and Detail response format is the basically the same. List allows search terms, sort orders, and fields as parameters, whereas detail returns all of the fields with the option of adding metadata.
 
-Example: request on https://app.nimble.com/api/contacts/last_viewed?_cb=1345564526886&limit=30
+Example: request on __https://app.nimble.com/api/contacts/last_viewed?_cb=1345564526886&limit=30
 
 .. code:: javascript
 
