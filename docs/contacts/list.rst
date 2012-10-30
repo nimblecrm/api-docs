@@ -11,39 +11,50 @@ Parameters
 
 All parameters are optional. Unrecognized parameters are ignored. Unrecognized values will return an error.
 
-**fields** — default: all fields are returned
+* **fields** — default: all fields are returned
 
-Specifies a comma separated list of fields to return. If this parameter is excluded, all fields will be returned. For example: ``fields=first%20name,my%20custom%20field``
+  Specifies a comma separated list of fields to return. If this parameter is excluded, all fields will be returned. 
+  For example: ``fields=first%20name,my%20custom%20field``
 
-*Note:* if field name contains "," (coma) it should be shielded with "\\". For example: we have some custom field with name "hello, Jon Doe" it should be HTML-encoded in ``hello%5C%2C%20John%20Doe`` (``hello\, John Doe``).
+    .. note:: 
+      If field name contains "," (coma) it should be shielded with "\\". For example: we have some custom field with name 
+      "hello, Jon Doe" it should be HTML-encoded in ``hello%5C%2C%20John%20Doe`` (``hello\, John Doe``).
 
-**tags** — default: 1
+* **tags** — default: 1
 
-Specifies whether tags should be included in the results. 
+  Specifies whether tags should be included in the results. 
 
-**per_page** — default: 30
 
-Specifies the number of items to return per page of results.
+* **per_page** — default: 30
 
-**page** — default: 1
+  Specifies the number of items to return per page of results.
 
-Specifies which page to display.
+* **page** — default: 1
 
-**sort** — default: name:asc
+  Specifies which page to display.
 
-Identifies the sort field and sort order. Sort order is required when this parameter is used. An single sort field can be specified. Any field can be sorted in either ``asc`` or ``desc`` order.  In addition to sorting on default and custom fields, there are the special sorts: recently viewed by the authenticated user (as ``recently%20viewed``), first + last name (as ``name``), and record created date (as ``create``).
+* **sort** — default: name:asc
 
-*Note:* Only fields that have been indexed by our search engine are sortable. These include all custom fields and most standard fields.
+  Identifies the sort field and sort order. Sort order is required when this parameter is used. 
+  An single sort field can be specified. Any field can be sorted in either ``asc`` or ``desc`` order.
+  In addition to sorting on default and custom fields, there are the special sorts: recently viewed by the authenticated 
+  user (as ``recently%20viewed``), first + last name (as ``name``), and record created date (as ``create``).
 
-When sorting by recently viewed, these parameters are disabled: **keyword**, **record type**, **page** and **per_page**. Nimble stores only the 30 most recently viewed records.
+    .. note:: 
+      Only fields that have been indexed by our search engine are sortable. These include all custom fields and most standard fields.
 
-**record_type** — default: all
+    .. note::
+      When sorting by recently viewed, these parameters are disabled: **keyword**, **record type**, **page** and **per_page**. 
+      Nimble stores only the 30 most recently viewed records.
 
-Identifies the record type. Possible value are ``person``, ``company``, and ``all``.
+* **record_type** — default: all
 
-**keyword** — default: empty
+  Identifies the record type. Possible value are ``person``, ``company``, and ``all``.
 
-Specifies a set of simple search criteria for the query. This simple search is performed on basic contact info fields, which includes name, email, and address. For example: ``keyword=Jon%20Smith``
+* **keyword** — default: empty
+
+  Specifies a set of simple search criteria for the query. This simple search is performed on basic contact info fields, 
+  which includes name, email, and address. For example: ``keyword=Jon%20Smith``
 
 Response: OK
 ------------
