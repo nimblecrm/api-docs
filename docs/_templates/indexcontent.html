@@ -1,0 +1,175 @@
+{% extends "defindex.html" %}
+
+{% block body %}
+
+ <h1>{{ docstitle|e }}</h1>
+  <!--
+  <p>
+    Welcome! This is
+    {% block description %}the documentation for {{ project|e }}
+    {{ release|e }}{% if last_updated %}, last updated {{ last_updated|e }}{% endif %}{% endblock %}.
+  </p>
+-->
+        
+{% block tables %}
+  <p><strong>Nimble Core packages:</strong></p>
+  <table class="contentstable" align="center"><tr>
+    <td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("contacts/doc/index") }}">Contacts</a><br/>
+         <span class="linkdescr"> All about contacts, CRUD, imports, tagging, etc.  </span></p>
+        
+      <p class="biglink"><a class="biglink" href="{{ pathto("messages/doc/index") }}">Messages</a><br/>
+         <span class="linkdescr">All about fetching e-mail, facebook, linkedin, twitter messages</span></p>
+        
+      <p class="biglink"><a class="biglink" href="{{ pathto("activities/doc/index") }}">Activities</a><br/>
+         <span class="linkdescr">Working with tasks &amp; events</span></p>
+
+      <p class="biglink"><a class="biglink" href="{{ pathto("tags/doc/index") }}">Tags</a><br/>
+         <span class="linkdescr">How tagging works</span></p>
+
+      <p class="biglink"><a class="biglink" href="{{ pathto("deals/doc/index") }}">Deals</a><br/>
+         <span class="linkdescr">All about Deals</span></p>
+
+      <p class="biglink"><a class="biglink" href="{{ pathto("search/doc/index") }}">Search</a><br/>
+         <span class="linkdescr">A saga about ElasticSearch(ES)</span></p>
+    
+    </td><td width="50%">
+
+
+
+      <p class="biglink"><a class="biglink" href="{{ pathto("core/doc/index") }}">Core</a><br/>
+         <span class="linkdescr">Common stuff, models, helpers, etc. </span></p>
+
+      <p class="biglink"><a class="biglink" href="{{ pathto("config/doc/index") }}">Config</a><br/>
+         <span class="linkdescr">A list of configurable parameters</span></p>
+
+      <p class="biglink"><a class="biglink" href="{{ pathto("dispatcher/doc/index") }}">Dispatcher service</a><br/>
+         <span class="linkdescr">Internal dispatcher service</span></p>
+
+      <p class="biglink"><a class="biglink" href="{{ pathto("slon/doc/index") }}">SLON service</a><br/>
+         <span class="linkdescr"><b>S</b>torage <b>L</b>ayer <b>O</b>f <b>N</b>imble</span></p>
+
+      <p class="biglink"><a class="biglink" href="{{ pathto("sync/doc/index") }}">Sync package</a><br/>
+         <span class="linkdescr">Synchronization of different stuff</span></p>
+
+      <p class="biglink"><a class="biglink" href="{{ pathto("invites/doc/index") }}">Invites package</a><br/>
+         <span class="linkdescr">Invites functionality for Nimble users</span></p>
+    </td></tr>
+  </table>
+
+
+
+   <p><strong>Integration with 3rd party systems</strong></p>
+  <table class="contentstable" align="center"><tr>
+    <td width="50%">
+        <p class="biglink"><a class="biglink" href="{{ pathto("assistly/doc/index") }}">Assitly</a><br/>
+         <span class="linkdescr"><a href="http://assistly.com">Assistly</a> customer support</span></p>
+
+        <p class="biglink"><a class="biglink" href="{{ pathto("mailchimp/doc/index") }}">Mailchimp</a><br/>
+         <span class="linkdescr"><a href="http://mailchimp.com">Mailchimp</a> email marketing</span></p>
+
+        <p class="biglink"><a class="biglink" href="{{ pathto("gmarket/doc/index") }}">Google Marketplace</a><br/>
+         <span class="linkdescr">Integration with <a href="www.google.com/enterprise/marketplace/">Google Marketplace</a>
+         </span></p>
+    </td><td width="50%">
+      
+      <p class="biglink"><a class="biglink" href="{{ pathto("hubspot/doc/index") }}"> Hubspot</a><br/>
+         <span class="linkdescr"><a href="http://hubspot.com">Hubspot</a> Inbound Marketing Software  </span></p>
+      
+      <p class="biglink"><a class="biglink" href="{{ pathto("wufoo/doc/index") }}">Wufoo</a><br/>
+         <span class="linkdescr"><a href="http://wufoo.com">Wufoo</a> is an online form builder</span></p>
+    </td></tr>
+  </table>
+
+
+  <p><strong>Python client for Nimble API</strong></p>
+  <table class="contentstable" align="center"><tr>
+    <td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("client/doc/index") }}">API Client</a><br/>
+         <span class="linkdescr">API Client based on Tornado's SyncHTTPClient</span></p>
+
+     </td></tr>
+  </table>
+
+
+
+  <p><strong>FAQ &amp; tutorials:</strong></p>
+  <table class="contentstable" align="center"><tr>
+    <td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("repository") }}">About repositories</a><br/>
+         <span class="linkdescr">Structure and maintenance of Nimble top-level repository</span>
+      </p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("doctutorial") }}">Sample documentation</a><br/>
+         <span class="linkdescr">A sample of rich documentation with diagrams &amp; graphs, code, etc.</span>
+      </p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("logging") }}">Logging</a><br/>
+            <span class="linkdescr">Logging guidelines &amp; how it works</span>
+      </p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("api_framework") }}">API framework (Proof of concept)</a><br/>
+          <span class="linkdescr">First draft of new API framework documentation</span>
+      </p>
+
+     </td>
+
+     <td width="50%">
+
+      <p class="biglink"><a class="biglink" href="{{ pathto("vm/index") }}"> Virtual Machine</a><br/>
+         <span class="linkdescr">Nimble virtual development environment  </span></p>
+
+      <p class="biglink"><a class="biglink" href="{{ pathto("testing/index") }}"> Testing your code </a><br/>
+             <span class="linkdescr">How to write unit tests</span></p>
+
+      <p class="biglink"><a class="biglink" href="{{ pathto("celery_event_bus") }}"> Nimble Event Bus </a><br/>
+             <span class="linkdescr">How to send events across different services of Nimble</span></p>
+
+      <p class="biglink"><a class="biglink" href="{{ pathto("http_push") }}"> HTTP PUSH </a><br/>
+              <span class="linkdescr">How to send http push messages</span></p>
+
+     </td>
+
+  </tr>
+  </table>
+
+
+<p><strong>Contact Public API:</strong></p>
+<table class="contentstable" align="center"><tr>
+    <td width="50%">
+        <p class="biglink"><a class="biglink" href="{{ pathto("contacts/doc/advanced_search") }}">Advanced Search API</a><br/>
+            <span class="linkdescr">public API for advanced search</span></p>
+    </td>
+</tr>
+</table>
+
+
+  <p><strong>Indices and tables:</strong></p>
+  <table class="contentstable" align="center"><tr>
+    <td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("py-modindex") }}">Global Module Index</a><br/>
+         <span class="linkdescr">quick access to all modules</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("genindex") }}">General Index</a><br/>
+         <span class="linkdescr">all functions, classes, terms</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("glossary") }}">Glossary</a><br/>
+         <span class="linkdescr">the most important terms explained</span></p>
+    </td><td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("search") }}">Search page</a><br/>
+         <span class="linkdescr">search this documentation</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("contents") }}">Complete Table of Contents</a><br/>
+         <span class="linkdescr">lists all sections and subsections</span></p>
+    </td></tr>
+  </table>
+
+ <!--
+  <p><strong>Meta information:</strong></p>
+  <table class="contentstable" align="center"><tr>
+    <td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("bugs") }}">Reporting bugs</a></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("about") }}">About the documentation</a></p>
+    </td><td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("license") }}">History and License of Python</a></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("copyright") }}">Copyright</a></p>
+    </td></tr>
+  </table>
+     -->
+{% endblock %}
+
+{% endblock %}

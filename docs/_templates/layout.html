@@ -1,0 +1,15 @@
+{% extends "!layout.html" %}
+{% set css_files = css_files + ["_static/nimble.css"] %}
+
+{% block rootrellink %}
+        <li><img src="{{ pathto('_static/logo.png', 1) }}" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        
+        <li><a href="{{ pathto('index') }}">{{ shorttitle }}</a>{{ reldelim1 }}</li>
+{% endblock %}
+
+{% block extrahead %}
+    <link rel="shortcut icon" type="image/png" href="{{ pathto('_static/logo.png', 1) }}" />
+{{ super() }}
+{% endblock %}
+

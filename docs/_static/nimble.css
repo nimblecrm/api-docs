@@ -1,0 +1,59 @@
+div.highlight{
+    background-color: #f0f0f0 !important;
+}
+
+div.highlight pre {
+    background-color: #f0f0f0 !important;
+}
+
+
+div.related {
+    background-color: #005dae !important;
+    padding-bottom:5px !important;
+    padding-top:5px !important;
+}
+
+
+dl.method, dl.staticmethod, dl.classmethod {
+    border-bottom:1px solid #ccc;
+}
+
+dl.class>dt {background-color:#eef;padding:5px;font-size:120%}
+
+/* ol.arabic li {margin:0;} */
+ol.arabic li .first{padding:0 !important; margin:0 !important;}
+
+a>tt {color: #005B81 !important;}
+a.reference:hover { color: white !important; background-color: #005B81; text-decoration: none !important;}
+a.reference:hover>tt {color: white !important;}
+
+p.graphviz img{margin:0 auto !important; display:block;}
+p.plantuml img{margin:0 auto !important; display:block;}
+
+
+
+/* -- index page ------------------------------------------------------------ */
+
+table.contentstable {
+    width: 90%;
+}
+
+table.contentstable p.biglink {
+    line-height: 150%;
+}
+
+a.biglink {
+    font-size: 1.3em;
+}
+
+span.linkdescr {
+    font-style: italic;
+    padding-top: 5px;
+    font-size: 90%;
+}
+
+
+
+.highlight-bash pre {
+background-color: #F0F0F0 !important;
+}

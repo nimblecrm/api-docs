@@ -63,7 +63,9 @@ Response: OK
 
 List and Detail response format is the basically the same. List allows search terms, sort orders, and fields as parameters, whereas detail returns all of the fields with the option of adding metadata.
 
-Example: request on __https://app.nimble.com/api/contacts/last_viewed?_cb=1345564526886&limit=30
+Example:: 
+  
+  Request on https://app.nimble.com/api/contacts/last_viewed?_cb=1345564526886&limit=30
 
 .. code:: javascript
 
