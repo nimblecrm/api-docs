@@ -1,15 +1,14 @@
 {% extends "default/layout.html" %}
 
 {% block extrahead %}
-    <link rel="shortcut icon" type="image/png" href="{{ pathto('_static/logo.png', 1) }}" />
+    <link rel="shortcut icon" type="image/png" href="{{ pathto('_static/favicon.ico', 1) }}" />
 {{ super() }}
 {% endblock %}
 
 {% block rootrellink %}
-    <li><a href="https://developers.nimble.com/">Nimble API docs</a> &raquo;</li>
-    {{ super() }}
+    <a href="https://developers.nimble.com/">Nimble API</a>&nbsp;|{{ super() }}
 {% endblock %}
 
 {% block sidebarlogo %}
-    <img src="{{ pathto('_static/logo.png', 1) }}" alt="" style="vertical-align: middle; margin-top: -1px"/>
+    <img src="{{ pathto('_static/nimble.png', 1) }}" alt="" style="vertical-align: middle; horizontal-align: center; margin-top: -1px"/><p/>
 {% endblock %}

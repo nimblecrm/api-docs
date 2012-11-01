@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Nimble API docs documentation build configuration file, created by
+# Nimble API documentation build configuration file, created by
 # sphinx-quickstart on Mon Oct 29 14:58:46 2012.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Nimble API docs'
+project = u'Nimble API'
 copyright = u'2012, Nimble'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -166,7 +166,7 @@ html_sidebars = {
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'NimbleAPIdocsdoc'
+htmlhelp_basename = 'NimbleAPIdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -185,7 +185,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'NimbleAPIdocs.tex', u'Nimble API docs Documentation',
+  ('index', 'NimbleAPIdocs.tex', u'Nimble API Documentation',
    u'Nimble', 'manual'),
 ]
 
@@ -215,7 +215,7 @@ latex_logo = "_static/logo_pdf.png"
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'nimbleapidocs', u'Nimble API docs Documentation',
+    ('index', 'nimbleapidocs', u'Nimble API Documentation',
      [u'Nimble'], 1)
 ]
 
@@ -229,7 +229,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'NimbleAPIdocs', u'Nimble API docs Documentation',
+  ('index', 'NimbleAPIdocs', u'Nimble API Documentation',
    u'Nimble', 'NimbleAPIdocs', 'One line description of project.',
    'Miscellaneous'),
 ]
