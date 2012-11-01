@@ -67,7 +67,7 @@ Example::
   
   Request on https://app.nimble.com/api/contacts/last_viewed?_cb=1345564526886&limit=30
 
-.. code:: javascript
+.. code-block:: javascript
 
     {
         "resources": [{

@@ -169,7 +169,7 @@ The Client should use the authorization code obtained to request an access token
 
 *Successfull Response XML*:
 
-.. code:: xml
+.. code-block:: xml
 
     <OAuth20>
         <access_token>
@@ -184,7 +184,8 @@ The Client should use the authorization code obtained to request an access token
 
 *Successfull Response JSON*:
 
-.. code:: javascript
+.. highlight:: guess
+.. code-block:: javascript
 
     {
         "OAuth20": {
