@@ -184,7 +184,6 @@ The Client should use the authorization code obtained to request an access token
 
 *Successfull Response JSON*:
 
-.. highlight:: guess
 .. code-block:: javascript
 
     {
