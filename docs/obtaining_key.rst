@@ -2,6 +2,8 @@
 Tutorial: Obtain Nimble API Key
 ===============================
 
+.. contents::
+
 Introduction
 ------------
 
