@@ -11,13 +11,6 @@ Contacts details
 
 Typical response to this request is a dictionary with 2 keys (if other doesn't specified by request to API): meta and resources. 
 
-.. _contact-metadata:
-
-Contact metadata
-~~~~~~~~~~~~~~~~
-
-Add here
-
 .. _contact-resources:
 
 Contact resources
@@ -133,44 +126,44 @@ This field usually contains all data for the contacts, you've requested. Here is
     
 Let's see keys of this dictionary in details. 
 
-    **updated**
-        Timestamp of contact's last update time
-        
-    **created**
-        Timestamp of contact's creation time
-        
-    **fields**
-        Dictionary, containing contact's fields data. Keys are field names, and values are lists of field values. All default contact fields in 
-        details :ref:`described here <contact-fields>`.
+**updated**
+    Timestamp of contact's last update time
     
-    **object_type**
-        String, specifying document type. For contacts, it's predictably ``contact``.
+**created**
+    Timestamp of contact's creation time
     
-    **id**
-        Unique contact id in BSON format.
-        
-    **last_contacted**
-        Information about last outbound message to this contact (if any). Contains following fields.
-            * *last_contacted* — timestamp of last outbound message
-            * *thread_id* — unique id of message thread in BSON format
-            * *message_id* — unique id of message in BSON format
-                        
-    **record_type**
-        Type of contact, can have one of two values: ``person`` and ``company``.
-        
-    **creator**
-        Name of the person, created contact
-        
-    **children**
-        For ``company`` contacts, this field contains list of ``person`` contacts, associated with this company.
-        
-    **tags**
-        List of tags, associated with this contact. Each tag represented by dictionary, having following keys.
-            * *tag* — tag's text
-            * *id* — unique id of tag in BSON format
-        
-    **owner_id**
-        Id of person, owning the contact in BSON format
+**fields**
+    Dictionary, containing contact's fields data. Keys are field names, and values are lists of field values. All default contact fields in 
+    details :ref:`described here <contact-fields>`.
+
+**object_type**
+    String, specifying document type. For contacts, it's predictably ``contact``.
+
+**id**
+    Unique contact id in BSON format.
+    
+**last_contacted**
+    Information about last outbound message to this contact (if any). Contains following fields.
+        * *last_contacted* — timestamp of last outbound message
+        * *thread_id* — unique id of message thread in BSON format
+        * *message_id* — unique id of message in BSON format
+                    
+**record_type**
+    Type of contact, can have one of two values: ``person`` and ``company``.
+    
+**creator**
+    Name of the person, created contact
+    
+**children**
+    For ``company`` contacts, this field contains list of ``person`` contacts, associated with this company.
+    
+**tags**
+    List of tags, associated with this contact. Each tag represented by dictionary, having following keys.
+        * *tag* — tag's text
+        * *id* — unique id of tag in BSON format
+    
+**owner_id**
+    Id of person, owning the contact in BSON format
         
 .. _contacts-meta:
 
@@ -240,39 +233,125 @@ Contact's metadata contains information about all basic and custom fields, creat
     
 Let's see keys of this dictionary in details.
     
-    **fields**
-        Information about fields in Nimble. Represented by dictionary, where keys are fields names, and values are lists, containing details about 
-        all possible modifications of this field. If field have no modifiers (like ``first name`` on example above), this list contains only one element.
-        
-        Information stored in dictionaries with following keys:
-            * *field_type* — type of the field, if this is specially treated field, ``None`` otherwise. ``lead status`` is typical specially treated field. In more details, field types :ref:`described here <field-types>`.
-            * *group* — unique name of the group, containing this field.
-            * *label* — unique name, representing the field in human-readable form.
-            * *values* — possible values, for specially treated fields. More details are :ref:`described here <field-types>`.
-            * *modifier* — name of the field's modifier
-            * *id* — unique id of the field in BSON format
-        
-    **groups**
-        Information about field groups. Represented by dictionary, where keys are unique group names, and values are dictionaries with more info. ``Basic Info`` represents typical group, and all default groups :ref:`described here <field-groups>`. Groups info dictionary contains following fields:
-            * *id* — unique id of the group in BSON format.
-            * *order* — list, containing names of the fields, as they appeared in group.
-            * *name* — unique name of the group. (Outdated, as we have field name as the key of ``groups`` dictionary.)
-            * *label* — unique name, representing the field in human-readable form.
+**fields**
+    Information about fields in Nimble. Represented by dictionary, where keys are fields names, and values are lists, containing details about 
+    all possible modifications of this field. If field have no modifiers (like ``first name`` on example above), this list contains only one element.
     
-    **meta_last_modified**
-        Outdated field, used to contain last metadata modification timestamp. Now for this purposes used E-Tag mechanism.
+    Information stored in dictionaries with following keys:
+        * *field_type* — type of the field, if this is specially treated field, ``None`` otherwise. ``lead status`` is typical specially treated field. In more details, field types :ref:`described here <field-types>`.
+        * *group* — unique name of the group, containing this field.
+        * *label* — unique name, representing the field in human-readable form.
+        * *values* — possible values, for specially treated fields. More details are :ref:`described here <field-types>`.
+        * *modifier* — name of the field's modifier
+        * *id* — unique id of the field in BSON format
+    
+**groups**
+    Information about field groups. Represented by dictionary, where keys are unique group names, and values are dictionaries with more info. ``Basic Info`` represents typical group, and all default groups :ref:`described here <field-groups>`. Groups info dictionary contains following fields:
+        * *id* — unique id of the group in BSON format.
+        * *order* — list, containing names of the fields, as they appeared in group.
+        * *name* — unique name of the group. (Outdated, as we have field name as the key of ``groups`` dictionary.)
+        * *label* — unique name, representing the field in human-readable form.
+
+**meta_last_modified**
+    Outdated field, used to contain last metadata modification timestamp. Now for this purposes used E-Tag mechanism.
     
 
 .. _contact-list:
 
 Contact list
 ------------
+Contact list request is similar to :ref:`contact-details`. It have the same key with resources, :ref:`described here <contact-resources>`. Difference is in ``meta`` key value. For contact listing it returns pagination details. 
 
-Add here
+.. code-block:: javascript
+
+    'meta': {
+        'per_page': 30,
+        'total': 45,
+        'pages': 2,
+        'page': 1
+    }
+
+Keys meaning:
+
+**per_page**
+    Number of contacts, returned per page
+**total**
+    Total number of contacts
+**pages**
+    Total pages count
+**page**
+    Current page number
 
 .. _api-errors:
 
 API Errors
 ----------
 
-Add here
+Usually, errors in Nimble returned as JSON dictionary, with appropriate HTTP error codes and following keys:
+
+**message**
+    Message about error reason
+**code**
+    Extended error code
+
+.. _validation-error:
+
+Validation Error
+~~~~~~~~~~~~~~~~
+Sent on invalid parameters. Returns with HTTP code 409 and code field equal to 245.
+
+In general cases, this response looks like common error dictionary:
+
+.. code-block:: javascript
+
+    {
+        "message": "You can specify either `keyword` or `query` parameter, not both!", 
+        "code": 245
+    }
+    
+    
+On contact creation and update — additional data is returned. 
+
+.. code-block:: javascript
+
+    {
+        "message": "Validation errors",
+        "code": 245,
+        "errors": {
+            "first name": [{
+                "message": "First name or last name field is required for person and should not be empty",
+                "field_id": "5049f697a694620a07000043"
+            }]
+        }
+    }
+
+Here errors is a dictionary, containing information about field, caused error. Key is field name, and values are extended error message and unique id of field, caused error.
+
+.. _quota-error:
+
+Quota Error
+~~~~~~~~~~~
+Sent if user exceeded his quota values. Returns with HTTP code 402 and code field equal to 108.
+
+.. code-block:: javascript
+
+    {
+        "message": "You have created the maximum number of contact records allowed for your subscription.\nDon't worry, you can upgrade your account and add more contacts right now.", 
+        "code": 108
+    }
+    
+.. _server-error:
+
+Server error
+~~~~~~~~~~~~
+Sent if unrecoverable Nimble server occurs. Returns with HTTP code 500 and code field equal to 107
+This errors are very rare, so our team receives automatical notifications on such errors and fixes them ASAP.
+
+.. code-block:: javascript
+
+    {
+        "message": "Internal error handling request", 
+        "code": 107
+    }
+
+Add about OAuth errors
