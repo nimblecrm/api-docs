@@ -4,14 +4,14 @@ Nimble API responses
 
 .. contents::
 
-.. _contact-details:
+.. _contact-details-response:
 
 Contacts details
 ----------------
 
 Typical response to this request is a dictionary with 2 keys (if other doesn't specified by request to API): meta and resources. 
 
-.. _contact-resources:
+.. _contact-resources-response:
 
 Contact resources
 ~~~~~~~~~~~~~~~~~
@@ -165,7 +165,7 @@ Let's see keys of this dictionary in details.
 **owner_id**
     Id of person, owning the contact in BSON format
         
-.. _contacts-meta:
+.. _contacts-meta-response:
 
 Contacts metadata
 ~~~~~~~~~~~~~~~~~
@@ -256,11 +256,11 @@ Let's see keys of this dictionary in details.
     Outdated field, used to contain last metadata modification timestamp. Now for this purposes used E-Tag mechanism.
     
 
-.. _contact-list:
+.. _contact-list-response:
 
 Contact list
 ------------
-Contact list request is similar to :ref:`contact-details`. It have the same key with resources, :ref:`described here <contact-resources>`. Difference is in ``meta`` key value. For contact listing it returns pagination details. 
+Contact list request is similar to :ref:`contact-details-response`. It have the same key with resources, :ref:`described here <contact-resources-response>`. Difference is in ``meta`` key value. For contact listing it returns pagination details. 
 
 .. code-block:: javascript
 

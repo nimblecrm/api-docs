@@ -8,6 +8,6 @@ Contents:
    
    overview.rst
    responses.rst
-   contacts/contacts_index.rst
+   contacts/index.rst
    contacts/fields.rst
    obtaining_key.rst
