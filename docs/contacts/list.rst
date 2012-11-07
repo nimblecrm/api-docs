@@ -19,7 +19,7 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
   For example: ``fields=first%20name,my%20custom%20field``
 
   .. note:: 
-    If field name contains "," (coma) it should be shielded with "\\". For example: we have some custom field with name 
+    If field name contains "," (comma) it should be shielded with "\\". For example: we have some custom field with name 
     "hello, Jon Doe" it should be HTML-encoded in ``hello%5C%2C%20John%20Doe`` (``hello\, John Doe``).
 
 **tags** — default: 1
@@ -33,7 +33,7 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
 
 **page** — default: 1
 
-  Specifies which page to display.
+  Specifies which page to display. Numeration starts from 1. 
 
 **sort** — default: name:asc
 
