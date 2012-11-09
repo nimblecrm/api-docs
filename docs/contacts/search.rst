@@ -73,7 +73,7 @@ Let’s define several occurrences:
 
     o4 = {
         "creation date": {
-            "is_within": {
+            "range": {
                 "start_date": "2012-02-13",
                 "end_date": "2012-02-23",
             }
@@ -182,7 +182,7 @@ Top level validation schema
     {
     	"additionalProperties": false,
     	"patternProperties": {
-    		"^(skype_id|twitter|linkedin|facebook|phone|last name|title|description|street|city|state|zip|country|lead type|company name|any|custom_fields|name|first name|lead source|creation date|address|tag|or|and|record type|saved_search)$": {
+    		"^(email|skype_id|twitter|linkedin|facebook|phone|last name|title|description|street|city|state|zip|country|lead type|company name|custom_fields|name|first name|lead source|creation date|address|tag|or|and|record type|saved_search)$": {
     			"required": true,
     			"type": "object"
     		}
@@ -212,7 +212,7 @@ Schema for validation of default fields occurrences
 
     {
     	"patternProperties": {
-    		"^(skype_id|twitter|linkedin|facebook|phone|last name|street|city|state|zip|country|company name|title)$": {
+    		"^(email|skype_id|twitter|linkedin|facebook|phone|last name|street|city|state|zip|country|company name|title)$": {
     			"additionalProperties": false,
     			"patternProperties": {
     				"^(is|is_not|contain|not_contain|is_empty)$": {
@@ -276,35 +276,63 @@ Schema for validation of creation date occurrences
 .. code-block:: javascript
 
     {
-    	"type": "object",
-    	"description": "creation date validation rule",
-    	"properties": {
-    		"creation date": {
-    			"additionalProperties": false,
-    			"type": "object",
-    			"properties": {
-    				"range": {
-    					"additionalProperties": false,
-    					"required": true,
-    					"type": "object",
-    					"properties": {
-    						"start_date": {
-    							"required": true,
-    							"type": "string",
-    							"description": "start date in format YYYY-MM-DD",
-    							"format": "date"
-    						},
-    						"end_date": {
-    							"required": true,
-    							"type": "string",
-    							"description": "end date in format YYYY-MM-DD",
-    							"format": "date"
-    						}
-    					}
-    				}
-    			}
-    		}
-    	}
+        "type": "object",
+        "description": "creation date validation rule",
+        "properties": {
+            "creation date": {
+                "type": [
+                    {
+                        "type": "object",
+                        "description": "sub-schema for validation range type occurrence",
+                        "properties": {
+                            "range": {
+                                "additionalProperties": false,
+                                "required": true,
+                                "type": "object",
+                                "properties": {
+                                    "start_date": {
+                                        "required": true,
+                                        "type": "string",
+                                        "description": "start date in format YYYY-MM-DD",
+                                        "format": "date"
+                                    },
+                                    "end_date": {
+                                        "required": true,
+                                        "type": "string",
+                                        "description": "end date in format YYYY-MM-DD",
+                                        "format": "date"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "description": "sub-schema for validation in the last type occurrence",
+                        "properties": {
+                            "in_the_last": {
+                                "additionalProperties": false,
+                                "required": true,
+                                "type": "object",
+                                "properties": {
+                                    "quantity": {
+                                        "required": true,
+                                        "type": "integer",
+                                        "description": "quantity of units, like 10 days, 2 months etc"
+                                    },
+                                    "unit": {
+                                        "required": true,
+                                        "type": "string",
+                                        "description": "possible types of period",
+                                        "enum": ["day", "month", "week"]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
     }
 
 Schema for validation of address occurrences
@@ -360,23 +388,22 @@ Schema for validation of custom fields
     	"description": "custom field validation rule",
     	"properties": {
     		"custom_fields": {
-    			"additionalProperties": false,
-    			"patternProperties": {
-    				"^[A-Fa-f0-9]{24}$": {
-    					"additionalProperties": false,
-    					"patternProperties": {
-    						"^(is|is_not|contain|not_contain|is_empty)$": {
-    							"required": true,
-    							"type": ["string", "boolean"]
-    						}
-    					},
-    					"required": true,
-    					"type": "object"
-    				}
-    			},
-    			"type": "object"
-    		}
-    	}
+                "type": "object",
+                "patternProperties": {
+                    "^.{1,150}$": {
+                        "additionalProperties": false,
+                        "required": true,
+                        "type": "object",
+                        "patternProperties": {
+                            "^(is|is_not|contain|not_contain|is_empty)$": {
+                                "required": true,
+                                "type": ["string", "boolean"]
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
 Schema for validation of record type
