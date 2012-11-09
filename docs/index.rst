@@ -1,5 +1,5 @@
-Welcome to Nimble API documentation!
-====================================
+Nimble API documentation contents
+=================================
 
 Contents:
 
