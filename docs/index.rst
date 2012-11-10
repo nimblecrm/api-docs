@@ -9,5 +9,5 @@ Contents:
    overview.rst
    responses.rst
    contacts/index.rst
-   contacts/fields.rst
+   contacts/fields_structure.rst
    obtaining_key.rst
