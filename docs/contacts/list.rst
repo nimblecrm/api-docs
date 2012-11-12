@@ -39,7 +39,7 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
 
   Identifies the sort field and sort order. Sort order is required when this parameter is used. 
   An single sort field can be specified. Any field can be sorted in either ``asc`` or ``desc`` order.
-  In addition to sorting on default and custom fields, there are the special sorts: recently viewed by the authenticated 
+  In addition to sorting on default, there are the special sorts: recently viewed by the authenticated 
   user (as ``recently%20viewed``), first + last name (as ``name``), and record created date (as ``create``).
 
   .. note:: 
@@ -55,8 +55,7 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
 
 **keyword** — default: empty
 
-  Specifies a set of simple search criteria for the query. This simple search is performed on basic contact info fields, 
-  which includes name, email, and address. For example: ``keyword=Jon%20Smith``
+  Specifies a set of simple search criteria for the query. This simple search is performed on any (indexed in our search engine) fied of contact. For example: ``keyword=Jon%20Smith``
 
 Response: OK
 ------------
