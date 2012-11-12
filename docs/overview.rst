@@ -9,7 +9,7 @@ Currently, only contact data is accessible via our REST API, and this data is av
  * **CREATE contact** - available
  * **GET contact list** with advanced SEARCH - available
  * **UPDATE contact** - available
- * **DELETE contact** - early Nov 2012
+ * **DELETE contact** - available
  * **GET related activities** - Q4
  * **GET related notes** - Q4
  * **CREATE related activities** - Q4
