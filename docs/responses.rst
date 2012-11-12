@@ -353,5 +353,3 @@ This errors are very rare, so our team receives automatical notifications on suc
         "message": "Internal error handling request", 
         "code": 107
     }
-
-Add about OAuth errors
