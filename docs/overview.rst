@@ -20,6 +20,6 @@ Currently, only contact data is accessible via our REST API, and this data is av
  
 Given the early state of the API, some aspects of the API are subject to change.
 
-We are building the API with a few main usecases in mind: widgets/extensions to Nimble, web clients (including our own), mobile clients. and ultimately 2-way data integrations with other services. We aspire to make an API that is simple to use, easy to read, and flexible. 
+We are building the API with a few main use cases in mind: widgets/extensions to Nimble, web clients (including our own), mobile clients. and ultimately 2-way data integrations with other services. We aspire to make an API that is simple to use, easy to read, and flexible. 
 
 Your feedback is greatly appreciated while we continue to shape our API offering. Please send any comments to care@nimble.com.
