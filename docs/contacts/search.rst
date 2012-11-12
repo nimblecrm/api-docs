@@ -36,13 +36,13 @@ Based on example above, let’s define basic terminology:
 **and**     
     is join operator for occurrences
     
-**skype_id** (record_type) 
+**skype_id** (``john.doe``)
     is a term to search by
 
 **is** 
     is occurrence of term in search index
 
-**person** (john.doe) 
+**record_type** (``person``)
     is a value for occurrence
 
 Joins
@@ -103,7 +103,7 @@ Join like (o1 and o2) or (o3 and o4)::
 
 Saved Advanced Searches
 ~~~~~~~~~~~~~~~~~~~~~~~
-Query language allow to specify as occurrence of other (previously saved) search query. You can combine saved search occurrences in a way as regular occurrences are used. Explanation example is provided bellow.
+Query language allows to specify as occurrence other (previously saved) search query. You can combine saved search occurrences in a way as regular occurrences are used. Explanation example is provided bellow.
 
 Let’s assume we have saved search query like:
 
@@ -121,7 +121,7 @@ Let’s assume we have saved search query like:
         }]
     }
 
-This saved search has id 4fc886dc682c4a64dd060062 in database (detailed information about saved searches API see in public API endpoints section).
+This saved search has id 4fc886dc682c4a64dd060062 in database (detailed information about saved searches :ref:`API endpoints<saved_search_api>` section).
 
 To use previously saved search we need to construct next query:
 
@@ -472,52 +472,65 @@ Schema for validation of saved searches
         }
     }
 
-..note::
+.. note::
     Most field names in query language are the same as field name in Nimble database, except some special cases (search by not a fields) 
     like: ``record type``, ``saved_search``, ``custom_fields``.
     For more information about default fields and their names in Nimble, see: :ref:`contact-fields`.
 
-Public API
-----------
-As any contacts public API - Advanced Search has its own entry point.
+API endpoints
+---------------------
 
-Next URL is handling all requests to advanced search::
+Advanced search requests should be done through statard contacts listing entry point::
 
     GET /api/v1/contacts/list
 
-This entry point can have following parameters:
+Parameters are the same as for regular listing, except new one:
 
-**query** — required
-    Should contain url-encoded JSON. Syntax of queries :ref:`described above <advanced-search-ref>`.
-    
-**fields** — optional, default: all fields in contact
+**query**
+    Should contain url-encoded JSON. Syntax of queries is :ref:`described above <advanced-search-ref>`.
 
-  Specifies a comma separated list of fields to return. If this parameter is excluded, all fields will be returned. 
-  For example: ``fields=first%20name,my%20custom%20field``. For more detailed info on Nimble's fields see :ref:`contact-fields`.
+ .. note::
+    Parameter ``record_type`` will be ignored, if ``query`` parameter was specified. To filter persons/companies, please use corresponding sub query in query.
 
-  .. note:: 
-    If field name contains "," (comma) it should be shielded with "\\". For example: we have some custom field with name 
-    "hello, Jon Doe" it should be HTML-encoded in ``hello%5C%2C%20John%20Doe`` (``hello\, John Doe``).
+ .. note::
+    Parameter ``keyword`` will be ignored, if ``query`` parameter was specified.
 
-**tags** — optional, default: 1
+Request example 1::
 
-  Specifies whether tags should be included in the results. 
+    https://app.nimble.com/api/v1/contacts/list?query=%7B%22first%20name%22%3A%20%7B%22is%22%3A%20%22Anton%22%7D%7D&tags=0&per_page=5&fields=first%20name
 
-**per_page** — optional, default: 30
+Advanced search query in this request is:
 
-  Specifies the number of items to return per page of results.
+    .. code-block:: javascript
 
-**page** — optional, default: 1
+         {
+             "first name": {
+                "is": "Anton"
+             }
+         }
 
-  Specifies which page to display. Numeration starts from 1. 
+Request example 2::
 
-**sort** — optional, default: ``name:asc``
+    https://app.nimble.com/api/v1/contacts/list?query=%7B%22and%22%3A%20%5B%7B%22last%20name%22%3A%20%7B%22is%22%3A%20%22Ferrara%22%7D%7D%2C%20%7B%22first%20name%22%3A%20%7B%22is%22%3A%20%22Jon%22%7D%7D%5D%7D&tags=0&per_page=5&fields=last%20name,first%20name
 
-  Identifies the sort field and sort order. Sort order is required when this parameter is used. 
-  An single sort field can be specified. Any field can be sorted in either ``asc`` or ``desc`` order.
+Advanced search query in this request is:
 
-.. note::
-    Parameter ``record_type`` will be ignored, if query parameter was specified. To filter persons/companies, please use corresponding sub query in query.
+  .. code-block:: javascript
+
+         {
+              "and": [
+                  {
+                      "last name": {
+                          "is": "Ferrara"
+                      }
+                  },
+                  {
+                      "first name": {
+                          "is": "Jon"
+                      }
+                  }
+              ]
+         }
 
 Response: OK
 ------------
@@ -529,6 +542,9 @@ Response: Errors
 Possible errors:
 
 * :ref:`validation-error`
+
+
+.. _saved_search_api:
 
 Saved search API
 ~~~~~~~~~~~~~~~~
@@ -569,7 +585,7 @@ Remove saved search with provided id::
 
 **Listing example**:: 
     
-    GET https://app.devnimble.com/api/v1/contacts/saved_search/
+    GET https://app.nimble.com/api/v1/contacts/saved_search/
 
 Response:
 
@@ -597,7 +613,7 @@ Response:
 
 **Creating example**:: 
     
-    POST https://app.devnimble.com/api/v1/contacts/saved_search/
+    POST https://app.nimble.com/api/v1/contacts/saved_search/
 
 Request data is::
 
@@ -616,7 +632,7 @@ Response::
     
 **Updating example**::
     
-    PUT https://app.devnimble.com/api/v1/contacts/saved_search/50885f43837d4e0df1000000
+    PUT https://app.nimble.com/api/v1/contacts/saved_search/50885f43837d4e0df1000000
 
 Request data is::
 
@@ -635,7 +651,7 @@ Response::
     
 **Deleting example**::
 
-    DELETE https://app.devnimble.com/api/v1/contacts/saved_search/50885f43837d4e0df1000001
+    DELETE https://app.nimble.com/api/v1/contacts/saved_search/50885f43837d4e0df1000001
 
 Response OK::
 
@@ -644,7 +660,7 @@ Response OK::
         "data": {}
     }
 
-Response if this search is referenced by other::
+Response if this saved search is referenced by other saved search::
 
     {
         "message": "something wrong while deleting advanced search instance",
