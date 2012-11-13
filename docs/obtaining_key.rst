@@ -224,7 +224,7 @@ No matter what request ``POST``, ``GET`` or any other HTTP method, just add an `
 
 **Example Request**::
 
-    https://api.nimble.com/api/v1/contacts/list?keyword=test&access_token=e0f7b053200672c2ff6ede59c8e2bfc7
+    https://api.nimble.com/api/v1/contacts?keyword=test&access_token=e0f7b053200672c2ff6ede59c8e2bfc7
 
  
 **Successful Response**:
