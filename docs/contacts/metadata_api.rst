@@ -33,7 +33,7 @@ This public API provides CRUD access to contacts fields.
 Create Field
 ----------------------------
 
-.. note:: Nimble allows to create only custom fields.
+.. note:: Nimble allows to create only custom fields. List of default fields can be found :ref:`here<contact-fields>`.
 
 Request
 """"""""""""""""""""""""""""
@@ -48,11 +48,17 @@ Parameters
 
 All parameters are passed as JSON in request body. All parameters are mandatory.
 
-**name**: name for new field.
+**name**
 
-**group_id**: id of fields group, new field should belong to.
+    name for new field.
 
-**presentation**: JSON-encoded structure describing how field should be presented in Nimble client (can be empty string as well).
+**group_id**
+
+    id of fields group, new field should belong to.
+
+**presentation**
+
+    JSON-encoded structure describing how field should be presented in Nimble client (can be empty string as well).
 
 Example request parameters:
 
@@ -174,7 +180,9 @@ Parameters
 
 All parameters are passed as JSON in request body. There is only single parameter for this method.
 
-**force**: should API remove field even if it has associated field values?. Should be boolean value.
+**force**
+
+    should API remove field even if it has associated field values?. Should be boolean value.
 
 Response
 """"""""""""""""""""""""""""
