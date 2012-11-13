@@ -6,7 +6,7 @@ Request
 -------
 Example::
 
-    POST https://api.nimble.com/api/v1/contact/create
+    POST https://api.nimble.com/api/v1/contact
     
 Parameters
 ----------

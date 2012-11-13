@@ -2,7 +2,7 @@
 Get contacts details
 ====================
 
-Single and bulk requests ore formatted and returned in the same way. The response format for each field is the same as returned in a contacts/list response. Metadata can be included in the response.
+Single and bulk requests ore formatted and returned in the same way. The response format for each field is the same as returned in a contacts listing response. Metadata can be included in the response.
 
 Request
 -------
