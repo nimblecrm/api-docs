@@ -1,6 +1,6 @@
 =================================================
 Full description of Nimble default contact fields
-=================================================
+================================================= 
 
 .. _field-types:
 
@@ -12,7 +12,7 @@ Field types
 Default fields
 ~~~~~~~~~~~~~~
 
-Simple text field without any validations.
+Simple text fields, like ``first name``, ``last name``, ``title``, ``description``, etc.
 
 .. _address-type:
 
@@ -52,7 +52,7 @@ For creation of contacts with social fields, all field values should correspond 
 **Fousquare**
     Value should be: user's id in Foursquare, user's screen name (if set) or Foursquare profile URL. 
 
-When contacts are listed, Nimble adds additional information to contact, fetched from social network:
+In response, for every contact, Nimble adds additional information to fields, fetched from social network:
 
 **avatar_url**
     URL of users's avatar in this social network.
