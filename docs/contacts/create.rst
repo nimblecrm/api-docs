@@ -6,7 +6,7 @@ Request
 -------
 Example::
 
-    POST https://api.nimble.com/api/v1/contacts/create
+    POST https://api.nimble.com/api/v1/contact/create
     
 Parameters
 ----------
@@ -94,9 +94,9 @@ On success, server returns response with HTTP code 201 and newly created contact
         'object_type': 'contact',
         'id': '509a751c262b37af05000011',
         'last_contacted': {
-            'last_contacted': None,
-            'thread_id': None,
-            'message_id': None
+            'last_contacted': null,
+            'thread_id': null,
+            'message_id': null
         },
         'record_type': 'person',
         'creator': 'Nimble API test',
