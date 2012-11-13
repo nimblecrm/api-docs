@@ -497,7 +497,7 @@ Parameters are the same as for regular listing, except new one:
 
 Request example 1::
 
-    https://app.nimble.com/api/v1/contacts/list?query=%7B%22first%20name%22%3A%20%7B%22is%22%3A%20%22Anton%22%7D%7D&tags=0&per_page=5&fields=first%20name
+    https://api.nimble.com/api/v1/contacts/list?query=%7B%22first%20name%22%3A%20%7B%22is%22%3A%20%22Anton%22%7D%7D&tags=0&per_page=5&fields=first%20name
 
 Advanced search query in this request is:
 
@@ -511,7 +511,7 @@ Advanced search query in this request is:
 
 Request example 2::
 
-    https://app.nimble.com/api/v1/contacts/list?query=%7B%22and%22%3A%20%5B%7B%22last%20name%22%3A%20%7B%22is%22%3A%20%22Ferrara%22%7D%7D%2C%20%7B%22first%20name%22%3A%20%7B%22is%22%3A%20%22Jon%22%7D%7D%5D%7D&tags=0&per_page=5&fields=last%20name,first%20name
+    https://api.nimble.com/api/v1/contacts/list?query=%7B%22and%22%3A%20%5B%7B%22last%20name%22%3A%20%7B%22is%22%3A%20%22Ferrara%22%7D%7D%2C%20%7B%22first%20name%22%3A%20%7B%22is%22%3A%20%22Jon%22%7D%7D%5D%7D&tags=0&per_page=5&fields=last%20name,first%20name
 
 Advanced search query in this request is:
 
@@ -585,7 +585,7 @@ Remove saved search with provided id::
 
 **Listing example**:: 
     
-    GET https://app.nimble.com/api/v1/contacts/saved_search/
+    GET https://api.nimble.com/api/v1/contacts/saved_search/
 
 Response:
 
@@ -613,7 +613,7 @@ Response:
 
 **Creating example**:: 
     
-    POST https://app.nimble.com/api/v1/contacts/saved_search/
+    POST https://api.nimble.com/api/v1/contacts/saved_search/
 
 Request data is::
 
@@ -632,7 +632,7 @@ Response::
     
 **Updating example**::
     
-    PUT https://app.nimble.com/api/v1/contacts/saved_search/50885f43837d4e0df1000000
+    PUT https://api.nimble.com/api/v1/contacts/saved_search/50885f43837d4e0df1000000
 
 Request data is::
 
@@ -651,7 +651,7 @@ Response::
     
 **Deleting example**::
 
-    DELETE https://app.nimble.com/api/v1/contacts/saved_search/50885f43837d4e0df1000001
+    DELETE https://api.nimble.com/api/v1/contacts/saved_search/50885f43837d4e0df1000001
 
 Response OK::
 
