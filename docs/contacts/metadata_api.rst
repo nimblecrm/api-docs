@@ -207,10 +207,5 @@ Example response on attempt to delete field with associated values:
         "code": 245
     }
 
-.. _groups-api-ref:
-
-Contacts groups API
-============================
-
 
 
