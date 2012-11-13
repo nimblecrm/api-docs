@@ -9,7 +9,7 @@ Request
 
 Example::
 
-    GET https://api.nimble.com/api/v1/contacts/detail/id=384348,2343434,34343 
+    GET https://api.nimble.com/api/v1/contacts/detail/id=5049fb9b9b85f669e4000447,5049fb7d9b85f669e4000066,5049fba29b85f669e40004fb 
     
 Parameters
 ----------
