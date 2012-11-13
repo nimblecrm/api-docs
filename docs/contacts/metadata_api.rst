@@ -82,15 +82,14 @@ Example response:
 .. code-block:: javascript
 
  {
-    "group_id": "5092a4d5084abd46de000725",
-    "name": "new field",
-    "presentation": "{\"width\": \"1\", \"type\": \"single-line-text-box\"}",
-    "modifier": "",
-    "type": "custom",
-    "id": "509d5400837d4e6700000006",
-    "multiples": false
+     "field_type": "single-line-text-box",
+     "group": "SOme new tab",
+     "name": "new field",
+     "label": "new field",
+     "values": null,
+     "modifier": "",
+     "id": "50a2d10b837d4e051a000006"
  }
-
 
 Update Field
 ----------------------------
@@ -143,22 +142,22 @@ will respond with:
    {
        "resources": [
            {
-               "group_id": "5049f696a694620a07000034",
+               "field_type": null,
+               "group": "Contact Info",
                "name": "phone",
-               "presentation": "",
+               "label": "phone",
+               "values": null,
                "modifier": "work",
-               "type": "phone",
-               "id": "5049f697a694620a07000054",
-               "multiples": true
+               "id": "5049f697a694620a07000054"
            },
            {
-               "group_id": "5049f696a694620a07000034",
+               "field_type": null,
+               "group": "Contact Info",
                "name": "phone",
-               "presentation": "",
+               "label": "phone",
+               "values": null,
                "modifier": "mobile",
-               "type": "phone",
-               "id": "5049f697a694620a07000058",
-               "multiples": true
+               "id": "5049f697a694620a07000058"
            }
        ]
    }
