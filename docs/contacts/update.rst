@@ -85,9 +85,9 @@ Updated contact is returned and encoded in the same way that is used in contacts
         'object_type': 'contact',
         'id': '509a751c262b37af05000011',
         'last_contacted': {
-            'last_contacted': None,
-            'thread_id': None,
-            'message_id': None
+            'last_contacted': null,
+            'thread_id': null,
+            'message_id': null
         },
         'record_type': 'person',
         'creator': 'Nimble API test',
