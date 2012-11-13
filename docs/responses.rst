@@ -228,7 +228,6 @@ Contact's metadata contains information about all basic and custom fields create
                 'label': 'Basic Info'
             }
         }
-        'meta_last_modified': 0
     }
     
 Here is a description of the response in detail:
