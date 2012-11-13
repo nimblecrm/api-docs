@@ -2,14 +2,14 @@
 Get contacts details
 ====================
 
-Single and bulk requests ore formatted and returned in the same way. The response format for each field is the same as returned in a contacts/list response. There are no parameters to limit or change the field-level data returned, however meta data can be included in the response.
+Single and bulk requests ore formatted and returned in the same way. The response format for each field is the same as returned in a contacts/list response. Metadata can be included in the response.
 
 Request
 -------
 
 Example::
 
-    GET https://api.nimble.com/api/v1/contacts/detail/id=5049fb9b9b85f669e4000447,5049fb7d9b85f669e4000066,5049fba29b85f669e40004fb 
+    GET https://api.nimble.com/api/v1/contact/5049fb9b9b85f669e4000447,5049fb7d9b85f669e4000066,5049fba29b85f669e40004fb 
     
 Parameters
 ----------
@@ -34,7 +34,7 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
 Response: OK
 ------------
 
-List and Detail response format is the basically the same. List allows search terms, sort orders, and fields as parameters, whereas detail returns all of the fields with the option of adding metadata. In more details, this format :ref:`described here <contact-details-response>`.
+List and Detail response format is the basically the same. List allows search terms, sort orders, and fields as parameters, whereas detail can only limit fields to return and provide the option of adding metadata. In more details, this format :ref:`described here <contact-details-response>`.
 
 Response: Errors
 ----------------
