@@ -114,6 +114,7 @@ This field usually contains all data for the contacts you've requested. Here is 
             'thread_id': 5049f697a694620a07000062,
             'message_id': 5049f697a694620a17000075
         },
+        'avatar_url': 'https://app.nimble.com/api/contacts/avatars/5049fb849b85f669e40000dc'
         'record_type': 'person',
         'creator': 'Emil Kio',
         'children': [],
@@ -147,6 +148,9 @@ Here is a description of the response in detail:
         * *last_contacted* — timestamp of last outbound message
         * *thread_id* — unique id of message thread in BSON format
         * *message_id* — unique id of message in BSON format
+        
+**avatar_url**
+    URL of image that can be used as contact's avatar. Value of null is used to indicate that contact has no avatar associated.
                     
 **record_type**
     Type of contact.  This can have one of two values: ``person`` and ``company``.
@@ -174,7 +178,7 @@ Contact's metadata contains information about all basic and custom fields create
 
 .. code-block:: javascript
 
-    'meta': {
+    'contacts_meta': {
         'fields': {
             'first name': [{
                 'field_type': None,
