@@ -11,15 +11,21 @@ Example::
 Parameters
 ----------
 
-All parameters are passed as JSON in request body. Both parameters are mandatory.
+All parameters are passed as JSON in request body. 
 
-**type**
+**type** — required
     Specifies the type of contact to create - the record type. This parameter could be one of two values: ``company`` or ``person``.
 
-**fields**
+**fields** — required
     Describes a dictionary organized in the same structure as a contact listing response. In this structure, each key is field name. 
     Values are lists of dictionaries, having two fields: value - actual value to store in contact field, modifier - field modifier to use, 
     if field can have one. 
+    
+**tags** — optional, default: None
+    Comma separated list of tags to assign to contacts. If you need to create tags, containing comma sign — escape it with backslash. E.g.
+    `customers\,best` will create tag `customers,best`.
+
+    .. note:: Maximum 5 tags are allowed in this list during contact creation.
 
 Example:
 
@@ -44,6 +50,7 @@ Example:
             }],
         },
         'type': 'person',
+        'tags': 'tag1,tag2'
     }
     
 Response: OK
