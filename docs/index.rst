@@ -11,3 +11,5 @@ Contents:
    contacts/index.rst
    contacts/fields.rst
    obtaining_key.rst
+   making_auth_requests.rst
+   

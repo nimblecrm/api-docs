@@ -4,6 +4,8 @@ Tutorial: Obtain Nimble API Key
 
 .. contents::
 
+.. _obtain-token-tutorial:
+
 Introduction
 ------------
 
@@ -205,34 +207,7 @@ The Client should use the authorization code obtained to request an access token
 
 API requests using Access Token
 -------------------------------
-Now when we have Access Token Received you need to store it and use for any requests for Nimble Data on behalf of user. 
-
-In order to use this token code you just add it into url as request parameter with name ``access_token``.
-
-
-**Endpoint**:
-
-Any of available endpoint of Nimble API
- 
-**Params**:
-
-No matter what request ``POST``, ``GET`` or any other HTTP method, just add an ``access_token`` as parameter.
-
-    **access_token**
-        *required* — put a token for user under this parameter. 
- 
-
-**Example Request**::
-
-    https://api.nimble.com/api/v1/contacts?keyword=test&access_token=e0f7b053200672c2ff6ede59c8e2bfc7
-
- 
-**Successful Response**:
-
-Some data depends on API call you requested
-
- 
-// TODO specify invalid token or expired token error
+Now when we have Access Token Received you need to store it and use for any requests for Nimble Data on behalf of user. This process described in :ref:`second part of our tutorial <making-requests-tutorial>`.
 
  
 .. _token-refresh:
@@ -241,7 +216,7 @@ Refresh token after expiration without user input
 -------------------------------------------------
 // TODO this section under development
 
- 
+
 
 Troubleshooting & Feedback
 --------------------------
