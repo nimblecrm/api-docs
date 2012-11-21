@@ -26,7 +26,7 @@ Request returns HTTP code 200, body contains OK status and list of IDs of delete
 
 Example:
 
-.. code-block::javascript
+.. code-block:: javascript
 
     {
         'status': 'ok',
@@ -89,7 +89,7 @@ Example request::
 
 Response will be:
 
-.. code-block::javascript
+.. code-block:: javascript
 
     {
         "status": "ok", 
