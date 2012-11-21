@@ -23,7 +23,7 @@ All parameters are passed as JSON in request body.
     
 **tags** — optional, default: None
     Comma separated list of tags to assign to contacts. If you need to create tags, containing comma sign — escape it with backslash. E.g.
-    `customers\,best` will create tag `customers,best`.
+    ``our customers\,best`` will create tags ``our customers`` and ``best``.
 
     .. note:: Maximum 5 tags are allowed in this list during contact creation.
 
@@ -50,7 +50,7 @@ Example:
             }],
         },
         'type': 'person',
-        'tags': 'tag1,tag2'
+        'tags': 'our customers\,best'
     }
     
 Response: OK
@@ -105,6 +105,13 @@ On success, server returns response with HTTP code 201 and newly created contact
             'thread_id': null,
             'message_id': null
         },
+        'tags': [{
+            'tag': 'our customers',
+            'id': '5049fa0c9b85f62cb4000639'
+        }, {
+            'tag': 'best',
+            'id': '5049fa0c9b85f62cb4000745'
+        }],        
         'record_type': 'person',
         'creator': 'Nimble API test',
         'children': [],
