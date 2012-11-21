@@ -85,7 +85,7 @@ Response: OK
 
 Example request:: 
     
-    DELETE https://api.nimble.com/api/v1/contacts?keyword=DoeAPItest
+    DELETE https://api.nimble.com/api/v1/contacts/list?keyword=DoeAPItest
 
 Response will be:
 
