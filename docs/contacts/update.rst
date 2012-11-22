@@ -11,13 +11,19 @@ Example::
     
 Parameters
 ----------
-All parameters are passed as JSON in request body. Parameters are mandatory
+All parameters are passed as JSON in request body. You should pass at least one of the parameters: ``fields`` or ``avatar_url`` (or both).
 
 **fields**
     Describes a dictionary organized in the same structure as a contact listing response. In this structure, each key is field name. 
     Values are lists of dicts, having two fields: value - actual value to store in contact field, modifier - field modifier to use, if field can have one. 
     Values provided in this list will replace actual field's values for contact. 
     If you want to remove all values from field — pass ``null`` as value. 
+
+**avatar_url** — optional, default: None
+    String, pointing to avatar, that should be assigned to the contact. 
+
+    .. note:: Nimble uses lazy loading mechanism for avatars, and didn't perform any checks for URL validness during ``avatar_url`` setting. If you'll pass
+        invalid parameter here — no avatar will be displayed for contact.    
 
 Example:
 

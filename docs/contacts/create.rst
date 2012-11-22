@@ -26,6 +26,12 @@ All parameters are passed as JSON in request body.
     ``our customers\,best`` will create tags ``our customers`` and ``best``.
 
     .. note:: Maximum 5 tags are allowed in this list during contact creation.
+    
+**avatar_url** — optional, default: None
+    String, pointing to avatar, that should be assigned to the contact. 
+    
+    .. note:: Nimble uses lazy loading mechanism for avatars, and didn't perform any checks for URL validness during ``avatar_url`` setting. If you'll pass
+        invalid parameter here — no avatar will be displayed for contact.
 
 Example:
 
