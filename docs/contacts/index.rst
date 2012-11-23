@@ -12,4 +12,5 @@ Contents:
    create.rst
    update.rst
    delete.rst
+   metadata_api.rst
    
