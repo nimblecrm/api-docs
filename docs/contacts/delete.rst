@@ -53,7 +53,7 @@ Request
 
 Example:: 
 
-    DELETE https://api.nimble.com/api/v1/contacts/?list
+    DELETE https://api.nimble.com/api/v1/contacts/list
 
 Parameters
 ~~~~~~~~~~
