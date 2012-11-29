@@ -265,25 +265,7 @@ Contact list
 ------------
 Contact list request is similar to :ref:`contact-details-response`. It has the same key with resources, :ref:`described here <contact-resources-response>`. Difference is in ``meta`` key value. For contact listing it returns pagination details. 
 
-.. code-block:: javascript
-
-    'meta': {
-        'per_page': 30,
-        'total': 45,
-        'pages': 2,
-        'page': 1
-    }
-
-Keys meaning:
-
-**per_page**
-    Number of contacts returned per page
-**total**
-    Total number of contacts
-**pages**
-    Total pages count
-**page**
-    Current page number
+.. include:: data_structures/commons/paging_metadata.rst 
 
 .. _api-errors:
 
