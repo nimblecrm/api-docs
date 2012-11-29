@@ -422,7 +422,7 @@ Schema for validation of record type
                         "minLength": 2,
                         "required": true,
                         "type": "string",
-                        "enum": ["person", "company"]
+                        "enum": ["all", "person", "company"]
                     }
                 }
             }
