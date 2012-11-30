@@ -7,6 +7,10 @@ Single and bulk requests ore formatted and returned in the same way. The respons
 Request
 -------
 
+Base endpoint::
+
+    GET https://api.nimble.com/api/v1/contact/<contact_id>[,<contact_id>,<contact_id>,...]
+
 Example::
 
     GET https://api.nimble.com/api/v1/contact/5049fb9b9b85f669e4000447,5049fb7d9b85f669e4000066,5049fba29b85f669e40004fb 
