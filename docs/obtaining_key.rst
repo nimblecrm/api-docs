@@ -214,15 +214,37 @@ Now when we have Access Token Received you need to store it and use for any requ
 
 Refresh token after expiration without user input
 -------------------------------------------------
-// TODO this section under development
-
-
-
-Troubleshooting & Feedback
---------------------------
-If you have any problems or want to submit feedback feel free to go to our support forum or email us at care@nimble.com
-
+The application uses the refresh token to extend the validity of the access token provided with the refresh token. When refreshing an access token, you should specify required data as a form parameters. Client application secret is needed for client authentication. ``Content-Type`` header must be set to ``application/x-www-form-urlencoded``.
  
+Example Request::
+ 
+    POST /oauth/token HTTP/1.1
+    Host: https://api.nimble.com/
+    Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+ 
+    client_id=3e8471e7516a0c85ef35ab1d23f1bdf1&client_secret=737d10deba3fd124&grant_type=refresh_token&refresh_token=5f752714eddb07a3e41c2a3311f514e1
+ 
+Parameters:
+
+**client_id** 
+    Client identifier used to obtain the authorization code
+**client_secret** 
+    Client secret code
+**grant_type** 
+    Must be set to ``refresh_token``
+**refresh_token**
+    Refresh token obtained from the access token request
+ 
+Example Response:
+
+.. code-block:: javascript
+
+    {
+        "access_token":"1d7bc7328b402f4826e17607e364bc6a",
+        "expires_in":"86399",
+        "refresh_token":"f35c2165112fda74f79b408cc253485fcdfd888a"
+    }
+
 
 Examples
 --------
@@ -233,3 +255,7 @@ For your convinience we created some examples:
 `Python authorization example <https://github.com/nimblecrm/python-example>`_. Actual code implementation on Python and Tornado
 
 `Ruby authorization example <https://github.com/nimblecrm/ruby-example>`_. Implementation of authorization process in Ruby
+
+Troubleshooting & Feedback
+--------------------------
+If you have any problems or want to submit feedback feel free to go to our support forum or email us at care@nimble.com
