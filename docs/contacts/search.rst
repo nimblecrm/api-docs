@@ -1,3 +1,5 @@
+.. _contacts-search-ref:
+
 ===============
 Search contacts
 ===============

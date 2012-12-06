@@ -56,6 +56,9 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
 **keyword** — default: empty
 
   Specifies a set of simple search criteria for the query. This simple search is performed on any (indexed in our search engine) fied of contact. For example: ``keyword=Jon%20Smith``
+  
+**query** — default: empty
+  Specifies query for contacts advanced search. More details about search see :ref:`contacts-search-ref`.
 
 Response: OK
 ------------
