@@ -4,7 +4,7 @@ Contacts API
 Contents:
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    basic/index.rst
    notes/index.rst
