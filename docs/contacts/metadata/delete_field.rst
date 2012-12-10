@@ -43,17 +43,4 @@ Response: Errors
 Possible errors:
 
 * :ref:`validation-error`
-
-.. code-block:: javascript
-
-    {
-        "message": "Validation errors",
-        "code": 245,
-        "errors": {
-            "field 5049f697a694620a07000043": {
-                "message": "is not custom field, delete of non-custom fields is forbidden!"
-            }
-        }
-    }
-
 * :ref:`notfound-error` (in case of invalid value in `group_id` or `field_id` fields)
