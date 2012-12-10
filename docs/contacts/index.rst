@@ -8,4 +8,4 @@ Contents:
 
    basic/index.rst
    notes/index.rst
-   
+   metadata/index.rst

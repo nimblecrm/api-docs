@@ -107,3 +107,4 @@ Response: Errors
 Possible errors:
 
 * :ref:`validation-error`
+* :ref:`notfound-error`

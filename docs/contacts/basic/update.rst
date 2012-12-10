@@ -111,3 +111,4 @@ Possible errors:
 
 * :ref:`validation-error`
 * :ref:`quota-error`
+* :ref:`notfound-error`
