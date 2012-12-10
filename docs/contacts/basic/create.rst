@@ -23,7 +23,7 @@ All parameters are passed as JSON in request body.
     
 **tags** — optional, default: None
     Comma separated list of tags to assign to contacts. If you need to create tags, containing comma sign — escape it with backslash. E.g.
-    ``our customers\,best`` will create tags ``our customers`` and ``best``.
+    ``our customers,best\,premium`` will create tags ``our customers`` and ``best,premium``.
 
     .. note:: Maximum 5 tags are allowed in this list during contact creation.
     
