@@ -17,6 +17,8 @@ All parameters are passed as JSON in request body. All parameters are mandatory.
 
     name for new field.
 
+    .. note:: Name should be unique.
+
 **group_id**
 
     id of fields group, new field should belong to.
@@ -57,4 +59,4 @@ Response: Errors
 Possible errors:
 
 * :ref:`validation-error`
-* :ref:`notfound-error`   (in case of invalid value in `group_id` field)
+* :ref:`notfound-error` (in case of invalid value in `group_id` parameter).

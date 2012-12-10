@@ -13,9 +13,9 @@ Parameters
 
 **field_id**
 
-    id of field we want to delete
+    id of field we want to delete.
 
-    .. note:: Only custom fields are allowed to be deleted
+    .. note:: Only custom fields are allowed to be deleted.
 
 Other (single one) parameters are passed as JSON in request body.
 
@@ -35,7 +35,7 @@ Example:
 
 Response: OK
 ------------
-On success, server returns  emptyresponse with HTTP code 200 and, recently updated, encoded field.
+On success, server returns empty response with HTTP code 200.
 
 Response: Errors
 ----------------
@@ -43,4 +43,4 @@ Response: Errors
 Possible errors:
 
 * :ref:`validation-error`
-* :ref:`notfound-error` (in case of invalid value in `group_id` or `field_id` fields)
+* :ref:`notfound-error` (in case of invalid value in `field_id` parameter).
