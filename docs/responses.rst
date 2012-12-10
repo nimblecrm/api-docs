@@ -265,7 +265,7 @@ Contact list
 ------------
 Contact list request is similar to :ref:`contact-details-response`. It has the same key with resources, :ref:`described here <contact-resources-response>`. Difference is in ``meta`` key value. For contact listing it returns pagination details. 
 
-.. include:: data_structures/commons/paging_metadata.rst 
+.. include:: /data_structures/commons/paging_metadata.rst
 
 .. _api-errors:
 
