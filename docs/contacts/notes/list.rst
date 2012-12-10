@@ -30,8 +30,8 @@ Response: OK
 
 Response to this request is dictionary formed out of two keys: ``meta`` and ``resources``. Metadata coming under ``meta`` key is common structure used among different listing in Nimble. Value under ``resources`` key is list of notes entries.
 
-.. include:: ../data_structures/commons/paging_metadata.rst
-.. include:: ../data_structures/contacts/note.rst
+.. include:: /data_structures/commons/paging_metadata.rst
+.. include:: /data_structures/contacts/note.rst
 
 Response example
 ~~~~~~~~~~~~~~~~~
