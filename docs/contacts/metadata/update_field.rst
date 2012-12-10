@@ -13,13 +13,15 @@ Parameters
 
 **field_id**
 
-    id of field we want perform an update for
+    id of field we want perform an update for.
 
 Other parameters are passed as JSON in request body. All parameters are mandatory.
 
 **name**
 
     name for new field.
+
+    .. note:: Name should be unique.
 
 **group_id**
 
@@ -61,4 +63,4 @@ Response: Errors
 Possible errors:
 
 * :ref:`validation-error`
-* :ref:`notfound-error` (in case of invalid value in `group_id` or `field_id` fields)
+* :ref:`notfound-error` (in case of invalid value in `group_id` or `field_id` parameter).
