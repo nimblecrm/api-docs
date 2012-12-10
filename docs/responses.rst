@@ -329,12 +329,26 @@ Sent if user exceeded his quota values. Returns with HTTP code 402 and code fiel
 
 Server error
 ~~~~~~~~~~~~
-Sent if unrecoverable Nimble server occurs. Returns with HTTP code 500 and code field equal to 107
-This errors are very rare, so our team receives automatical notifications on such errors and fixes them ASAP.
+Sent if unrecoverable Nimble server occurs. Returns with HTTP code 500 and code field equal to 107.
 
 .. code-block:: javascript
 
     {
         "message": "Internal error handling request", 
         "code": 107
+    }
+
+.. _notfound-error:
+
+NotFound Error
+~~~~~~~~~~~~~~~~
+Sent on attempt to get some object by invalid identifier (in most cases identifier of object is its ID in our database).
+
+This response will contain dictionary with `object_type` and `object_id` fields:
+
+.. code-block:: javascript
+
+    {
+        "object_type": "contact field",
+        "object_id": "111111111111111111111111"
     }
