@@ -6,14 +6,12 @@ Nimble is a social relationship management tool that brings together your contac
 Currently, only contact data is accessible via our REST API, and this data is available with limited functionality under the "beta" label. We plan on releasing additional functionality in the following order:
 
  * **GET contact list and contact detail**, includes simple SEARCH -- available
- * **CREATE contact** - available
+ * **CREATE/UPDATE/DELETE contact** - available
  * **GET contact list** with advanced SEARCH - available
- * **UPDATE contact** - available
- * **DELETE contact** - early Nov 2012
- * **GET related activities** - Q4
- * **GET related notes** - Q4
- * **CREATE related activities** - Q4
+ * **CREATE/UPDATE/DELETE custom fields and groups** via metadata API- available
+ * **GET related notes** - available
  * **CREATE related notes** - Q4
+ * **GET/CREATE related activities** - 2013
  * **GET related messages** - TBD
  * **GET related social** - TBD
  * **MERGE contact** - TBD
