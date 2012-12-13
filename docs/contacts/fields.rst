@@ -193,7 +193,7 @@ Nimble default fields
        * personal
        * other
      - 
-   * - skype id
+   * - skype_id
      - :ref:`default <default-type>`
      - \+
      - N/A
