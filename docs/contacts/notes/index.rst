@@ -8,3 +8,4 @@ Contents:
 
    List notes <list.rst>
    Create note <create.rst>
+   Show single note <show.rst>
