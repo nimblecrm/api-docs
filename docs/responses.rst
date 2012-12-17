@@ -24,26 +24,33 @@ This field usually contains all data for the contacts you've requested. Here is 
         'updated': '2012-09-07T16:49:56+0300',
         'created': '2012-09-07T16:49:56+0300',
         'fields': {
-            'parent company': [{
-                'group': 'Basic Info',
-                'field_id': '5049f697a694620a0700004d',
-                'value': 'Nimble',
-                'label': 'parent company',
-                'extra_value': '5049fb7d9b85f669e4000063',
-                'modifier': ''
-            }],
+            "parent company": [
+                {
+                    "group": "Basic Info",
+                    "name": "parent company",
+                    "label": "parent company",
+                    "modifier": "",
+                    "presentation": {},
+                    "id": "5049f697a694620a0700004d",
+                    "multiples": false
+                }
+            ],
             'description': [{
-                'field_id': '5049f697a694620a0700007f',
-                'modifier': 'other',
-                'group': 'Extra Info',
-                'value': 'Nimble Developers team member',
-                'label': 'description'
+                "group": "Extra Info",
+                "name": "description",
+                "label": "description",
+                "modifier": "other",
+                "presentation": {},
+                "id": "5049f697a694620a0700007f",
+                "multiples": true
             }, {
-                'field_id': '5049f697a694620a07000082',
-                'modifier': 'linkedin',
-                'group': 'Extra Info',
-                'value': 'Highly professional Python developer',
-                'label': 'description'
+               "group": "Extra Info",
+               "name": "description",
+               "label": "description",
+               "modifier": "linkedin",
+               "presentation": {},
+               "id": "5049f697a694620a07000082",
+               "multiples": true
             }],
             'last name': [{
                 'field_id': '5049f697a694620a07000045',
@@ -181,55 +188,80 @@ Contact's metadata contains information about all basic and custom fields create
     'contacts_meta': {
         'fields': {
             'first name': [{
-                'field_type': None,
-                'group': 'Basic Info',
-                'label': 'first name',
-                'values': None,
-                'modifier': '',
-                'id': '5049f697a694620a07000043'
-            }],        
-            'email': [{
-                'field_type': None,
-                'group': 'Contact Info',
-                'label': 'email',
-                'values': None,
-                'modifier': 'other',
-                'id': '5049f697a694620a07000065'
+                "group": "Basic Info",
+                "name": "first name",
+                "label": "first name",
+                "modifier": "",
+                "presentation": {},
+                "id": "5049f697a694620a07000043",
+                "multiples": false
+            }],
+                'email': [{
+                "group": "Contact Info",
+                "name": "email",
+                "label": "email",
+                "modifier": "other",
+                "presentation": {},
+                "id": "5049f697a694620a07000065",
+                "multiples": true
             }, {
-                'field_type': None,
-                'group': 'Contact Info',
-                'label': 'email',
-                'values': None,
-                'modifier': 'personal',
-                'id': '5049f697a694620a07000064'
+                "group": "Contact Info",
+                "name": "email",
+                "label": "email",
+                "modifier": "personal",
+                "presentation": {},
+                "id": "5049f697a694620a07000064",
+                "multiples": true
             }],
             'lead status': [{
-                'field_type': 'select-box',
-                'group': 'Lead Details',
-                'label': 'lead status',
-                'values': [{
-                    'id': '1',
-                    'value': 'Open'
-                }, {
-                    'id': '2',
-                    'value': 'Contacted'
-                }, {
-                    'id': '3',
-                    'value': 'Qualified'
-                }, {
-                    'id': '4',
-                    'value': 'Unqualified'
-                }],
-                'modifier': '',
-                'id': '5049f697a694620a0700008d'
+                "group": "Lead Details",
+                "name": "lead status",
+                "label": "lead status",
+                "modifier": "",
+                "presentation": {
+                    "width": "1",
+                    "next_id": "5",
+                    "values": [
+                        {
+                            "id": "1",
+                            "value": "Open"
+                        },
+                        {
+                            "id": "2",
+                            "value": "Contacted"
+                        },
+                        {
+                            "id": "3",
+                            "value": "Qualified"
+                        },
+                        {
+                            "id": "4",
+                            "value": "Unqualified"
+                        }
+                    ],
+                    "type": "select-box"
+                },
+                "id": "5049f697a694620a0700008d",
+                "multiples": false
             }]
         },
         'groups': {
             'Basic Info': {
-                'id': '5049f696a694620a07000031',
-                'order': ['first name', 'last name', 'middle name', 'company name', 'title', 'parent company', 'source', 'last contacted'],
-                'name': 'Basic Info',
-                'label': 'Basic Info'
+                "name": "Basic Info",
+                "order": [
+                    "first name",
+                    "last name",
+                    "middle name",
+                    "company name",
+                    "title",
+                    "parent company",
+                    "source",
+                    "last contacted"
+                ],
+                "is_standard": true,
+                "label": "Basic Info",
+                "type": "both",
+                "id": "5049f696a694620a07000031"
             }
         }
     }
@@ -241,12 +273,12 @@ Here is a description of the response in detail:
     all possible modifications of this field. If field have no modifiers (like ``first name`` on example above), this list contains only one element.
     
     Information stored in dictionaries with following keys:
-        * *field_type* — type of the field if this is specially treated field, ``None`` otherwise. ``lead status`` is typically a specially treated field.  Field types are :ref:`described here <field-types>`.
         * *group* — unique name of the group containing this field.
         * *label* — unique name representing the field in human-readable form.
-        * *values* — possible values for specially treated fields. More details are :ref:`described here <field-types>`.
         * *modifier* — name of the field's modifier
         * *id* — unique id of the field in BSON format
+        * *multiples* - indicates whether field could have multiple values (under different modifiers).
+        * *presentation* - dict with the information which should help to display this field on client. More details are at :ref:`described here <field-types>`.
     
 **groups**
     Information about field groups. Represented by dictionary where keys are unique group names and values are dictionaries with more info. ``Basic Info`` represents typical group, and all default groups :ref:`described here <field-groups>`. Groups info dictionary contains following fields:
@@ -254,10 +286,8 @@ Here is a description of the response in detail:
         * *order* — list containing names of the fields as they appeared in group.
         * *name* — unique name of the group. (Outdated: as we have field name as the key of ``groups`` dictionary.)
         * *label* — unique name representing the field in human-readable form.
-
-**meta_last_modified**
-    Outdated field, used to contain last metadata modification timestamp. Now for this purposes used E-Tag mechanism.
-    
+        * *is_standard* - whether this group belongs to standard Nimble groups.
+        * *type* - type (belonging) of group, could be among ``person``, ``company``, ``both``.
 
 .. _contact-list-response:
 

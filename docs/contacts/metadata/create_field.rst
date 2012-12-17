@@ -25,7 +25,7 @@ All parameters are passed as JSON in request body. All parameters are mandatory.
 
 **presentation**
 
-    JSON-encoded structure describing how field should be presented in Nimble client (can be empty string as well).
+    dictionary describing how field should be presented in Nimble client (can be empty dictionary as well).
 
 Example:
 
@@ -33,7 +33,10 @@ Example:
 
  {
      "group_id": "5092a4d5084abd46de000725",
-     "presentation": "{\"width\": \"1\", \"type\": \"single-line-text-box\"}",
+     "presentation": {
+         "width": "1",
+         "type": "single-line-text-box"
+     },
      "name": "new field"
  }
 
@@ -44,13 +47,16 @@ On success, server returns response with HTTP code 201 and, newly created, encod
 .. code-block:: javascript
 
      {
-         "field_type": "single-line-text-box",
          "group": "SOme new tab",
          "name": "new field",
          "label": "new field",
-         "values": null,
          "modifier": "",
-         "id": "50a2d10b837d4e051a000006"
+         "presentation": {
+             "width": "1",
+             "type": "single-line-text-box"
+         },
+         "id": "50cf3eca084abd0f070013ae",
+         "multiples": false
      }
 
 Response: Errors
