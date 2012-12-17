@@ -29,7 +29,7 @@ All parameters are passed as JSON in request body.
 
 **order**
 
-    list, contains ids of fields from group we try to perform update for in needed order.
+    list, contains names of fields from group we try to perform update for in needed order.
 
     If this parameter omitted in request it will counted as empty list.
 
@@ -39,7 +39,7 @@ Example:
 
  {
      "type": "both",
-     "name": "grp123_modified",
+     "name": "grp525496_m2",
      "order": []
  }
 
@@ -50,10 +50,12 @@ On success, server returns response with HTTP code 200 and, recently updated, en
 .. code-block:: javascript
 
      {
-         "label": "grp123_modified",
-         "id": "50c5e684e5ef8305390003b2",
-         "name": "grp123_modified",
-         "order": []
+         "name": "grp525496_m2",
+         "label": "grp525496_m2",
+         "is_standard": false,
+         "order": [],
+         "type": "both",
+         "id": "50cf3ecce5ef833f4f000341"
      }
 
 Response: Errors

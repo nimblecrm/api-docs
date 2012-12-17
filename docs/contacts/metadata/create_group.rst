@@ -39,10 +39,12 @@ On success, server returns response with HTTP code 201 and, newly created, encod
 .. code-block:: javascript
 
      {
-         "label": "grp123",
-         "id": "50c5e684084abd59fc000027",
-         "name": "grp123",
-         "order": []
+         "name": "grp525496_m",
+         "label": "grp525496_m",
+         "is_standard": false,
+         "order": [],
+         "type": "both",
+         "id": "50cf3ecce5ef833f4f000341"
      }
 
 Response: Errors
