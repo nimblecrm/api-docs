@@ -6,6 +6,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   Show single note <show.rst>
    List notes <list.rst>
    Create note <create.rst>
-   Show single note <show.rst>
+   Update note <update.rst>
+   

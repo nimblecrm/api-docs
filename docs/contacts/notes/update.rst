@@ -1,12 +1,12 @@
 ===================
-Create contact note
+Update contact note
 ===================
 
 Request 
 -------
 Base endpoint::
 
-    POST https://api.nimble.com/api/v1/contacts/notes
+    PUT https://api.nimble.com/api/v1/contacts/notes/<note_id>
     
 Parameters
 ----------
@@ -68,3 +68,4 @@ Response: Errors
 Possible errors:
 
 * :ref:`validation-error`
+* :ref:`notfound-error`
