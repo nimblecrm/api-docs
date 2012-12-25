@@ -11,11 +11,9 @@ Base endpoint::
 Parameters
 ----------
 
-All parameters are passed as JSON in request body. All parameters are mandatory.
-
 **note_id** 
 
-  Single note id that can be get from notes listing
+  Single note id to show
 
 .. code-block:: javascript
 
@@ -54,3 +52,4 @@ Response: Errors
 Possible errors:
 
 * :ref:`validation-error`
+* :ref:`notfound-error`
