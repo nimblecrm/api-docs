@@ -10,4 +10,5 @@ Contents:
    List notes <list.rst>
    Create note <create.rst>
    Update note <update.rst>
+   Delete note <delete.rst>
    
