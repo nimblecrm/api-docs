@@ -16,7 +16,7 @@ Short example of querying all persons with skype “john.doe”:
     {
        "and": [
            {
-               "skype_id": {
+               "skype id": {
                    "is": "john.doe",
                 }
            },
@@ -36,7 +36,7 @@ Based on example above, let’s define basic terminology:
 **and**     
     is join operator for occurrences
     
-**skype_id** (``john.doe``)
+**skype id** (``john.doe``)
     is a term to search by
 
 **is** 
@@ -54,7 +54,7 @@ Let’s define several occurrences:
 .. code-block:: javascript
 
     o1 = {
-        "skype_id": {
+        "skype id": {
             "is": "john.doe"
         }
     };
@@ -72,7 +72,7 @@ Let’s define several occurrences:
     },
 
     o4 = {
-        "creation date": {
+        "created": {
             "range": {
                 "start_date": "2012-02-13",
                 "end_date": "2012-02-23",
@@ -129,7 +129,7 @@ To use previously saved search we need to construct next query:
 
     {
         "and": [{
-            "skype_id": {
+            "skype id": {
                 "is": "john.doe"
             }
         }, {
@@ -146,7 +146,7 @@ And it will be expanded (on server) to:
 
     {
         "and": [{
-            "skype_id": {
+            "skype id": {
                 "is": "john.doe"
             }
         }, {
@@ -182,7 +182,7 @@ Top level validation schema
     {
     	"additionalProperties": false,
     	"patternProperties": {
-    		"^(email|skype_id|twitter|linkedin|facebook|phone|last name|title|description|street|city|state|zip|country|lead type|company name|custom_fields|name|first name|lead source|creation date|address|tag|or|and|record type|saved_search)$": {
+    		"^(email|skype id|twitter|linkedin|facebook|phone|last name|title|description|street|city|state|zip|country|lead type|company name|custom_fields|name|first name|lead source|created|address|tag|or|and|record type|saved_search)$": {
     			"required": true,
     			"type": "object"
     		}
@@ -212,7 +212,7 @@ Schema for validation of default fields occurrences
 
     {
     	"patternProperties": {
-    		"^(email|skype_id|twitter|linkedin|facebook|phone|last name|street|city|state|zip|country|company name|title)$": {
+    		"^(email|skype id|twitter|linkedin|facebook|phone|last name|street|city|state|zip|country|company name|title)$": {
     			"additionalProperties": false,
     			"patternProperties": {
     				"^(is|is_not|contain|not_contain|is_empty)$": {
@@ -225,7 +225,8 @@ Schema for validation of default fields occurrences
     		}
     	},
     	"type": "object",
-    	"description": "skype_id/twitter/linkedin/facebook/phone/last name/street/city/state/zip/country/company name/title validation rule"
+    	"description": "
+/twitter/linkedin/facebook/phone/last name/street/city/state/zip/country/company name/title validation rule"
     }
 
 Schema for validation of full name/first name fields
@@ -271,15 +272,15 @@ Schema for validation of lead source/lead type field
     	}
     }
 
-Schema for validation of creation date occurrences
+Schema for validation of created occurrences
 
 .. code-block:: javascript
 
     {
         "type": "object",
-        "description": "creation date validation rule",
+        "description": "created validation rule",
         "properties": {
-            "creation date": {
+            "created": {
                 "type": [
                     {
                         "type": "object",
