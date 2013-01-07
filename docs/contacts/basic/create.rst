@@ -19,7 +19,7 @@ All parameters are passed as JSON in request body.
 **fields** — required
     Describes a dictionary organized in the same structure as a contact listing response. In this structure, each key is field name. 
     Values are lists of dictionaries, having two fields: value - actual value to store in contact field, modifier - field modifier to use, 
-    if field can have one. 
+    if field can have one. At a minimum, contacts require a name (first or last for a person, company name for a company).
     
 **tags** — optional, default: None
     Comma separated list of tags to assign to contacts. If you need to create tags, containing comma sign — escape it with backslash. E.g.
