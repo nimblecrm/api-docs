@@ -171,38 +171,15 @@ The Client should use the authorization code obtained to request an access token
  
 .. _token-response-details:
 
-*Successfull Response XML*:
-
-.. code-block:: xml
-
-    <OAuth20>
-        <access_token>
-            <token>d38ab9d959346db4396fa459494cd70e</token>
-            <scope>scope1</scope>
-            <refresh_token>529e176a5c38a44b74b1cd2f8f03f4631c66c7e7</refresh_token>
-            <token_type>bearer</token_type>
-            <expires_in>86399</expires_in>
-        </access_token>
-    </OAuth20>
- 
-
 *Successfull Response JSON*:
 
 .. code-block:: javascript
 
     {
-        "OAuth20": {
-            "access_token": {
-                "token": "20dfabc53c0c175445d7551f934e8127",
-                "scope": "scope1",
-                "refresh_token": "fda676baf8fc14646ebcf117cd0dbef36c71b918",
-                "token_type": "bearer",
-                "expires_in": 86399
-            }
-        }
+        "access_token":"12123486db0552de35ec6daa0cc836b0",
+        "expires_in":"3599",
+        "refresh_token":"456542fa23e5541e035451586f9c5eaf4a6692a7"
     }
-
-// TODO specify errors requests
 
 
 API requests using Access Token
