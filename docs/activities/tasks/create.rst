@@ -11,23 +11,23 @@ Base endpoint::
 Parameters
 ----------
 
-All parameters are passed as JSON in request body.
+All parameters are passed as JSON in request body and could be omitted except `subject`.
 
-**subject**
+**subject** — mandatory
 
-  Subject (short description) of new task. Parameter is **mandatory**.
+  Subject (short description) of new task. Field length should be between 2 and 128 chars.
 
 **notes**
 
-  Any additional text (notes) for task. Parameter can be omitted.
+  Any additional text (notes) for task. 
 
 **related_to**
 
-  List with contact ids we want to bind this task with. Parameter can be omitted.
+  List with contact ids we want to bind this task with. 
 
 **due_date**
 
-  Due date for new task. Should be passed in format like "YYYY-MM-DD HOURS:MINUTES". Parameter can be omitted.
+  Due date for new task. Should be passed in format like "YYYY-MM-DD HOURS:MINUTES". 
 
 Example:
 
