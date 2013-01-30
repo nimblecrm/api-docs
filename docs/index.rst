@@ -13,4 +13,6 @@ Contents:
    activities/index.rst
    obtaining_key.rst
    making_auth_requests.rst
+   getting_help.rst
+   
    

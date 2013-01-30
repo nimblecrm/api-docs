@@ -10,7 +10,8 @@ Currently, only contact data is accessible via our REST API, and this data is av
  * **GET contact list** with advanced SEARCH - available
  * **GET/CREATE/UPDATE/DELETE custom fields and groups** via metadata API - available
  * **GET/CREATE/UPDATE/DELETE notes related to contacts** - available
- * **GET/CREATE related activities** - 2013
+ * **CREATE related activities** - available
+ * **GET related activities** - 2013
  * **GET related messages** - TBD
  * **GET related social** - TBD
  * **MERGE contact** - TBD
@@ -19,4 +20,4 @@ Given the early state of the API, some aspects of the API are subject to change.
 
 We are building the API with a few main use cases in mind: widgets/extensions to Nimble, web clients (including our own), mobile clients. and ultimately 2-way data integrations with other services. We aspire to make an API that is simple to use, easy to read, and flexible. 
 
-Your feedback is greatly appreciated while we continue to shape our API offering. Please send any comments to care@nimble.com.
+:ref:`Your feedback<getting-help>` is greatly appreciated while we continue to shape our API offering.
