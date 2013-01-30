@@ -32,7 +32,7 @@ Response example
     {
         "id": "508a4750084abd28bc00016f"
     }
-    
+
 Response: Errors
 ----------------
 Possible errors:
