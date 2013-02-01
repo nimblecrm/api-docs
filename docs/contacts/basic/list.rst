@@ -6,7 +6,7 @@ Request
 -------
 Base endpoint::
 
-    GET https://api.nimble.com/api/v1/contacts
+    GET https://api.nimble.com/api/v1/contacts/list
 
 Parameters
 ----------
