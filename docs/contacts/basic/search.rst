@@ -30,6 +30,8 @@ Short example of querying all persons with skype “john.doe”:
        ]
     }
 
+For more examples, see :ref:`examples <advanced-search-examples>`.
+
 Terminology
 ~~~~~~~~~~~
 
@@ -168,6 +170,73 @@ And it will be expanded (on server) to:
 .. note::
     Number of occurrences is still under the rule of maximum limit of occurrences in one request query is 11.
     Occurrences will be counted through expanded query. Query can also contain only reference to saved search without joins and additional occurrences.
+    
+
+.. _advanced-search-examples:    
+
+More search examples
+~~~~~~~~~~~~~~~~~~~~
+Search all contacts with specified type::
+
+    {"record type": {"is": "person"}}
+    
+Search contacts with name, containing "Gal" and tagged with specific tag:
+
+.. code-block:: javascript
+
+    {
+        "and": [{
+            "first name": {
+                "contain": "Gal"
+            }
+        }, {
+            "tag": {
+                "is": "csv import2"
+            }
+        }]
+    }
+
+Search for contacts without values in `city` field::
+
+    {"city": {"is_empty": False}}
+
+
+Search for contacts, created in given date range:
+
+.. code-block:: javascript
+
+    {
+        "created": {
+            "range": {
+                "start_date": "2012-10-16",
+                "end_date": "2012-10-18"
+            }
+        }
+    }
+
+Search for specific value in custom field::
+
+    {"custom_fields": {"custom field1": {"is": "value"}}}
+
+.. note:: 
+    If your custom field is ``select-box``, in search you should specify not it's value, but id of this value. For example, if you have field with following values:
+    
+    .. code-block:: javascript
+    
+        "values": [
+            {
+                "id": "1",
+                "value": "Open"
+            },
+            {
+                "id": "2",
+                "value": "Closed"
+            }
+        ]
+    
+    You should use ``2`` as value, if you want to find contacts with field equal to ``closed``. For example::
+
+        {"custom_fields": {"comminication state": {"is": "2"}}}
 
 Validation
 ~~~~~~~~~~
