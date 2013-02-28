@@ -19,18 +19,20 @@ Simple text fields, like ``first name``, ``last name``, ``title``, ``description
 Address
 ~~~~~~~
 
-All values represented as dictionary with following keys: ``street``, ``city``, ``state``, ``zip``, ``country``.
+All values represented as dictionary with following keys: ``street``, ``city``, ``state``, ``zip``, ``country``. This dictionary should be dumped to JSON string, and this string should be used as field's value.
 
 Example:
 
 .. code-block:: javascript
 
     {
-        "city": "Beegden",
-        "state": "Limburg",
-        "street": "Braambos 13",
-        "zip": "6099 CT",
-        "country": "Netherlands"
+        "type": "person",
+        "fields": {
+            "address": [{
+                "value": "{\"street\":\"Test\", \"city\":\"Testing\", \"country\":\"Togo\"}",
+                "modifier": "other"
+            }]
+        }
     }
 
 
