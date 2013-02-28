@@ -33,13 +33,16 @@ Example:
         'fields': {
             'first name': [{
                 'value': 'Jack',
-                'modifier': '',
+                'modifier': ''
             }],
             'last name': [{
                 'value': 'Daniels',
-                'modifier': '',
+                'modifier': ''
             }],
-            'phone': null,
+            'phone': [{
+                'value': null,
+                'modifier': 'work'
+            }]
         }
     }
 
@@ -59,19 +62,6 @@ Updated contact is returned and encoded in the same way that is used in contacts
                 'group': 'Basic Info',
                 'value': 'Daniels',
                 'label': 'last name'
-            }],
-            'phone': [{
-                'field_id': '5049f697a694620a07000054',
-                'modifier': 'work',
-                'group': 'Contact Info',
-                'value': '123123123',
-                'label': 'phone'
-            }, {
-                'field_id': '5049f697a694620a07000054',
-                'modifier': 'work',
-                'group': 'Contact Info',
-                'value': '2222',
-                'label': 'phone'
             }],
             'source': [{
                 'field_id': '5049f697a694620a0700004f',

@@ -60,6 +60,10 @@ In response, for every contact, Nimble adds additional information to fields, fe
     Network-specific unique ID of user's account.
 **user_name**
     User's name, obtained from social account. 
+    
+.. warning::
+    To correctly get data from social networks, user should connect appropriate social network account in Nimble. If no account connected — Nimble sometimes 
+    could be not able to fetch data.
 
 Example:
 
