@@ -7,12 +7,14 @@ Full description of Nimble default contact fields
 Field types
 -----------
 
+Here described basic field types in Nimble. For full list of Nimble default fields — :ref:`see below<contact-fields>`. 
+
 .. _default-type:
 
 Default fields
 ~~~~~~~~~~~~~~
 
-Simple text fields, like ``first name``, ``last name``, ``title``, ``description``, etc.
+Simple text fields, like ``first name``, ``last name``, ``title``, ``description``, etc. 
 
 .. _address-type:
 
@@ -132,7 +134,7 @@ Example:
 
 Nimble default fields
 ---------------------
-.. list-table:: Nimble default fields
+.. list-table:: Full list of Nimble default fields
    :widths: 15 15 5 15 45
    :header-rows: 1
 
