@@ -4,9 +4,16 @@ Get contacts list
 
 Request 
 -------
+For contacts listing we support two endpoints: base, returning full contact info, and ids-only endpoint that return only contact ids. Last one works faster then base one, so if you need only ids — please use it. 
+
 Base endpoint::
 
     GET https://api.nimble.com/api/v1/contacts/
+    
+IDs endpoint::
+
+    GET https://api.nimble.com/api/v1/contacts/ids/
+
 
 Parameters
 ----------
@@ -64,6 +71,20 @@ Response: OK
 ------------
 
 List and Detail response format is the basically the same. List allows search terms, sort orders, and fields as parameters, whereas detail returns all of the fields with the option of adding metadata. In more details, this format :ref:`described here <contact-list-response>`.
+
+Example response for IDs only request:
+
+.. code-block:: javascript
+
+    {
+        'meta': {
+            'page': 1,
+            'pages': 1,
+            'per_page': 30,
+            'total': 2
+        },
+        'resources': ['4f69fb852ab3740c5e000004', '5e69fb852ab3f40d5e050017']
+    }
 
 
 Response: Errors
