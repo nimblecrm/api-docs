@@ -38,25 +38,25 @@ Example:
 .. code-block:: javascript
 
     {
-        'fields': {
-            'first name': [{
-                'value': 'Jack',
-                'modifier': '',
+        "fields": {
+            "first name": [{
+                "value": "Jack",
+                "modifier": ""
             }],
-            'last name': [{
-                'value': 'Daniels',
-                'modifier': '',
+            "last name": [{
+                "value": "Daniels",
+                "modifier": ""
             }],
-            'phone': [{
-                'modifier': 'work',
-                'value': '123123123',
+            "phone": [{
+                "modifier": "work",
+                "value": "123123123"
             }, {
-                'modifier': 'work',
-                'value': '2222',
-            }],
+                "modifier": "work",
+                "value": "2222"
+            }]
         },
-        'type': 'person',
-        'tags': 'our customers\,best'
+        "type": "person",
+        "tags": "our customers\\,best"
     }
     
 Response: OK
@@ -66,65 +66,80 @@ On success, server returns response with HTTP code 201 and newly created contact
 .. code-block:: javascript
 
     {
-        'updated': '2012-11-07T16:50:04+0200',
-        'created': '2012-11-07T16:50:04+0200',
-        'fields': {
-            'last name': [{
-                'field_id': '5049f697a694620a07000045',
-                'modifier': '',
-                'group': 'Basic Info',
-                'value': 'Daniels',
-                'label': 'last name'
-            }],
-            'phone': [{
-                'field_id': '5049f697a694620a07000054',
-                'modifier': 'work',
-                'group': 'Contact Info',
-                'value': '123123123',
-                'label': 'phone'
-            }, {
-                'field_id': '5049f697a694620a07000054',
-                'modifier': 'work',
-                'group': 'Contact Info',
-                'value': '2222',
-                'label': 'phone'
-            }],
-            'source': [{
-                'field_id': '5049f697a694620a0700004f',
-                'modifier': '',
-                'group': 'Basic Info',
-                'value': 'm',
-                'label': 'source'
-            }],
-            'first name': [{
-                'field_id': '5049f697a694620a07000043',
-                'modifier': '',
-                'group': 'Basic Info',
-                'value': 'Jack',
-                'label': 'first name'
-            }]
+        "updated": "2012-11-07T16: 50: 04+0200",
+        "created": "2012-11-07T16: 50: 04+0200",
+        "fields": {
+            "lastname": [
+                {
+                    "field_id": "5049f697a694620a07000045",
+                    "modifier": "",
+                    "group": "BasicInfo",
+                    "value": "Daniels",
+                    "label": "lastname"
+                }
+            ],
+            "phone": [
+                {
+                    "field_id": "5049f697a694620a07000054",
+                    "modifier": "work",
+                    "group": "ContactInfo",
+                    "value": "123123123",
+                    "label": "phone"
+                },
+                {
+                    "field_id": "5049f697a694620a07000054",
+                    "modifier": "work",
+                    "group": "ContactInfo",
+                    "value": "2222",
+                    "label": "phone"
+                }
+            ],
+            "source": [
+                {
+                    "field_id": "5049f697a694620a0700004f",
+                    "modifier": "",
+                    "group": "BasicInfo",
+                    "value": "m",
+                    "label": "source"
+                }
+            ],
+            "firstname": [
+                {
+                    "field_id": "5049f697a694620a07000043",
+                    "modifier": "",
+                    "group": "BasicInfo",
+                    "value": "Jack",
+                    "label": "firstname"
+                }
+            ]
         },
-        'object_type': 'contact',
-        'id': '509a751c262b37af05000011',
-        'last_contacted': {
-            'last_contacted': null,
-            'thread_id': null,
-            'message_id': null
+        "object_type": "contact",
+        "id": "509a751c262b37af05000011",
+        "last_contacted": {
+            "last_contacted": null,
+            "thread_id": null,
+            "message_id": null
         },
-        'tags': [{
-            'tag': 'our customers',
-            'id': '5049fa0c9b85f62cb4000639'
-        }, {
-            'tag': 'best',
-            'id': '5049fa0c9b85f62cb4000745'
-        }],        
-        'record_type': 'person',
-        'creator': 'Nimble API test',
-        'children': [],
-        'tags': [],
-        'owner_id': '5049f696a694620a0700001c'
+        "tags": [
+            {
+                "tag": "ourcustomers",
+                "id": "5049fa0c9b85f62cb4000639"
+            },
+            {
+                "tag": "best",
+                "id": "5049fa0c9b85f62cb4000745"
+            }
+        ],
+        "record_type": "person",
+        "creator": "NimbleAPItest",
+        "children": [
+        
+        ],
+        "tags": [
+        
+        ],
+        "owner_id": "5049f696a694620a0700001c"
     }
-
 For more details see: :ref:`contact-resources-response`.
 
 Response: Errors
