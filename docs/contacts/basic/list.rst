@@ -77,13 +77,16 @@ Example response for IDs only request:
 .. code-block:: javascript
 
     {
-        'meta': {
-            'page': 1,
-            'pages': 1,
-            'per_page': 30,
-            'total': 2
+        "meta": {
+            "page": 1,
+            "pages": 1,
+            "per_page": 30,
+            "total": 2
         },
-        'resources': ['4f69fb852ab3740c5e000004', '5e69fb852ab3f40d5e050017']
+        "resources": [
+            "4f69fb852ab3740c5e000004",
+            "5e69fb852ab3f40d5e050017"
+        ]
     }
 
 

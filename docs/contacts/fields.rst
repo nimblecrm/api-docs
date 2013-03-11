@@ -108,26 +108,26 @@ Example:
 
 .. code-block:: javascript
 
-    'lead status': [{
-        'field_type': 'select-box',
-        'group': 'Lead Details',
-        'label': 'lead status',
-        'values': [{
-            'id': '1',
-            'value': 'Open'
+    "lead status": [{
+        "field_type": "select-box",
+        "group": "Lead Details",
+        "label": "lead status",
+        "values": [{
+            "id": "1",
+            "value": "Open"
         }, {
-            'id': '2',
-            'value': 'Contacted'
+            "id": "2",
+            "value": "Contacted"
         }, {
-            'id': '3',
-            'value': 'Qualified'
+            "id": "3",
+            "value": "Qualified"
         }, {
-            'id': '4',
-            'value': 'Unqualified'
+            "id": "4",
+            "value": "Unqualified"
         }],
-        'modifier': '',
-        'id': '5049f697a694620a0700008d'
-    }],
+        "modifier": "",
+        "id": "5049f697a694620a0700008d"
+    }]
 
 
 .. _contact-fields:

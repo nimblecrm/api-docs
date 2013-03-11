@@ -31,14 +31,15 @@ Example:
 
 .. code-block:: javascript
 
- {
-     "group_id": "5092a4d5084abd46de000725",
-     "presentation": {
-         "width": "1",
-         "type": "single-line-text-box"
-     },
-     "name": "new field"
- }
+    {
+        "group_id": "5092a4d5084abd46de000725",
+        "presentation": {
+            "width": "1",
+            "type": "single-line-text-box"
+        },
+        "name": "new field"
+    }
+
 
 Response: OK
 ------------
@@ -47,7 +48,7 @@ On success, server returns response with HTTP code 201 and, newly created, encod
 .. code-block:: javascript
 
      {
-         "group": "SOme new tab",
+         "group": "Some new tab",
          "name": "new field",
          "label": "new field",
          "modifier": "",

@@ -37,11 +37,12 @@ Example:
 
 .. code-block:: javascript
 
- {
-     "type": "both",
-     "name": "grp525496_m2",
-     "order": []
- }
+    {
+        "type": "both",
+        "name": "grp525496_m2",
+        "order": []
+    }
+
 
 Response: OK
 ------------

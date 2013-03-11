@@ -140,6 +140,7 @@ On success, server returns response with HTTP code 201 and newly created contact
         ],
         "owner_id": "5049f696a694620a0700001c"
     }
+    
 For more details see: :ref:`contact-resources-response`.
 
 Response: Errors

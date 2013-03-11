@@ -27,10 +27,10 @@ Example:
 
 .. code-block:: javascript
 
- {
-     "type": "both",
-     "name": "grp123"
- }
+    {
+        "type": "both",
+        "name": "grp123"
+    }
 
 Response: OK
 ------------

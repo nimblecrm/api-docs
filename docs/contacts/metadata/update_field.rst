@@ -35,14 +35,14 @@ Example:
 
 .. code-block:: javascript
 
- {
-      "group_id": "5092a4d5084abd46de000725",
-      "presentation": {
-          "width": "1",
-          "type": "single-line-text-box"
-      },
-      "name": "new field2"
-  }
+    {
+        "group_id": "5092a4d5084abd46de000725",
+        "presentation": {
+            "width": "1",
+            "type": "single-line-text-box"
+        },
+        "name": "new field2"
+    }
 
 Response: OK
 ------------
@@ -50,18 +50,19 @@ On success, server returns response with HTTP code 200 and, recently updated, en
 
 .. code-block:: javascript
 
-     {
-              "group": "SOme new tab",
-              "name": "new field2",
-              "label": "new field2",
-              "modifier": "",
-              "presentation": {
-                  "width": "1",
-                  "type": "single-line-text-box"
-              },
-              "id": "50cf3eca084abd0f070013ae",
-              "multiples": false
-          }
+    {
+        "group": "SOme new tab",
+        "name": "new field2",
+        "label": "new field2",
+        "modifier": "",
+        "presentation": {
+            "width": "1",
+            "type": "single-line-text-box"
+        },
+        "id": "50cf3eca084abd0f070013ae",
+        "multiples": false
+    }
+
 
 Response: Errors
 ----------------

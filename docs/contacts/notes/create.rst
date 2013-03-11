@@ -32,7 +32,7 @@ Example:
     {
         "contact_ids": ["50c07a69e5ef834edb000080", "50c07a53084abd5f61000aac"],
         "note": "Just contact note, with some longer text",
-        "note_preview": "Just contact note",
+        "note_preview": "Just contact note"
     }
 
 Response: OK

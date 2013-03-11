@@ -19,7 +19,7 @@ Short example of querying all persons with skype “john.doe”:
        "and": [
            {
                "skype_id": {
-                   "is": "john.doe",
+                   "is": "john.doe"
                 }
            },
            {
