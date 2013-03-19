@@ -101,6 +101,106 @@ Join like (o1 and o2) or (o3 and o4)::
 .. note::
     Maximum limit of occurrences in one request query is 11; If request could be done without join operators — then it should contain only single occurrence.
 
+Search occurrence types
+------------------------
+.. list-table:: Full list of available occurrences types
+   :widths: 15 15 5
+   :header-rows: 1
+
+   * - Occurrence type
+     - Meaning
+     - Example
+   * - contain
+     - Provided value matches document attribute from left or right side. For example "\*document\_value" or "document\_value\*" .But not both
+     - {"first name": {"contain": "aaa"}}
+   * - is
+     - Provided value is equal to document attribute
+     - {"record type": {"is": "all"}}
+   * - is\_empty
+     - Document attribute with specified type is absent or empty
+     - {"last name": {"is\_empty": True}}
+   * - in\_the\_last
+     - Date attribute of matched documents is within last X days/weeks/monthes
+     - {"created": {"in\_the\_last": {"unit": "day", "quantity": 2}}}
+   * - range
+     - Date attribute of matched documents is within specified period
+     - {"created": {"range": {"start\_date": "2013-03-19", "end\_date": "2013-03-19"}}}
+   * - gt
+     - Document attribute with specified type have lower value than provided in the search criteria
+     - {"rating": {"gt": "3"}}
+   * - lt
+     - Document attribute with specified type have greater value than provided in the search criteria
+     - {"rating": {"gt": "3"}}
+   * - gte
+     - Document attribute with specified type have lower or equal value than provided in the search criteria
+     - {"rating": {"gte": "3"}}
+   * - lte
+     - Document attribute with specified type have greater or equal value than provided in the search criteria
+     - {"rating": {"lte": "3"}}
+
+Available search field types
+----------------------------
+.. list-table:: Full list of available field types for searching on them
+   :widths: 15 15
+   :header-rows: 1
+
+   * - Field
+     - Possible occurrences
+   * - email
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - skype id
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - twitter
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - linkedin
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - facebook
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - phone
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - last name
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - street
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - city
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - state
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - zip
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - country
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - company name
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - title
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - name
+     - is\|is\_not\|contain\|not\_contain
+   * - first name
+     - is\|is\_not\|contain\|not\_contain
+   * - lead source
+     - is\|is\_not\|is\_empty
+   * - lead type
+     - is\|is\_not\|is\_empty
+   * - lead status
+     - is\|is\_not\|is\_empty
+   * - rating
+     - is\|is\_not\|is\_empty\|gt\|lt\|lte\|gte
+   * - created
+     - in_the_last\|range
+   * - address
+     - contain\|not\_contain\|is\_empty
+   * - tag
+     - is
+   * - custom\_fields
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - record type
+     - is
+   * - description
+     - contain\|not\_contain\|is\_empty
+   * - saved\_search
+     - is
+
 Saved Advanced Searches
 ~~~~~~~~~~~~~~~~~~~~~~~
 Query language allows to specify as occurrence other (previously saved) search query. You can combine saved search occurrences in a way as regular occurrences are used. Explanation example is provided bellow.
