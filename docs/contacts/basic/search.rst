@@ -18,8 +18,8 @@ Short example of querying all persons with skype “john.doe”:
     {
        "and": [
            {
-               "skype_id": {
-                   "is": "john.doe"
+               "skype id": {
+                   "is": "john.doe",
                 }
            },
            {
@@ -40,7 +40,7 @@ Based on example above, let’s define basic terminology:
 **and**     
     is join operator for occurrences
     
-**skype_id** (``john.doe``)
+**skype id** (``john.doe``)
     is a term to search by
 
 **is** 
@@ -58,7 +58,7 @@ Let’s define several occurrences:
 .. code-block:: javascript
 
     o1 = {
-        "skype_id": {
+        "skype id": {
             "is": "john.doe"
         }
     };
@@ -76,7 +76,7 @@ Let’s define several occurrences:
     },
 
     o4 = {
-        "creation date": {
+        "created": {
             "range": {
                 "start_date": "2012-02-13",
                 "end_date": "2012-02-23",
@@ -104,6 +104,106 @@ Join like (o1 and o2) or (o3 and o4)::
 
 .. note::
     Maximum limit of occurrences in one request query is 11; If request could be done without join operators — then it should contain only single occurrence.
+
+Search occurrence types
+------------------------
+.. list-table:: Full list of available occurrences types
+   :widths: 15 15 5
+   :header-rows: 1
+
+   * - Occurrence type
+     - Meaning
+     - Example
+   * - contain
+     - Provided value matches document attribute from left or right side. For example "\*document\_value" or "document\_value\*" .But not both
+     - {"first name": {"contain": "aaa"}}
+   * - is
+     - Provided value is equal to document attribute
+     - {"record type": {"is": "all"}}
+   * - is\_empty
+     - Document attribute with specified type is absent or empty
+     - {"last name": {"is\_empty": True}}
+   * - in\_the\_last
+     - Date attribute of matched documents is within last X days/weeks/monthes
+     - {"created": {"in\_the\_last": {"unit": "day", "quantity": 2}}}
+   * - range
+     - Date attribute of matched documents is within specified period
+     - {"created": {"range": {"start\_date": "2013-03-19", "end\_date": "2013-03-19"}}}
+   * - gt
+     - Document attribute with specified type have lower value than provided in the search criteria
+     - {"rating": {"gt": "3"}}
+   * - lt
+     - Document attribute with specified type have greater value than provided in the search criteria
+     - {"rating": {"gt": "3"}}
+   * - gte
+     - Document attribute with specified type have lower or equal value than provided in the search criteria
+     - {"rating": {"gte": "3"}}
+   * - lte
+     - Document attribute with specified type have greater or equal value than provided in the search criteria
+     - {"rating": {"lte": "3"}}
+
+Available search field types
+----------------------------
+.. list-table:: Full list of available field types for searching on them
+   :widths: 15 15
+   :header-rows: 1
+
+   * - Field
+     - Possible occurrences
+   * - email
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - skype id
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - twitter
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - linkedin
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - facebook
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - phone
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - last name
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - street
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - city
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - state
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - zip
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - country
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - company name
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - title
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - name
+     - is\|is\_not\|contain\|not\_contain
+   * - first name
+     - is\|is\_not\|contain\|not\_contain
+   * - lead source
+     - is\|is\_not\|is\_empty
+   * - lead type
+     - is\|is\_not\|is\_empty
+   * - lead status
+     - is\|is\_not\|is\_empty
+   * - rating
+     - is\|is\_not\|is\_empty\|gt\|lt\|lte\|gte
+   * - created
+     - in_the_last\|range
+   * - address
+     - contain\|not\_contain\|is\_empty
+   * - tag
+     - is
+   * - custom\_fields
+     - is\|is\_not\|contain\|not\_contain\|is\_empty
+   * - record type
+     - is
+   * - description
+     - contain\|not\_contain\|is\_empty
+   * - saved\_search
+     - is
 
 Saved Advanced Searches
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -133,7 +233,7 @@ To use previously saved search we need to construct next query:
 
     {
         "and": [{
-            "skype_id": {
+            "skype id": {
                 "is": "john.doe"
             }
         }, {
@@ -150,7 +250,7 @@ And it will be expanded (on server) to:
 
     {
         "and": [{
-            "skype_id": {
+            "skype id": {
                 "is": "john.doe"
             }
         }, {
@@ -253,7 +353,7 @@ Top level validation schema
     {
     	"additionalProperties": false,
     	"patternProperties": {
-    		"^(email|skype_id|twitter|linkedin|facebook|phone|last name|title|description|street|city|state|zip|country|lead type|company name|custom_fields|name|first name|lead source|creation date|address|tag|or|and|record type|saved_search)$": {
+    		"^(email|skype id|twitter|linkedin|facebook|phone|last name|title|description|street|city|state|zip|country|lead type|company name|custom_fields|name|first name|lead source|created|address|tag|or|and|record type|saved_search)$": {
     			"required": true,
     			"type": "object"
     		}
@@ -283,7 +383,7 @@ Schema for validation of default fields occurrences
 
     {
     	"patternProperties": {
-    		"^(email|skype_id|twitter|linkedin|facebook|phone|last name|street|city|state|zip|country|company name|title)$": {
+    		"^(email|skype id|twitter|linkedin|facebook|phone|last name|street|city|state|zip|country|company name|title)$": {
     			"additionalProperties": false,
     			"patternProperties": {
     				"^(is|is_not|contain|not_contain|is_empty)$": {
@@ -296,7 +396,8 @@ Schema for validation of default fields occurrences
     		}
     	},
     	"type": "object",
-    	"description": "skype_id/twitter/linkedin/facebook/phone/last name/street/city/state/zip/country/company name/title validation rule"
+    	"description": "
+/twitter/linkedin/facebook/phone/last name/street/city/state/zip/country/company name/title validation rule"
     }
 
 Schema for validation of full name/first name fields
@@ -342,15 +443,15 @@ Schema for validation of lead source/lead type field
     	}
     }
 
-Schema for validation of creation date occurrences
+Schema for validation of created occurrences
 
 .. code-block:: javascript
 
     {
         "type": "object",
-        "description": "creation date validation rule",
+        "description": "created validation rule",
         "properties": {
-            "creation date": {
+            "created": {
                 "type": [
                     {
                         "type": "object",
