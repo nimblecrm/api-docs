@@ -105,105 +105,105 @@ Join like (o1 and o2) or (o3 and o4)::
 .. note::
     Maximum limit of occurrences in one request query is 11; If request could be done without join operators — then it should contain only single occurrence.
 
-Search occurrence types
-------------------------
-.. list-table:: Full list of available occurrences types
-   :widths: 15 15 5
+Search operators
+----------------
+.. list-table:: Full list of available search operators
+   :widths: 5 15 15
    :header-rows: 1
 
-   * - Occurrence type
-     - Meaning
+   * - Operator
+     - Description
      - Example
    * - contain
-     - Provided value matches document attribute from left or right side. For example "\*document\_value" or "document\_value\*" .But not both
-     - {"first name": {"contain": "aaa"}}
+     - Provided value matches field value from left or right side. For example ``document_value`` or ``document_value``. But not both
+     - ``{"first name": {"contain": "aaa"}}``
    * - is
-     - Provided value is equal to document attribute
-     - {"record type": {"is": "all"}}
-   * - is\_empty
-     - Document attribute with specified type is absent or empty
-     - {"last name": {"is\_empty": True}}
-   * - in\_the\_last
-     - Date attribute of matched documents is within last X days/weeks/monthes
-     - {"created": {"in\_the\_last": {"unit": "day", "quantity": 2}}}
+     - Provided value is equal to field value
+     - ``{"record type": {"is": "all"}}``
+   * - is_empty
+     - Feild value with specified name is absent or empty
+     - ``{"last name": {"is_empty": True}}``
+   * - in_the_last
+     - Date field value of matched documents is within last X days/weeks/monthes
+     - ``{"created": {"in_the_last": {"unit": "day", "quantity": 2}}}``
    * - range
-     - Date attribute of matched documents is within specified period
-     - {"created": {"range": {"start\_date": "2013-03-19", "end\_date": "2013-03-19"}}}
+     - Date field value of matched documents is within specified period
+     - ``{"created": {"range": {"start_date": "2013-03-19", "end_date": "2013-03-19"}}}``
    * - gt
-     - Document attribute with specified type have lower value than provided in the search criteria
-     - {"rating": {"gt": "3"}}
+     - Field value with specified name have lower value than provided in the search criteria
+     - ``{"rating": {"gt": "3"}}``
    * - lt
-     - Document attribute with specified type have greater value than provided in the search criteria
-     - {"rating": {"gt": "3"}}
+     - Field value with specified name have greater value than provided in the search criteria
+     - ``{"rating": {"gt": "3"}}``
    * - gte
-     - Document attribute with specified type have lower or equal value than provided in the search criteria
-     - {"rating": {"gte": "3"}}
+     - Field value with specified name have lower or equal value than provided in the search criteria
+     - ``{"rating": {"gte": "3"}}``
    * - lte
-     - Document attribute with specified type have greater or equal value than provided in the search criteria
-     - {"rating": {"lte": "3"}}
+     - Field value with specified name have greater or equal value than provided in the search criteria
+     - ``{"rating": {"lte": "3"}}``
 
-Available search field types
-----------------------------
+Available search fields
+-----------------------
 .. list-table:: Full list of available field types for searching on them
-   :widths: 15 15
+   :widths: 7 15
    :header-rows: 1
 
-   * - Field
-     - Possible occurrences
+   * - Field name
+     - Possible operators
    * - email
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - skype id
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - twitter
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - linkedin
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - facebook
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - phone
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - last name
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - street
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - city
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - state
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - zip
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - country
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - company name
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - title
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - name
-     - is\|is\_not\|contain\|not\_contain
+     - ``is``, ``is_not``, ``contain``, ``not_contain``
    * - first name
-     - is\|is\_not\|contain\|not\_contain
+     - ``is``, ``is_not``, ``contain``, ``not_contain``
    * - lead source
-     - is\|is\_not\|is\_empty
+     - ``is``, ``is_not``, ``is_empty``
    * - lead type
-     - is\|is\_not\|is\_empty
+     - ``is``, ``is_not``, ``is_empty``
    * - lead status
-     - is\|is\_not\|is\_empty
+     - ``is``, ``is_not``, ``is_empty``
    * - rating
-     - is\|is\_not\|is\_empty\|gt\|lt\|lte\|gte
+     - ``is``, ``is_not``, ``is_empty````, ``gt``, ``lt``, ``lte``, ``gte``
    * - created
-     - in_the_last\|range
+     - ``in_the_last``, ``range``
    * - address
-     - contain\|not\_contain\|is\_empty
+     - ``contain``, ``not_contain``, ``is_empty``
    * - tag
-     - is
-   * - custom\_fields
-     - is\|is\_not\|contain\|not\_contain\|is\_empty
+     - ``is``
+   * - custom_fields
+     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - record type
-     - is
+     - ``is``
    * - description
-     - contain\|not\_contain\|is\_empty
-   * - saved\_search
-     - is
+     - ``contain``, ``not_contain``, ``is_empty``
+   * - saved_search
+     - ``is``
 
 Saved Advanced Searches
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -396,8 +396,7 @@ Schema for validation of default fields occurrences
     		}
     	},
     	"type": "object",
-    	"description": "
-/twitter/linkedin/facebook/phone/last name/street/city/state/zip/country/company name/title validation rule"
+    	"description": "/twitter/linkedin/facebook/phone/last name/street/city/state/zip/country/company name/title validation rule"
     }
 
 Schema for validation of full name/first name fields
