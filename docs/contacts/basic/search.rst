@@ -142,6 +142,8 @@ Search operators
      - Field value with specified name have greater or equal value than provided in the search criteria
      - ``{"rating": {"lte": "3"}}``
 
+.. _search-fields-list:
+
 Available search fields
 -----------------------
 .. list-table:: Full list of available field types for searching on them

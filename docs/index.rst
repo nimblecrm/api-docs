@@ -1,6 +1,8 @@
 Nimble API documentation contents
 =================================
 
+Actual Nimble API version - :ref:`1.2<changelog>`
+
 Contents:
 
 .. toctree::
@@ -13,6 +15,7 @@ Contents:
    activities/index.rst
    obtaining_key.rst
    making_auth_requests.rst
+   changelog.rst
    getting_help.rst
    
    

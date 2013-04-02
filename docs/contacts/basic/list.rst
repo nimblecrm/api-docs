@@ -1,3 +1,5 @@
+.. _contacts-list-api:
+
 =================
 Get contacts list
 =================

@@ -1,5 +1,7 @@
+.. _metadata-api-ref:
+
 Contacts Metadata API
-========================
+=====================
 
 Contents:
 

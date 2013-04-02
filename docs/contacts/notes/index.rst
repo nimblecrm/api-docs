@@ -1,5 +1,7 @@
+.. _notes-api-ref:
+
 Contact Notes API
-========================
+=================
 
 Contents:
 

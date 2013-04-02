@@ -1,3 +1,5 @@
+.. _contacts-api:
+
 Contacts API
 ============
 

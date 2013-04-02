@@ -1,3 +1,5 @@
+.. _activities-api-ref:
+
 Activities API
 ==================
 
