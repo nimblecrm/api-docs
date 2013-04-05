@@ -191,8 +191,12 @@ Available search fields
    * - lead status
      - ``is``, ``is_not``, ``is_empty``
    * - rating
-     - ``is``, ``is_not``, ``is_empty````, ``gt``, ``lt``, ``lte``, ``gte``
+     - ``is``, ``is_not``, ``is_empty``, ``gt``, ``lt``, ``lte``, ``gte``
    * - created
+     - ``in_the_last``, ``range``
+   * - updated
+     - ``in_the_last``, ``range``
+   * - company last contacted
      - ``in_the_last``, ``range``
    * - address
      - ``contain``, ``not_contain``, ``is_empty``
