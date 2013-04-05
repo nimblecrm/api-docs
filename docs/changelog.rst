@@ -3,6 +3,10 @@
 Nimble API changes history
 ==========================
 
+**Version 1.3**
+
+    * :ref:`New fields<search-fields-list>` available for custom search
+
 **Version 1.2**
 
     * :ref:`New fields<search-fields-list>` available for custom search
