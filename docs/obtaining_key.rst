@@ -80,13 +80,15 @@ You should use this request on step B of :ref:`Authorization Process<auth-proces
     **client_id** 
         *required* — Your Client Key from Application Page.
     **redirect_uri** 
-        *required* — URI where you have a handler who will catch a code and finish the Process 
+        *required* — URI where you have a handler who will catch a code and finish the Process, see note below.
     **response_type**
         *required* — must be set to "code". We don't support Implicit Flow, so ``code`` must be always sent here. 
     **scope**
         *optional* — for now it is only one scope for Nimble API, so skip this parameter for now.
  
-
+    .. note:: Please note, that main value for redirect URL is specified in application settings on developer portal. ``redirect_uri`` parameter in URL could be used only to overwrite path part in redirect URL. So, ``redirect_uri`` should have exactly same domain, as specified in application settings. 
+    
+    
 **Example request**::
 
     GET https://api.nimble.com/oauth/authorize?client_id=5f96b5e9adaxzca93x1213123132&redirect_uri=https://yourportal.com&response_type=code
@@ -123,7 +125,7 @@ You should use this request on step B of :ref:`Authorization Process<auth-proces
     *Example Deny Consent Redirect*::
     
         http://www.myapp.com/oauth?error=access_denied&error_description=User%20denied%20access
-
+        
  
 .. _request-access-token:
 
