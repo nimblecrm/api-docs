@@ -25,7 +25,7 @@ All parameters are passed as JSON in request body. All parameters are mandatory.
 
 **presentation**
 
-    dictionary describing how field should be presented in Nimble client (can be empty dictionary as well).
+    dictionary describing how field should be presented in Nimble client (can be empty dictionary as well). More details are at :ref:`described here <field-presentations>`.
 
 Example:
 

@@ -17,5 +17,3 @@ Contents:
    making_auth_requests.rst
    changelog.rst
    getting_help.rst
-   
-   
