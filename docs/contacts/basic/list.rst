@@ -44,19 +44,29 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
 
   Specifies which page to display. Numeration starts from 1. 
 
-**sort** — default: ``name:asc``
+.. _contact_list_sorting:
+**sort** — default: ``score:desc``
 
   Identifies the sort field and sort order. Sort order is required when this parameter is used. 
   An single sort field can be specified. Any field can be sorted in either ``asc`` or ``desc`` order.
-  In addition to sorting on default, there are the special sorts: recently viewed by the authenticated 
-  user (as ``recently%20viewed``), first + last name (as ``name``), and record created date (as ``create``).
+  All :ref:`searchable fields <search-fields-list> which aren't multiple  and aren't custom fields are sortable.
+  Information about is field multiple can be retrieved from fields metadata. There are some notes for special fields:
 
-  .. note:: 
-    Only fields that have been indexed by our search engine are sortable. These include all custom fields and most standard fields.
-
-  .. warning::
-    When sorting by recently viewed, these parameters are disabled: **keyword**, **record type**, **page** and **per_page**. 
-    Nimble stores only the 30 most recently viewed records.
+----------------
+.. list-table:: Exceptions
+   :widths: 5 15
+   :header-rows: 1
+   * - Name
+     - Meaning
+     - Note
+   * - recently viewed
+     - sorts by user's recently viewed contacts
+     - When sorting by recently viewed, these parameters are disabled: **keyword**, **record type**, **page** and
+       **per_page**. Nimble stores only the 30 most recently viewed records.
+   * - score
+     - sorts by relevance to search request
+     - This sorting only have sense when you are performing search request with
+       :ref:`contains <advanced_search_contain_occurrence>` type of occurrence.
 
 **record_type** — default: ``all``
 

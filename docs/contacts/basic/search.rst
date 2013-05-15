@@ -114,8 +114,19 @@ Search operators
    * - Operator
      - Description
      - Example
+.. _advanced_search_contain_occurrence:
    * - contain
-     - Provided value matches field value from left or right side. For example ``document_value`` or ``document_value``. But not both
+     - performs left match on ANY word in the text string
+     - Some of words in provided search request(one or more) for specified field is equal to some word(one or more)
+       in field of contact(contacts).
+       This contacts will be returned as result of search request.
+       .. note::
+           As more equal words in request are in contact field as higher contact is in returned list if
+           :ref:`sorting is by relevance in descending order`.
+   * - contain(old)
+     - Provided value matches field value from left or right side. For example ``*document_value`` or
+       ``document_value*``. But not both.
+       Note: ``old`` means only another approach to ger right results, API parameters is still same.
      - ``{"first name": {"contain": "aaa"}}``
    * - is
      - Provided value is equal to field value
@@ -128,7 +139,7 @@ Search operators
      - ``{"created": {"in_the_last": {"unit": "day", "quantity": 2}}}``
    * - range
      - Date field value of matched documents is within specified period
-     - ``{"created": {"range": {"start_date": "2013-03-19", "end_date": "2013-03-19"}}}``
+     - ``{"company last contacted": {"range": {"start_date": "2013-03-19", "end_date": "2013-03-19"}}}``
    * - gt
      - Field value with specified name have lower value than provided in the search criteria
      - ``{"rating": {"gt": "3"}}``
@@ -153,19 +164,19 @@ Available search fields
    * - Field name
      - Possible operators
    * - email
-     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
+     - ``is``, ``is_not``, ``contain(old)``, ``not_contain(old)``, ``is_empty``
    * - skype id
-     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
+     - ``is``, ``is_not``, ``contain(old)``, ``not_contain(old)``, ``is_empty``
    * - twitter
-     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
+     - ``is``, ``is_not``, ``contain(old)``, ``not_contain(old)``, ``is_empty``
    * - linkedin
-     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
+     - ``is``, ``is_not``, ``contain(old)``, ``not_contain(old)``, ``is_empty``
    * - facebook
-     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
+     - ``is``, ``is_not``, ``contain(old)``, ``not_contain(old)``, ``is_empty``
    * - phone
-     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
+     - ``is``, ``is_not``, ``contain(old)``, ``not_contain(old)``, ``is_empty``
    * - last name
-     - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
+     - ``is``, ``is_not``, ``contain(old)``, ``not_contain(old)``, ``is_empty``
    * - street
      - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - city
@@ -181,9 +192,9 @@ Available search fields
    * - title
      - ``is``, ``is_not``, ``contain``, ``not_contain``, ``is_empty``
    * - name
-     - ``is``, ``is_not``, ``contain``, ``not_contain``
+     - ``is``, ``is_not``, ``contain(old)``, ``not_contain``
    * - first name
-     - ``is``, ``is_not``, ``contain``, ``not_contain``
+     - ``is``, ``is_not``, ``contain(old)``, ``not_contain``
    * - lead source
      - ``is``, ``is_not``, ``is_empty``
    * - lead type
