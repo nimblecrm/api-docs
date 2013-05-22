@@ -49,13 +49,14 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
 
   Identifies the sort field and sort order. Sort order is required when this parameter is used. 
   An single sort field can be specified. Any field can be sorted in either ``asc`` or ``desc`` order.
-  All :ref:`searchable fields <search-fields-list> which aren't multiple  and aren't custom fields are sortable.
+  All :ref:`searchable fields <search-fields-list>` which aren't multiple  and aren't custom fields are sortable.
   Information about is field multiple can be retrieved from fields metadata. There are some notes for special fields:
 
-----------------
+
 .. list-table:: Exceptions
    :widths: 5 15
    :header-rows: 1
+   
    * - Name
      - Meaning
      - Note
