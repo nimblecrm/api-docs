@@ -105,6 +105,8 @@ Join like (o1 and o2) or (o3 and o4)::
 .. note::
     Maximum limit of occurrences in one request query is 11; If request could be done without join operators — then it should contain only single occurrence.
 
+.. _advanced_search_contain_occurrence:
+
 Search operators
 ----------------
 .. list-table:: Full list of available search operators
@@ -114,15 +116,12 @@ Search operators
    * - Operator
      - Description
      - Example
-.. _advanced_search_contain_occurrence:
    * - contain
      - performs left match on ANY word in the text string
-     - Some of words in provided search request(one or more) for specified field is equal to some word(one or more)
-       in field of contact(contacts).
+     - Some of words in provided search request (one or more) for specified field is equal to some word (one or more)
+       in field of contact (contacts).
        This contacts will be returned as result of search request.
-       .. note::
-           As more equal words in request are in contact field as higher contact is in returned list if
-           :ref:`sorting is by relevance in descending order`.
+       As more equal words in request are in contact field as higher contact is in returned list if :ref:`sorting <contact_list_sorting>` is by relevance in descending order.
    * - contain(old)
      - Provided value matches field value from left or right side. For example ``*document_value`` or
        ``document_value*``. But not both.

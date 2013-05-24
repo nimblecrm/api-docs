@@ -15,5 +15,7 @@ Contents:
    activities/index.rst
    obtaining_key.rst
    making_auth_requests.rst
+   examples_libs.rst
    changelog.rst
    getting_help.rst
+   
