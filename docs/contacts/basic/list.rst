@@ -53,7 +53,7 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
   All :ref:`searchable fields <search-fields-list>` which aren't multiple  and aren't custom fields are sortable.
   Information about is field multiple can be retrieved from fields metadata. There are some notes for special fields:
 
-  .. list-table:: Exceptions
+  .. list-table:: Special sortings
     :widths: 5 15 15
     :header-rows: 1
    
@@ -67,6 +67,9 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
     * - score
       - sorts by relevance to search request
       - This sorting only have sense when you are performing search request with :ref:`contains <advanced_search_contain_occurrence>` type of occurrence.
+    * - users last contacted
+      - sorts by recently contacted by user contacts
+      - When sorting by user's last contacted, these parameters are disabled: **keyword** and **record type**.
 
 **record_type** — default: ``all``
 
