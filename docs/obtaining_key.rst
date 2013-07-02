@@ -82,25 +82,25 @@ You should use this request on step B of :ref:`Authorization Process<auth-proces
     **redirect_uri** 
         *required* — URI where you have a handler who will catch a code and finish the Process, see note below.
     **response_type**
-        *required* — must be set to "code". We don't support Implicit Flow, so ``code`` must be always sent here. 
+        *required* — must be set to ``code``. We don't support Implicit Flow, so ``code`` is the only available option now. 
     **scope**
-        *optional* — for now it is only one scope for Nimble API, so skip this parameter for now.
+        *optional* — for now there is only one scope for Nimble API, so skip this parameter for now.
  
     .. note:: Please note, that main value for redirect URL is specified in application settings on developer portal. ``redirect_uri`` parameter in URL could be used only to overwrite path part in redirect URL. So, ``redirect_uri`` should have exactly same domain, as specified in application settings. 
     
     
 **Example request**::
 
-    GET https://api.nimble.com/oauth/authorize?client_id=5f96b5e9adaxzca93x1213123132&redirect_uri=https://yourportal.com&response_type=code
+    GET https://api.nimble.com/oauth/authorize?client_id=5f96b5e9adaxzca93x1213123132&redirect_uri=https%3A%2F%2Fyourportal.com%2Fauth%2Fpassed&response_type=code
 
 
 **Successful response**:
 
-    First, user will be redirected to the page on Authorization Server with hostname ``https://developers.nimble.com/oauth/login.php``
+    First, user will be redirected to the page on Authorization Server with hostname ``https://api.nimble.com/oauth/authorize``
 
     As soon as he provided his credentials, you will receive a request like listed below on your ``Redirect URI``::
 
-       https://yourportal.com?code=LTM4MjQ3MTk2OjEzYTU5ZjY2NTkxOjZiOGQ= 
+       https://yourportal.com/auth/passed?code=LTM4M 
 
 
 **Error response**:
@@ -135,32 +135,29 @@ As soon as User complete step C your handler will catch step D. You need to list
 
 The Client should use the authorization code obtained to request an access token. When requesting an access token, you SHOULD specify required data as form parameters. Client application secret is needed for client authentication. When specifying client_id and client_secret as form parameters, the ``Content-Type`` header MUST be set to ``application/x-www-form-urlencoded``. Request should be done via HTTPS only.
 
- 
 
 **Endpoint**::
 
  POST https://api.nimble.com/oauth/token
 
 
-**Params**:
+**Parameters:**
 
+    **grant_type**
+        *required* — must be set to ``authorization_code``. You need to receive an Access token.
+    **code**
+        *required* — code that you received on step D. This code has a short-valid time, so initiate request for token as soon as you receive it.
+    **redirect_uri**
+        *required* — redirect URI for your application. Should be equal to ``redirect_uri``, provided during :ref:`request-grant-code`.
     **client_id**
         *required* — your Client API key.
     **client_secret**
-        *required* — your Client Secret key
-    **code**
-        required* — code that you received on step D. This code has a short-valid time, so initiate request for token as soon as you receive it.
-    **grant_type**
-        *required* — must be set to ``authorization_code``. You need to receive an Access token.
- 
+        *required* — your Client API secret key.
 
 **Headers**:
 
     ``Content-Type: application/x-www-form-urlencoded; charset=UTF-8``
-        *required* — you need to specify this header always
-    ``Accept: application/json``
-        *optional* — if you want to receive the response in ``JSON`` format, not in ``XML``.
- 
+        *required* — you need to specify this header always 
 
 **Example Request**::
 
@@ -168,7 +165,7 @@ The Client should use the authorization code obtained to request an access token
     Host: api.nimble.com
     Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 
-    Body : client_id=5f96b5e9a6b7478e1537574a42615063&client_secret=2d78885526dc3c5e& code=LTM4MjQ3MTk2OjEzOTQ1YjQ3ODJhOi0yNjRl&grant_type=authorization_code
+    Body : client_id=5f96b5e9a6b7478e15ee574a426aa063&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth&code=LTM4M&grant_type=authorization_code&client_secret=89bb4ffb4f264bff
 
  
 .. _token-response-details:
@@ -178,10 +175,13 @@ The Client should use the authorization code obtained to request an access token
 .. code-block:: javascript
 
     {
-        "access_token":"12123486db0552de35ec6daa0cc836b0",
-        "expires_in":"3599",
-        "refresh_token":"456542fa23e5541e035451586f9c5eaf4a6692a7"
+        "access_token": "bf086611-9e97-4d11-9cd7-3c86dec0bbd4",
+        "token_type": "bearer",
+        "expires_in": 599,
+        "refresh_token": "515ac59b-6518-49a2-81d6-54f91ee74c4a",
+        "scope": "read write"
     }
+
 
 
 API requests using Access Token
@@ -194,34 +194,36 @@ Now when we have Access Token Received you need to store it and use for any requ
 Refresh token after expiration without user input
 -------------------------------------------------
 The application uses the refresh token to extend the validity of the access token provided with the refresh token. When refreshing an access token, you should specify required data as a form parameters. Client application secret is needed for client authentication. ``Content-Type`` header must be set to ``application/x-www-form-urlencoded``.
- 
+  
+Parameters:
+
+    **client_id** 
+        Client identifier used to obtain the authorization code
+    **client_secret** 
+        Client secret code
+    **grant_type** 
+        Must be set to ``refresh_token``
+    **refresh_token**
+        Refresh token obtained from the access token request
+    **redirect_uri**
+        *required* — redirect URI for your application. Should be equal to ``redirect_uri``, provided during :ref:`request-grant-code`.
+
 Example Request::
- 
+
     POST /oauth/token HTTP/1.1
     Host: https://api.nimble.com/
     Content-Type: application/x-www-form-urlencoded; charset=UTF-8
- 
-    client_id=3e8471e7516a0c85ef35ab1d23f1bdf1&client_secret=737d10deba3fd124&grant_type=refresh_token&refresh_token=5f752714eddb07a3e41c2a3311f514e1
- 
-Parameters:
+    
+    client_id=3e8471e7516a0c85ef35ab1d23f1bdf1&client_secret=737d10deba3fd124&grant_type=refresh_token&refresh_token=5f752714eddb07a3e41c2a3311f514e1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth
 
-**client_id** 
-    Client identifier used to obtain the authorization code
-**client_secret** 
-    Client secret code
-**grant_type** 
-    Must be set to ``refresh_token``
-**refresh_token**
-    Refresh token obtained from the access token request
- 
 Example Response:
 
 .. code-block:: javascript
 
     {
-        "access_token":"1d7bc7328b402f4826e17607e364bc6a",
-        "expires_in":"86399",
-        "refresh_token":"f35c2165112fda74f79b408cc253485fcdfd888a"
+        "access_token": "1d7bc7328b402f4826e17607e364bc6a",
+        "expires_in": 559,
+        "refresh_token": "f35c2165112fda74f79b408cc253485fcdfd888a"
     }
 
 
@@ -229,12 +231,11 @@ Examples
 --------
 For your convinience we created some examples:
 
-`Live example with API Console <https://developers.nimble.com/console>`_. Go by link and select OAuth2 in Authorization dropdown. You will be able to see process from user standpoint
-
 `Python authorization example <https://github.com/nimblecrm/python-example>`_. Actual code implementation on Python and Tornado
 
 `Ruby authorization example <https://github.com/nimblecrm/ruby-example>`_. Implementation of authorization process in Ruby
 
 Troubleshooting & Feedback
 --------------------------
-If you have any problems or want to submit feedback feel free to go to our support forum or email us at care@nimble.com
+If you have any problems or want to submit feedback feel free to go to our support forum or email us at api-support@nimble.com
+
