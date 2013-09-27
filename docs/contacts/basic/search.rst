@@ -10,10 +10,12 @@ Basic concepts
 All values putted to search (values of the objects by which search is performed and the text of search request) are
 converted to lowercase and are subjected to procedure
 of `ascii folding <http://lucene.apache.org/core/3_1_0/api/core/org/apache/lucene/analysis/ASCIIFoldingFilter.html>`_
+
 Examples:
-1) "cAr" is the same as "car"
-2) "čar" is the same as "car"
-3) "ČAR" is the same as "car"
+    1) "cAr" is the same as "car"
+    2) "čar" is the same as "car"
+    3) "ČAR" is the same as "car"
+
 No any another normalization procedures are used. (plural, phonetic, etc)
 
 
@@ -140,22 +142,32 @@ Search operators
        Only WHOLE words from query and contact data are used. There is no additional analysis for part of word.
      - Some of words in provided search request (one or more) for specified field is equal to some word (one or more)
        in field of contact (contacts). This contacts will be returned as result of search request.
-       For example you are searching for "Jon Pupken" in name field
+
+       For example you are searching for ``Jon Pupken`` in name field
+
        So contacts with the following name will be matched:
-       JON PUPKEN, JON travolta, James PUPKEN
+       ``JON PUPKEN``, ``JON travolta``, ``James PUPKEN``
+
        Contacts with this names will not be matched:
-       JaN PUPKEr, JONy PoPov
+       ``JaN PUPKEr``, ``JONy PoPov``
        As more equal words from request string are in contact field as higher contact is in returned list
        if :ref:`sorting <contact_list_sorting>` set to `by relevance in descending order`.
+
+       Query exapmle:
+       ``{"address": {"contain": "Greater LA"}}``
    * - contain(old)
      - Provided value matches field value from LEFT OR RIGHT side. For example ``*document_value`` or
        ``document_value*``. But not both.
-     - ``{"first name": {"contain": "aaa"}}``
-     - For example you are searching for "POPOV" in last_name field
+     - For example you are searching for ``POPOV`` in last_name field
+
        So contacts with the following name will be matched:
-       POPOV, POPOVa, POPOVenko, podPOPOV
+       ``POPOV``, ``POPOVa``, ``POPOVenko``, ``podPOPOV``
+
        Contacts with this names will not be matched:
-       PuPken, podPOPOVenko
+       ``PuPken``, ``podPOPOVenko``
+
+       Query example:
+       ``{"first name": {"contain": "aaa"}}``
    * - is
      - Provided value is equal to field value
      - ``{"record type": {"is": "all"}}``
