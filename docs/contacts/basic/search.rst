@@ -4,6 +4,21 @@
 Search contacts
 ===============
 
+Basic concepts
+--------------
+
+All values putted to search (values of the objects by which search is performed and the text of search request) are
+converted to lowercase and are subjected to procedure
+of `ascii folding <http://lucene.apache.org/core/3_1_0/api/core/org/apache/lucene/analysis/ASCIIFoldingFilter.html>`_
+Examples:
+1) "cAr" is the same as "car"
+2) "čar" is the same as "car"
+3) "ČAR" is the same as "car"
+No any another normalization procedures are used. (plural, phonetic, etc)
+
+
+For some fields like social network profiles, emails, phones special chars escaping are being done.
+
 .. _advanced-search-ref:
 
 Advanced search query syntax
@@ -109,6 +124,10 @@ Join like (o1 and o2) or (o3 and o4)::
 
 Search operators
 ----------------
+.. note:: To get relevant results you may use :ref:`sorting <contact_list_sorting>` by relevance.
+.. note:: In the table below ``(old)`` means only another(previously used) behaviour of search operator, API parameters is still same.
+
+
 .. list-table:: Full list of available search operators
    :widths: 5 15 15
    :header-rows: 1
@@ -117,16 +136,26 @@ Search operators
      - Description
      - Example
    * - contain
-     - performs left match on ANY word in the text string
+     - looks for EXACT match of ANY word from provided request in the words of specified contact field.
+       Only WHOLE words from query and contact data are used. There is no additional analysis for part of word.
      - Some of words in provided search request (one or more) for specified field is equal to some word (one or more)
-       in field of contact (contacts).
-       This contacts will be returned as result of search request.
-       As more equal words in request are in contact field as higher contact is in returned list if :ref:`sorting <contact_list_sorting>` is by relevance in descending order.
+       in field of contact (contacts). This contacts will be returned as result of search request.
+       For example you are searching for "Jon Pupken" in name field
+       So contacts with the following name will be matched:
+       JON PUPKEN, JON travolta, James PUPKEN
+       Contacts with this names will not be matched:
+       JaN PUPKEr, JONy PoPov
+       As more equal words from request string are in contact field as higher contact is in returned list
+       if :ref:`sorting <contact_list_sorting>` set to `by relevance in descending order`.
    * - contain(old)
-     - Provided value matches field value from left or right side. For example ``*document_value`` or
+     - Provided value matches field value from LEFT OR RIGHT side. For example ``*document_value`` or
        ``document_value*``. But not both.
-       Note: ``old`` means only another approach to ger right results, API parameters is still same.
      - ``{"first name": {"contain": "aaa"}}``
+     - For example you are searching for "POPOV" in last_name field
+       So contacts with the following name will be matched:
+       POPOV, POPOVa, POPOVenko, podPOPOV
+       Contacts with this names will not be matched:
+       PuPken, podPOPOVenko
    * - is
      - Provided value is equal to field value
      - ``{"record type": {"is": "all"}}``
