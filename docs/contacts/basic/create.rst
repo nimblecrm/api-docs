@@ -13,7 +13,7 @@ Parameters
 
 All parameters are passed as JSON in request body. 
 
-**type** — required
+**record_type** — required
     Specifies the type of contact to create - the record type. This parameter could be one of two values: ``company`` or ``person``.
 
 **fields** — required
@@ -55,8 +55,8 @@ Example:
                 "value": "2222"
             }]
         },
-        "type": "person",
-        "tags": "our customers\\,best"
+        "record_type": "person",
+        "tags": "our customers,best"
     }
     
 Response: OK
@@ -65,82 +65,91 @@ On success, server returns response with HTTP code 201 and newly created contact
 
 .. code-block:: javascript
 
-    {
-        "updated": "2012-11-07T16: 50: 04+0200",
-        "created": "2012-11-07T16: 50: 04+0200",
+     {
+        "avatar_url": null,
+        "children": [],
+        "company_last_contacted": {
+            "in": null,
+            "out": null
+        },
+        "created": "2013-10-22T12:26:31+0300",
+        "creator": "NimbleAPItest",
         "fields": {
-            "lastname": [
+            "first name": [
                 {
-                    "field_id": "5049f697a694620a07000045",
+                    "field_id": "4eabb0b64fb88d334c000ab6",
+                    "group": "Basic Info",
+                    "label": "first name",
                     "modifier": "",
-                    "group": "BasicInfo",
-                    "value": "Daniels",
-                    "label": "lastname"
+                    "value": "Jack"
+                }
+            ],
+            "last name": [
+                {
+                    "field_id": "4eabb0b64fb88d334c000ab8",
+                    "group": "Basic Info",
+                    "label": "last name",
+                    "modifier": "",
+                    "value": "Daniels"
                 }
             ],
             "phone": [
                 {
-                    "field_id": "5049f697a694620a07000054",
+                    "field_id": "4eabb0b74fb88d334c000ac5",
+                    "group": "Contact Info",
+                    "label": "phone",
                     "modifier": "work",
-                    "group": "ContactInfo",
-                    "value": "123123123",
-                    "label": "phone"
+                    "value": "123123123"
                 },
                 {
-                    "field_id": "5049f697a694620a07000054",
+                    "field_id": "4eabb0b74fb88d334c000ac5",
+                    "group": "Contact Info",
+                    "label": "phone",
                     "modifier": "work",
-                    "group": "ContactInfo",
-                    "value": "2222",
-                    "label": "phone"
+                    "value": "2222"
                 }
             ],
             "source": [
                 {
-                    "field_id": "5049f697a694620a0700004f",
+                    "field_id": "4eabb0b74fb88d334c000ac2",
+                    "group": "Basic Info",
+                    "label": "source",
                     "modifier": "",
-                    "group": "BasicInfo",
-                    "value": "m",
-                    "label": "source"
-                }
-            ],
-            "firstname": [
-                {
-                    "field_id": "5049f697a694620a07000043",
-                    "modifier": "",
-                    "group": "BasicInfo",
-                    "value": "Jack",
-                    "label": "firstname"
+                    "value": "m"
                 }
             ]
         },
-        "object_type": "contact",
-        "id": "509a751c262b37af05000011",
+        "id": "526644c7837d4e249372f091",
+        "is_important": null,
         "last_contacted": {
-            "last_contacted": null,
+            "message_id": null,
             "thread_id": null,
-            "message_id": null
+            "tstamp": null,
+            "user_id": null
+        },
+        "object_type": "contact",
+        "owner_id": "4decc6b662100441e200000b",
+        "record_type": "person",
+        "reminder": null,
+        "social_connections": {
+            "facebook": {},
+            "linkedin": {},
+            "twitter": {}
         },
         "tags": [
             {
-                "tag": "ourcustomers",
-                "id": "5049fa0c9b85f62cb4000639"
+                "id": "52664434837d4e249372f081",
+                "tag": "our customers"
             },
             {
-                "tag": "best",
-                "id": "5049fa0c9b85f62cb4000745"
+                "id": "52664434837d4e249372f083",
+                "tag": "best"
             }
         ],
-        "record_type": "person",
-        "creator": "NimbleAPItest",
-        "children": [
-        
-        ],
-        "tags": [
-        
-        ],
-        "owner_id": "5049f696a694620a0700001c"
-    }
-    
+        "updated": "2013-10-22T12:26:31+0300",
+        "updater": null
+     }
+
 For more details see: :ref:`contact-resources-response`.
 
 Response: Errors
