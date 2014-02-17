@@ -86,7 +86,7 @@ You should use this request on step B of :ref:`Authorization Process<auth-proces
     **scope**
         *optional* — for now there is only one scope for Nimble API, so skip this parameter for now.
  
-    .. note:: Please note, that main value for redirect URL is specified in application settings on developer portal. ``redirect_uri`` parameter in URL could be used only to overwrite path part in redirect URL. So, ``redirect_uri`` should have exactly same domain, as specified in application settings. 
+    .. note:: Please note, that main value for redirect URL is specified in application settings on developer portal. ``redirect_uri`` parameter in URL could be used only to overwrite path part in redirect URL. So, ``redirect_uri`` should have exactly same URI, as specified in application settings. 
     
     
 **Example request**::
