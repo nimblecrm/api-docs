@@ -178,8 +178,16 @@ Search operators
      - Date field value of matched documents is within last X days/weeks/monthes
      - ``{"created": {"in_the_last": {"unit": "day", "quantity": 2}}}``
    * - range
-     - Date field value of matched documents is within specified period
-     - ``{"company last contacted": {"range": {"start_date": "2013-03-19", "end_date": "2013-03-19"}}}``
+     - Date field value of matched documents is within specified period. There are two types of selector for range occurrence type.
+
+       ``date`` - simple case. Provided date will be converted to user timezone. Expected format is ``%Y-%m-%d``
+
+       ``datetime`` - provided date is expected to be in UTC in rfc3339 format.
+
+     -
+       ``{"company last contacted": {"range": {"start_date": "2013-03-19", "end_date": "2013-03-19"}}}``
+
+       ``{"company last contacted": {"range": {"start_datetime": "2013-04-23 00:00:10", "end_datetime": "2013-04-26T00:00:10"}}}``
    * - gt
      - Field value with specified name have lower value than provided in the search criteria
      - ``{"rating": {"gt": "3"}}``
