@@ -14,7 +14,7 @@ Parameters
 
 **replace**
     Optional url parameter that identifies whether to replace all other values for this kind of field or not. Can take 1 or 0 as true or false state, default 0.
-    For example if contacts has such set of fields:
+    For example if contact has such set of fields:
 
     .. code-block:: javascript
 
@@ -45,7 +45,7 @@ Parameters
                 }]
             }
         }
-    will update field value with modifier "personal", but leave other modifier untouched. Result will be: 
+    will update field value with modifier "personal", but leave fields with other modifiers untouched. Result will be: 
 
     .. code-block:: javascript
 
@@ -95,7 +95,7 @@ Parameters
                 }]
             }
         }
-    will replace the whole "email" field. Result will be: 
+    will replace ``email`` fields with all modifiers. Result will be: 
 
     .. code-block:: javascript
 
