@@ -7,11 +7,113 @@ Request
 
 Example::
     
-    PUT https://api.nimble.com/api/v1/contact/<id>
+    PUT https://api.nimble.com/api/v1/contact/<id>?replace=1
     
 Parameters
 ----------
-All parameters are passed as JSON in request body. You should pass at least one of the parameters: ``fields`` or ``avatar_url`` (or both).
+
+**replace**
+    Optional url parameter that identifies whether to replace all other values for this kind of field or not. Can take 1 or 0 as true or false state, default 0.
+    For example if contacts has such set of fields:
+
+    .. code-block:: javascript
+
+        {
+            "fields": {
+                "first name": [{
+                    "value": "Jack",
+                    "modifier": ''
+                }],
+                "email": [{
+                    "value": "user@nimble.com",
+                    "modifier": "work"
+                }, {
+                    "value": "jack@gmail.com",
+                    "modifier": "personal"
+                }]
+            }
+        }
+    then update it with:
+
+    .. code-block:: javascript
+
+        {
+            "fields": {
+                "email": [{
+                    "value": "user@nimble.com",
+                    "modifier": "personal"
+                }]
+            }
+        }
+    will update field value with modifier "personal", but leave other modifier untouched. Result will be: 
+
+    .. code-block:: javascript
+
+        {
+            "fields": {
+                "first name": [{
+                    "value": "Jack",
+                    "modifier": ''
+                }],
+                "email": [{
+                    "value": "user@nimble.com",
+                    "modifier": "work"
+                }, {
+                    "value": "user@nimble.com",
+                    "modifier": "personal"
+                }]
+            }
+        }
+    With ``replace`` parameter set to 1 if contacts that has:
+
+    .. code-block:: javascript
+
+        {
+            "fields": {
+                "first name": [{
+                    "value": "Jack",
+                    "modifier": ''
+                }],
+                "email": [{
+                    "value": "user@nimble.com",
+                    "modifier": "work"
+                }, {
+                    "value": "jack@gmail.com",
+                    "modifier": "personal"
+                }]
+            }
+        }
+    and then UPDATE with:
+
+    .. code-block:: javascript
+
+        {
+            "fields": {
+                "email": [{
+                    "value": "user@nimble.com",
+                    "modifier": "personal"
+                }]
+            }
+        }
+    will replace the whole "email" field. Result will be: 
+
+    .. code-block:: javascript
+
+        {
+            "fields": {
+                "first name": [{
+                    "value": "Jack",
+                    "modifier": ''
+                }],
+                "email": [{
+                    "value": "user@nimble.com",
+                    "modifier": "personal"
+                }]
+            }
+        }
+
+
+``fields`` and ``avatar_url`` parameters are passed as JSON in request body. You should pass at least one of the parameters: ``fields`` or ``avatar_url`` (or both).
 
 **fields**
     Describes a dictionary organized in the same structure as a contact listing response. In this structure, each key is field name. 
