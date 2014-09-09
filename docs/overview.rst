@@ -11,7 +11,7 @@ Currently, only contact data is accessible via our REST API, and this data is av
  * **GET/CREATE/UPDATE/DELETE custom fields and groups** via metadata API - available
  * **GET/CREATE/UPDATE/DELETE notes related to contacts** - available
  * **CREATE related activities** - available
- * **GET related activities** - 2013
+ * **GET related activities** - TBD
  * **GET related messages** - TBD
  * **GET related social** - TBD
  * **MERGE contact** - TBD
