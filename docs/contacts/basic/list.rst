@@ -46,12 +46,16 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
 
 .. _contact_list_sorting:
 
-**sort** — default: ``score:desc``
+**sort** — default: none
 
-  Identifies the sort field and sort order. Sort order is required when this parameter is used. 
+  Identifies the sort field and sort order. Sort order is required when this parameter is used.
   An single sort field can be specified. Any field can be sorted in either ``asc`` or ``desc`` order.
   All :ref:`searchable fields <search-fields-list>` which aren't multiple  and aren't custom fields are sortable.
-  Information about is field multiple can be retrieved from fields metadata. There are some notes for special fields:
+  .. note:: There is no way to sort requests which have size more then 100 contacts. In order to sort results you should
+    set ``per_page`` with number lower or equal 100. We suggest to use
+  ``score`` sorting if ``contain`` type of occurrence or ``keyword`` parameter is used.
+
+  Information about if field is multiple can be retrieved from fields metadata. There are some notes for special fields:
 
   .. list-table:: Special sortings
     :widths: 5 15 15
@@ -78,6 +82,7 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
 **keyword** — default: empty
 
   Specifies a set of simple search criteria for the query. This simple search is performed on any (indexed in our search engine) fied of contact. For example: ``keyword=Jon%20Smith``
+  We suggest to use ``score`` sorting with this parameter.
   
 **query** — default: empty
   Specifies query for contacts advanced search. Please note, that this parameter not compatible with parameters ``record_type`` and ``keyword``. For more details about search see :ref:`contacts-search-ref`.
