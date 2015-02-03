@@ -168,6 +168,18 @@ Search operators
 
        Query example:
        ``{"first name": {"contain": "aaa"}}``
+   * - starts_with
+     - Provided value matches field value from LEFT side. For example ``document_value*``.
+     - For example you are searching for ``POPOV`` in last_name field
+
+       So contacts with the following name will be matched:
+       ``POPOV``, ``POPOVa``, ``POPOVenko``
+
+       Contacts with this names will not be matched:
+       ``PuPken``, ``podPOPOVenko``, ``podPOPOV``
+
+       Query example:
+       ``{"first name": {"starts_with": "value"}}``
    * - is
      - Provided value is equal to field value
      - ``{"record type": {"is": "all"}}``
