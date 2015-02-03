@@ -51,9 +51,10 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
   Identifies the sort field and sort order. Sort order is required when this parameter is used.
   An single sort field can be specified. Any field can be sorted in either ``asc`` or ``desc`` order.
   All :ref:`searchable fields <search-fields-list>` which aren't multiple  and aren't custom fields are sortable.
-  .. note:: There is no way to sort requests which have size more then 100 contacts. In order to sort results you should
-    set ``per_page`` with number lower or equal 100. We suggest to use
-  ``score`` sorting if ``contain`` type of occurrence or ``keyword`` parameter is used.
+  .. note::
+    There is no way to sort requests which have size more then 100 contacts. In order to sort results you should
+    set ``per_page`` with number lower or equal 100.
+  We suggest to use ``score`` sorting if ``contain`` type of occurrence or ``keyword`` parameter is used.
 
   Information about if field is multiple can be retrieved from fields metadata. There are some notes for special fields:
 
