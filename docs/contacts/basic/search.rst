@@ -812,6 +812,8 @@ Parameters:
     Desired name for saved search.
 **query**
     JSON-encoded valid query.
+**is_imortant**
+    Is this search marked as important
 
 Update saved search with provided id with new values for name and|or query::
     
@@ -823,6 +825,8 @@ Parameters:
     New desired name for saved search.
 **query**
     New JSON-encoded valid query.
+**is_imortant**
+    Is this search marked as important
     
 Remove saved search with provided id::
     
