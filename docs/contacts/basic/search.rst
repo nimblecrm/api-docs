@@ -813,7 +813,7 @@ Parameters:
 **query**
     JSON-encoded valid query.
 **is_imortant**
-    Is this search marked as important
+    Is this search marked as important (1 for important or 0 otherwise)
 
 Update saved search with provided id with new values for name and|or query::
     
@@ -826,7 +826,7 @@ Parameters:
 **query**
     New JSON-encoded valid query.
 **is_imortant**
-    Is this search marked as important
+    Is this search marked as important (1 for important or 0 otherwise)
     
 Remove saved search with provided id::
     
