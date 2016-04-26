@@ -172,7 +172,12 @@ Nimble default fields
      - :ref:`parent company <parent-company-type>`
      - \-
      - N/A
-     - 
+     -
+   * - domain
+     - :ref:`parent company <parent-company-type>`
+     - \-
+     - N/A
+     - Unique. For company contact
    * - source
      - :ref:`default <default-type>`
      - \-
