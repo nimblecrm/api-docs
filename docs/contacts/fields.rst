@@ -90,7 +90,21 @@ Example:
 Parent company
 ~~~~~~~~~~~~~~
 
-Usual string, representing parent company for this person's contact. If company with corresponding name (search are case-insensitie) not found — it will be created. Value record for this field contains additional key ``extra_value``, holding unique ID of parent company. 
+Usual string, representing parent company for this person's contact. If company with corresponding name (search are case-insensitie) not found — it will be created. Value record for this field contains additional key ``extra_value``, holding unique ID of parent company.
+
+
+.. _domain-type:
+
+Domain
+~~~~~~
+
+The domain field. Example: ``nimble.com``.
+This field satisfies the following conditions:
+
+ * Unique in terms of team. It is possible to have only one company record with particular value in the whole account.
+ * Properly formatted. No protocol or path is allowed, it can have 3rd level domain at most.
+ * It can be assigned to company records only
+
 
 .. _dropdown-type:
 
@@ -174,7 +188,7 @@ Nimble default fields
      - N/A
      -
    * - domain
-     - :ref:`parent company <parent-company-type>`
+     - :ref:`domain <domain-type>`
      - \-
      - N/A
      - Unique. For company contact
