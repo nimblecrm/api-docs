@@ -54,7 +54,8 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
 
   .. note::
     There is no way to sort requests which have size more then 100 contacts. In order to sort results you should
-    set ``per_page`` with number lower or equal 100.
+    set ``per_page`` with number less or equal 100.
+
   We suggest to use ``score`` sorting if ``contain`` type of occurrence or ``keyword`` parameter is used.
 
   Information about if field is multiple can be retrieved from fields metadata. There are some notes for special fields:
