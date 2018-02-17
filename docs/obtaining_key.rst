@@ -38,7 +38,7 @@ Terminology
 Prerequisites
 -------------
 In order to create a Client for Nimble API you need to have to register your application in our DB and get Client Secret and Client Id. 
-Its can be done on the page with this link: https://developers.nimble.com/user/register. You probably have done this already.
+Its can be done on the page with this link: https://support.nimble.com/third-party-integrations/nimble-api-access/nimble-api-access. You probably have done this already.
 
 
 Authorization process overview
