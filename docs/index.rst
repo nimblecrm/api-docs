@@ -10,6 +10,7 @@ Contents:
    
    overview.rst
    responses.rst
+   userinfo.rst
    contacts/index.rst
    contacts/fields.rst
    activities/index.rst
