@@ -27,14 +27,14 @@ All parameters are passed as JSON in request body and could be omitted except `s
 
 **due_date**
 
-  Due date for new task. Should be passed in format like "YYYY-MM-DD HOURS:MINUTES". 
+  Due date for new task. Should be passed in format like "YYYY-MM-DDTHOURS:MINUTES:SECONDS". Example: "2013-04-04T13:50:00"
 
 Example:
 
 .. code-block:: javascript
 
     {
-        "due_date": "2013-04-04 13:50",
+        "due_date": "2013-04-04T13:50:00",
         "notes": "Blah blah blah blah \u0440\u0443\u0441\u0441\u043a\u0438\u0439 \u0442\u0435\u043a\u0441\u0442 8168949",
         "related_to": [
             "508a4750084abd28bc00016f"
@@ -56,7 +56,7 @@ Response example
         "related_to": [
             "508a4750084abd28bc00016f"
         ],
-        "due_date": "2013-04-04 13:50",
+        "due_date": "2013-04-04T13:50:00",
         "notes": "Blah blah blah blah \u0440\u0443\u0441\u0441\u043a\u0438\u0439 \u0442\u0435\u043a\u0441\u0442 8168949",
         "id": "5108f1cc837d4e3930e297fb",
         "subject": "Hello task! 2423056"
