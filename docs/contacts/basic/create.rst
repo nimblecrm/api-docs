@@ -39,21 +39,28 @@ Example:
 
     {
         "fields": {
-            "first name": [{
-                "value": "Jack",
-                "modifier": ""
-            }],
-            "last name": [{
-                "value": "Daniels",
-                "modifier": ""
-            }],
-            "phone": [{
-                "modifier": "work",
-                "value": "123123123"
-            }, {
-                "modifier": "work",
-                "value": "2222"
-            }]
+            "first name": [
+                {
+                    "value": "Jack",
+                    "modifier": ""
+                }
+            ],
+            "last name": [
+                {
+                    "value": "Daniels",
+                    "modifier": ""
+                }
+            ],
+            "phone": [
+                {
+                    "modifier": "work",
+                    "value": "123123123"
+                },
+                {
+                    "modifier": "work",
+                    "value": "2222"
+                }
+            ]
         },
         "record_type": "person",
         "tags": "our customers,best"
@@ -77,65 +84,51 @@ On success, server returns response with HTTP code 201 and newly created contact
         "fields": {
             "first name": [
                 {
-                    "field_id": "4eabb0b64fb88d334c000ab6",
-                    "group": "Basic Info",
-                    "label": "first name",
                     "modifier": "",
-                    "value": "Jack"
+                    "value": "Jack",
+                    "label": "first name"
                 }
             ],
             "last name": [
                 {
-                    "field_id": "4eabb0b64fb88d334c000ab8",
-                    "group": "Basic Info",
-                    "label": "last name",
                     "modifier": "",
-                    "value": "Daniels"
+                    "value": "Daniels",
+                    "label": "last name"
                 }
             ],
             "phone": [
                 {
-                    "field_id": "4eabb0b74fb88d334c000ac5",
-                    "group": "Contact Info",
-                    "label": "phone",
                     "modifier": "work",
-                    "value": "123123123"
+                    "value": "123123123",
+                    "label": "phone"
                 },
                 {
-                    "field_id": "4eabb0b74fb88d334c000ac5",
-                    "group": "Contact Info",
-                    "label": "phone",
                     "modifier": "work",
-                    "value": "2222"
+                    "value": "2222",
+                    "label": "phone"
                 }
             ],
             "source": [
                 {
-                    "field_id": "4eabb0b74fb88d334c000ac2",
-                    "group": "Basic Info",
-                    "label": "source",
                     "modifier": "",
-                    "value": "m"
+                    "value": "m",
+                    "label": "source"
                 }
             ]
         },
         "id": "526644c7837d4e249372f091",
         "is_important": null,
         "last_contacted": {
-            "message_id": null,
-            "thread_id": null,
-            "tstamp": null,
-            "user_id": null
+            "user_id": null,
+            "deletion_tstamp": null,
+            "type": null,
+            "object_id": null,
+            "tstamp": null
         },
         "object_type": "contact",
         "owner_id": "4decc6b662100441e200000b",
         "record_type": "person",
         "reminder": null,
-        "social_connections": {
-            "facebook": {},
-            "linkedin": {},
-            "twitter": {}
-        },
         "tags": [
             {
                 "id": "52664434837d4e249372f081",

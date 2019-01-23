@@ -73,16 +73,18 @@ Example:
 
 .. code-block:: javascript
 
-    "facebook": [{
-        "avatar_url": "http://graph.facebook.com/210857648102/picture",
-        "group": "Contact Info",
-        "user_id": "210857648102",
-        "user_name": "Nimble",
-        "modifier": "",
-        "field_id": "4eabb2494fb88d3352011a82",
-        "value": "http://www.facebook.com/nimble",
-        "label": "facebook"
-    }]
+    "facebook": [
+        {
+            "avatar_url": "http://graph.facebook.com/210857648102/picture",
+            "group": "Contact Info",
+            "user_id": "210857648102",
+            "user_name": "Nimble",
+            "modifier": "",
+            "field_id": "4eabb2494fb88d3352011a82",
+            "value": "http://www.facebook.com/nimble",
+            "label": "facebook"
+        }
+    ]
 
 
 .. _parent-company-type:
@@ -122,26 +124,33 @@ Example:
 
 .. code-block:: javascript
 
-    "lead status": [{
-        "field_type": "select-box",
-        "group": "Lead Details",
-        "label": "lead status",
-        "values": [{
-            "id": "1",
-            "value": "Open"
-        }, {
-            "id": "2",
-            "value": "Contacted"
-        }, {
-            "id": "3",
-            "value": "Qualified"
-        }, {
-            "id": "4",
-            "value": "Unqualified"
-        }],
-        "modifier": "",
-        "id": "5049f697a694620a0700008d"
-    }]
+    "lead status": [
+        {
+            "field_type": "select-box",
+            "group": "Lead Details",
+            "label": "lead status",
+            "values": [
+                {
+                    "id": "1",
+                    "value": "Open"
+                },
+                {
+                    "id": "2",
+                    "value": "Contacted"
+                },
+                {
+                    "id": "3",
+                    "value": "Qualified"
+                },
+                {
+                    "id": "4",
+                    "value": "Unqualified"
+                }
+            ],
+            "modifier": "",
+            "id": "5049f697a694620a0700008d"
+        }
+    ]
 
 
 .. _contact-fields:
@@ -400,16 +409,20 @@ Examples:
     
     {
         width: 1,
-        values: [{
-            id: 1,
-            value: "Yes"
-        }, {
-            id: 2,
-            value: "No"
-        }, {
-            id: 3,
-            value: "I don't know"
-        }],
+        values: [
+            {
+                id: 1,
+                value: "Yes"
+            },
+            {
+                id: 2,
+                value: "No"
+            },
+            {
+                id: 3,
+                value: "I don't know"
+            }
+        ],
         type: "select-box"
     }
     

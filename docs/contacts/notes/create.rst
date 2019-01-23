@@ -51,8 +51,21 @@ Response example
         "created": "2012-11-29T10:16:46+0000",
         "contacts": [
             {
-                "id": "508a4750084abd28bc00016f",
-                "name": "Jack Daniels"
+                "avatar_url": "https://app.nimble.com/api/contacts/avatars/5049fb849b85f669e40000dc",
+                "subtitle": "CEO",
+                "name": "Jack Daniels",
+                "contact_type": "person",
+                "phones": [
+                    {
+                        "value": "123456789",
+                        "label": "work"
+                    }
+                ],
+                "title": "CEO",
+                "id": "5c459c56ceee1868ee3ab46f",
+                "email": [
+                    "care@nimble.com"
+                ]
             }
         ],
         "note_preview": "note 1",
