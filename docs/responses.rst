@@ -20,117 +20,113 @@ This field usually contains all data for the contacts you've requested. Here is 
 
 .. code-block:: javascript
 
-    'resources': [{
-        'updated': '2012-09-07T16:49:56+0300',
-        'created': '2012-09-07T16:49:56+0300',
-        'fields': {
-            "parent company": [
+    "resources": [
+        {
+            "updated": "2012-09-07T16:49:56+0300",
+            "created": "2012-09-07T16:49:56+0300",
+            "fields": {
+                "parent company": [
+                    {
+                        "modifier": "",
+                        "extra_value": "5c459c56ceee1868ee3ab468",
+                        "value": "Nimble",
+                        "label": "parent company"
+                    }
+                ],
+                "description": [
+                    {
+                        "value": "description",
+                        "label": "description",
+                        "modifier": "other"
+                    },
+                    {
+                       "value": "description",
+                       "label": "description",
+                       "modifier": "linkedin"
+                    }
+                ],
+                "last name": [
+                    {
+                        "modifier": "",
+                        "value": "Akopyan",
+                        "label": "last name"
+                    }
+                ],
+                "phone": [
+                    {
+                        "modifier": "mobile",
+                        "value": "+7 (917) 202-456-1111",
+                        "label": "phone"
+                    },
+                    {
+                        "modifier": "home",
+                        "value": "+7 244 231 84 22",
+                        "label": "phone"
+                    }
+                ],
+                "URL": [
+                    {
+                        "modifier": "other",
+                        "value": "https://nimble.com",
+                        "label": "URL"
+                    },
+                    {
+                        "modifier": "other",
+                        "value": "https://app.nimble.com",
+                        "label": "URL"
+                    }
+                ],
+                "source": [
+                    {
+                        "modifier": "",
+                        "value": "csv",
+                        "label": "source"
+                    }
+                ],
+                "address": [
+                    {
+                        "modifier": "other",
+                        "value": "{'city': 'Dushanbe', 'street': 'First str. 15', 'zip': '54055', 'country': 'Farganistan'}",
+                        "label": "address"
+                    }
+                ],
+                "email": [
+                    {
+                        "modifier": "other",
+                        "value": "fake_person@nimble.com",
+                        "label": "email"
+                    }
+                ],
+                "first name": [
+                    {
+                        "modifier": "",
+                        "value": "Amayak",
+                        "label": "first name"
+                    }
+                ]
+            },
+            "object_type": "contact",
+            "id": "5049fb849b85f669e40000dc",
+            "last_contacted": {
+                "user_id": "5c459c52ceee1868ee3ab41f",
+                "deletion_tstamp": null,
+                "type": "LCType<message>",
+                "object_id": "ed5afbee-37f5-db6b-7f71-c7d6b8750bbb",
+                "tstamp": "2019-01-22T21:57:30+0000"
+            },
+            "avatar_url": "https://app.nimble.com/api/contacts/avatars/5049fb849b85f669e40000dc",
+            "record_type": "person",
+            "creator": "Emil Kio",
+            "children": [],
+            "tags": [
                 {
-                    "group": "Basic Info",
-                    "name": "parent company",
-                    "label": "parent company",
-                    "modifier": "",
-                    "presentation": {},
-                    "id": "5049f697a694620a0700004d",
-                    "multiples": false
+                    "tag": "csv import",
+                    "id": "5049fa0c9b85f62cb4000639"
                 }
             ],
-            'description': [{
-                "group": "Extra Info",
-                "name": "description",
-                "label": "description",
-                "modifier": "other",
-                "presentation": {},
-                "id": "5049f697a694620a0700007f",
-                "multiples": true
-            }, {
-               "group": "Extra Info",
-               "name": "description",
-               "label": "description",
-               "modifier": "linkedin",
-               "presentation": {},
-               "id": "5049f697a694620a07000082",
-               "multiples": true
-            }],
-            'last name': [{
-                'field_id': '5049f697a694620a07000045',
-                'modifier': '',
-                'group': 'Basic Info',
-                'value': 'Akopyan',
-                'label': 'last name'
-            }],
-            'phone': [{
-                'field_id': '5049f697a694620a07000058',
-                'modifier': 'mobile',
-                'group': 'Contact Info',
-                'value': '+7 (917) 202-456-1111',
-                'label': 'phone'
-            }, {
-                'field_id': '5049f697a694620a07000056',
-                'modifier': 'home',
-                'group': 'Contact Info',
-                'value': '+7 244 231 84 22',
-                'label': 'phone'
-            }],
-            'URL': [{
-                'field_id': '5049f697a694620a0700007d',
-                'modifier': 'other',
-                'group': 'Extra Info',
-                'value': 'https://nimble.com',
-                'label': 'URL'
-            }, {
-                'field_id': '5049f697a694620a0700007d',
-                'modifier': 'other',
-                'group': 'Extra Info',
-                'value': 'https://app.nimble.com',
-                'label': 'URL'
-            }],
-            'source': [{
-                'field_id': '5049f697a694620a0700004f',
-                'modifier': '',
-                'group': 'Basic Info',
-                'value': 'csv',
-                'label': 'source'
-            }],
-            'address': [{
-                'field_id': '5049f697a694620a07000075',
-                'modifier': 'other',
-                'group': 'Contact Info',
-                'value': '{"city": "Dushanbe", "street": "First str. 15", "zip": "54055", "country": "Farganistan"}',
-                'label': 'address'
-            }],
-            'email': [{
-                'field_id': '5049f697a694620a07000065',
-                'modifier': 'other',
-                'group': 'Contact Info',
-                'value': 'fake_person@nimble.com',
-                'label': 'email'
-            }],
-            'first name': [{
-                'field_id': '5049f697a694620a07000043',
-                'modifier': '',
-                'group': 'Basic Info',
-                'value': 'Amayak',
-                'label': 'first name'
-            }]
-        },
-        'object_type': 'contact',
-        'id': '5049fb849b85f669e40000dc',
-        'last_contacted': {
-            'last_contacted': '2012-09-17T11:43:51+0300',,
-            'thread_id': 5049f697a694620a07000062,
-            'message_id': 5049f697a694620a17000075
-        },
-        'avatar_url': 'https://app.nimble.com/api/contacts/avatars/5049fb849b85f669e40000dc'
-        'record_type': 'person',
-        'creator': 'Emil Kio',
-        'children': [],
-        'tags': [{
-            'tag': 'csv import',
-            'id': '5049fa0c9b85f62cb4000639'
-        }],
-        'owner_id': '5049f696a694620a0700001c'
-    }]
+            "owner_id": "5049f696a694620a0700001c"
+        }
+    ]
     
 Here is a description of the response in detail:
 
@@ -152,10 +148,13 @@ Here is a description of the response in detail:
     
 **last_contacted**
     Information about last outbound message to this contact (if any). Contains following fields.
-        * *last_contacted* — timestamp of last outbound message
-        * *thread_id* — unique id of message thread in BSON format
-        * *message_id* — unique id of message in BSON format
-        
+        * *user_id* — unique id of owner in BSON format
+        * *object_id* — id of object of corresponding type in BSON format
+        * *type* — last contacted provider's type
+        * *tstamp* — timestamp of last outbound message
+        * *deletion_tstamp* — timestamp of object deleting
+
+
 **avatar_url**
     URL of image that can be used as contact's avatar. Value of null is used to indicate that contact has no avatar associated.
                     
@@ -185,68 +184,75 @@ Contact's metadata contains information about all basic and custom fields create
 
 .. code-block:: javascript
 
-    'contacts_meta': {
-        'fields': {
-            'first name': [{
-                "group": "Basic Info",
-                "name": "first name",
-                "label": "first name",
-                "modifier": "",
-                "presentation": {},
-                "id": "5049f697a694620a07000043",
-                "multiples": false
-            }],
-                'email': [{
-                "group": "Contact Info",
-                "name": "email",
-                "label": "email",
-                "modifier": "other",
-                "presentation": {},
-                "id": "5049f697a694620a07000065",
-                "multiples": true
-            }, {
-                "group": "Contact Info",
-                "name": "email",
-                "label": "email",
-                "modifier": "personal",
-                "presentation": {},
-                "id": "5049f697a694620a07000064",
-                "multiples": true
-            }],
-            'lead status': [{
-                "group": "Lead Details",
-                "name": "lead status",
-                "label": "lead status",
-                "modifier": "",
-                "presentation": {
-                    "width": "1",
-                    "next_id": "5",
-                    "values": [
-                        {
-                            "id": "1",
-                            "value": "Open"
-                        },
-                        {
-                            "id": "2",
-                            "value": "Contacted"
-                        },
-                        {
-                            "id": "3",
-                            "value": "Qualified"
-                        },
-                        {
-                            "id": "4",
-                            "value": "Unqualified"
-                        }
-                    ],
-                    "type": "select-box"
+    "contacts_meta": {
+        "fields": {
+            "first name": [
+                {
+                    "group": "Basic Info",
+                    "name": "first name",
+                    "label": "first name",
+                    "modifier": "",
+                    "presentation": {},
+                    "id": "5049f697a694620a07000043",
+                    "multiples": false
+                }
+            ],
+            "email": [
+                {
+                    "group": "Contact Info",
+                    "name": "email",
+                    "label": "email",
+                    "modifier": "other",
+                    "presentation": {},
+                    "id": "5049f697a694620a07000065",
+                    "multiples": true
                 },
-                "id": "5049f697a694620a0700008d",
-                "multiples": false
-            }]
+                {
+                    "group": "Contact Info",
+                    "name": "email",
+                    "label": "email",
+                    "modifier": "personal",
+                    "presentation": {},
+                    "id": "5049f697a694620a07000064",
+                    "multiples": true
+                }
+            ],
+            "lead status": [
+                {
+                    "group": "Lead Details",
+                    "name": "lead status",
+                    "label": "lead status",
+                    "modifier": "",
+                    "presentation": {
+                        "width": "1",
+                        "next_id": "5",
+                        "values": [
+                            {
+                                "id": "1",
+                                "value": "Open"
+                            },
+                            {
+                                "id": "2",
+                                "value": "Contacted"
+                            },
+                            {
+                                "id": "3",
+                                "value": "Qualified"
+                            },
+                            {
+                                "id": "4",
+                                "value": "Unqualified"
+                            }
+                        ],
+                        "type": "select-box"
+                    },
+                    "id": "5049f697a694620a0700008d",
+                    "multiples": false
+                }
+            ]
         },
-        'groups': {
-            'Basic Info': {
+        "groups": {
+            "Basic Info": {
                 "name": "Basic Info",
                 "order": [
                     "first name",

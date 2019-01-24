@@ -30,7 +30,7 @@ Example:
 .. code-block:: javascript
 
     {
-        "force": false,
+        "force": false
     }
 
 Response: OK

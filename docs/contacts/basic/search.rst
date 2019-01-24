@@ -36,7 +36,7 @@ Short example of querying all persons with skype “john.doe”:
        "and": [
            {
                "skype id": {
-                   "is": "john.doe",
+                   "is": "john.doe"
                 }
            },
            {
@@ -78,7 +78,7 @@ Let’s define several occurrences:
         "skype id": {
             "is": "john.doe"
         }
-    };
+    },
 
     o2 = {
             "record type": {
@@ -96,7 +96,7 @@ Let’s define several occurrences:
         "created": {
             "range": {
                 "start_date": "2012-02-13",
-                "end_date": "2012-02-23",
+                "end_date": "2012-02-23"
             }
         }
     }
@@ -294,15 +294,18 @@ Search contacts with name, containing "Gal" and tagged with specific tag:
 .. code-block:: javascript
 
     {
-        "and": [{
-            "first name": {
-                "contain": "Gal"
+        "and": [
+            {
+                "first name": {
+                    "contain": "Gal"
+                }
+            },
+            {
+                "tag": {
+                    "is": "csv import2"
+                }
             }
-        }, {
-            "tag": {
-                "is": "csv import2"
-            }
-        }]
+        ]
     }
 
 Search for contacts without values in `city` field::

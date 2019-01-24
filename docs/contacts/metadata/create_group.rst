@@ -39,8 +39,8 @@ On success, server returns response with HTTP code 201 and, newly created, encod
 .. code-block:: javascript
 
      {
-         "name": "grp525496_m",
-         "label": "grp525496_m",
+         "name": "grp123",
+         "label": "grp123",
          "is_standard": false,
          "order": [],
          "type": "both",

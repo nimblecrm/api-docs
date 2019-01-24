@@ -20,17 +20,22 @@ Parameters
 
         {
             "fields": {
-                "first name": [{
-                    "value": "Jack",
-                    "modifier": ''
-                }],
-                "email": [{
-                    "value": "user@nimble.com",
-                    "modifier": "work"
-                }, {
-                    "value": "jack@gmail.com",
-                    "modifier": "personal"
-                }]
+                "first name": [
+                    {
+                        "value": "Jack",
+                        "modifier": ""
+                    }
+                ],
+                "email": [
+                    {
+                        "value": "user@nimble.com",
+                        "modifier": "work"
+                    }, 
+                    {
+                        "value": "jack@gmail.com",
+                        "modifier": "personal"
+                    }
+                ]
             }
         }
     then update it with:
@@ -39,10 +44,12 @@ Parameters
 
         {
             "fields": {
-                "email": [{
-                    "value": "user@nimble.com",
-                    "modifier": "personal"
-                }]
+                "email": [
+                    {
+                        "value": "user@nimble.com",
+                        "modifier": "personal"
+                    }
+                ]
             }
         }
     will update field value with modifier "personal", but leave fields with other modifiers untouched. Result will be: 
@@ -51,17 +58,22 @@ Parameters
 
         {
             "fields": {
-                "first name": [{
-                    "value": "Jack",
-                    "modifier": ''
-                }],
-                "email": [{
-                    "value": "user@nimble.com",
-                    "modifier": "work"
-                }, {
-                    "value": "user@nimble.com",
-                    "modifier": "personal"
-                }]
+                "first name": [
+                    {
+                        "value": "Jack",
+                        "modifier": ""
+                    }
+                ],
+                "email": [
+                    {
+                        "value": "user@nimble.com",
+                        "modifier": "work"
+                    }, 
+                    {
+                        "value": "user@nimble.com",
+                        "modifier": "personal"
+                    }
+                ]
             }
         }
     With ``replace`` parameter set to 1 if contacts that has:
@@ -70,17 +82,22 @@ Parameters
 
         {
             "fields": {
-                "first name": [{
-                    "value": "Jack",
-                    "modifier": ''
-                }],
-                "email": [{
-                    "value": "user@nimble.com",
-                    "modifier": "work"
-                }, {
-                    "value": "jack@gmail.com",
-                    "modifier": "personal"
-                }]
+                "first name": [
+                    {
+                        "value": "Jack",
+                        "modifier": ""
+                    }
+                ],
+                "email": [
+                    {
+                        "value": "user@nimble.com",
+                        "modifier": "work"
+                    }, 
+                    {
+                        "value": "jack@gmail.com",
+                        "modifier": "personal"
+                    }
+                ]
             }
         }
     and then UPDATE with:
@@ -89,10 +106,12 @@ Parameters
 
         {
             "fields": {
-                "email": [{
-                    "value": "user@nimble.com",
-                    "modifier": "personal"
-                }]
+                "email": [
+                    {
+                        "value": "user@nimble.com",
+                        "modifier": "personal"
+                    }
+                ]
             }
         }
     will replace ``email`` fields with all modifiers. Result will be: 
@@ -101,14 +120,18 @@ Parameters
 
         {
             "fields": {
-                "first name": [{
-                    "value": "Jack",
-                    "modifier": ''
-                }],
-                "email": [{
-                    "value": "user@nimble.com",
-                    "modifier": "personal"
-                }]
+                "first name": [
+                    {
+                        "value": "Jack",
+                        "modifier": ""
+                    }
+                ],
+                "email": [
+                    {
+                        "value": "user@nimble.com",
+                        "modifier": "personal"
+                    }
+                ]
             }
         }
 
@@ -132,19 +155,25 @@ Example:
 .. code-block:: javascript
 
     {
-        'fields': {
-            'first name': [{
-                'value': 'Jack',
-                'modifier': ''
-            }],
-            'last name': [{
-                'value': 'Daniels',
-                'modifier': ''
-            }],
-            'phone': [{
-                'value': null,
-                'modifier': 'work'
-            }]
+        "fields": {
+            "first name": [
+                {
+                    "value": "Jack",
+                    "modifier": ""
+                }
+            ],
+            "last name": [
+                {
+                    "value": "Daniels",
+                    "modifier": ""
+                }
+            ],
+            "phone": [
+                {
+                    "value": null,
+                    "modifier": "work"
+                }
+            ]
         }
     }
 
@@ -155,43 +184,45 @@ Updated contact is returned and encoded in the same way that is used in contacts
 .. code-block:: javascript
 
     {
-        'updated': '2012-11-07T16:50:04+0200',
-        'created': '2012-11-07T16:50:04+0200',
-        'fields': {
-            'last name': [{
-                'field_id': '5049f697a694620a07000045',
-                'modifier': '',
-                'group': 'Basic Info',
-                'value': 'Daniels',
-                'label': 'last name'
-            }],
-            'source': [{
-                'field_id': '5049f697a694620a0700004f',
-                'modifier': '',
-                'group': 'Basic Info',
-                'value': 'm',
-                'label': 'source'
-            }],
-            'first name': [{
-                'field_id': '5049f697a694620a07000043',
-                'modifier': '',
-                'group': 'Basic Info',
-                'value': 'Jack',
-                'label': 'first name'
-            }]
+        "updated": "2012-11-07T16:50:04+0200",
+        "created": "2012-11-07T16:50:04+0200",
+        "fields": {
+            "last name": [
+                {
+                    "modifier": "",
+                    "value": "Daniels",
+                    "label": "last name"
+                }
+            ],
+            "source": [
+                {
+                    "modifier": "",
+                    "value": "m",
+                    "label": "source"
+                }
+            ],
+            "first name": [
+                {
+                    "modifier": "",
+                    "value": "Jack",
+                    "label": "first name"
+                }
+            ]
         },
-        'object_type': 'contact',
-        'id': '509a751c262b37af05000011',
-        'last_contacted': {
-            'last_contacted': null,
-            'thread_id': null,
-            'message_id': null
+        "object_type": "contact",
+        "id": "509a751c262b37af05000011",
+        "last_contacted": {
+            "user_id": "5c459c52ceee1868ee3ab41f",
+            "deletion_tstamp": null,
+            "type": "LCType<message>",
+            "object_id": "ed5afbee-37f5-db6b-7f71-c7d6b8750bbb",
+            "tstamp": "2019-01-22T21:57:30+0000"
         },
-        'record_type': 'person',
-        'creator': 'Nimble API test',
-        'children': [],
-        'tags': [],
-        'owner_id': '5049f696a694620a0700001c'
+        "record_type": "person",
+        "creator": "Nimble API test",
+        "children": [],
+        "tags": [],
+        "owner_id": "5049f696a694620a0700001c"
     }
 
 For more details see: :ref:`contact-resources-response`.
