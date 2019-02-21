@@ -73,7 +73,7 @@ You should use this request on step B of :ref:`Authorization Process<auth-proces
 
 **Endpoint**::
 
-   GET https://api.nimble.com/oauth/authorize
+   GET https://app.nimble.com/oauth/authorize
 
 
 **Params**:
@@ -91,7 +91,7 @@ You should use this request on step B of :ref:`Authorization Process<auth-proces
     
 **Example request**::
 
-    GET https://api.nimble.com/oauth/authorize?client_id=5f96b5e9adaxzca93x1213123132&redirect_uri=https%3A%2F%2Fyourportal.com%2Fauth%2Fpassed&response_type=code
+    GET https://app.nimble.com/oauth/authorize?client_id=5f96b5e9adaxzca93x1213123132&redirect_uri=https%3A%2F%2Fyourportal.com%2Fauth%2Fpassed&response_type=code
 
 
 **Successful response**:
@@ -138,7 +138,7 @@ The Client should use the authorization code obtained to request an access token
 
 **Endpoint**::
 
- POST https://api.nimble.com/oauth/token
+ POST https://app.nimble.com/api/oauth/token
 
 
 **Parameters:**
@@ -161,8 +161,8 @@ The Client should use the authorization code obtained to request an access token
 
 **Example Request**::
 
-    POST /oauth/token HTTP/1.1
-    Host: api.nimble.com
+    POST /api/oauth/token HTTP/1.1
+    Host: app.nimble.com
     Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 
     Body : client_id=5f96b5e9a6b7478e15ee574a426aa063&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth&code=LTM4M&grant_type=authorization_code&client_secret=89bb4ffb4f264bff
@@ -179,7 +179,7 @@ The Client should use the authorization code obtained to request an access token
         "token_type": "bearer",
         "expires_in": 599,
         "refresh_token": "515ac59b-6518-49a2-81d6-54f91ee74c4a",
-        "scope": "read write"
+        "scope": "basic"
     }
 
 
@@ -210,7 +210,7 @@ Parameters:
 
 Example Request::
 
-    POST /oauth/token HTTP/1.1
+    POST /api/oauth/token HTTP/1.1
     Host: https://api.nimble.com/
     Content-Type: application/x-www-form-urlencoded; charset=UTF-8
     
