@@ -11,6 +11,7 @@ Contents:
    overview.rst
    responses.rst
    userinfo.rst
+   company/index.rst
    contacts/index.rst
    contacts/fields.rst
    activities/index.rst
