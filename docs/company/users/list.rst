@@ -26,3 +26,5 @@ On success, server returns response with HTTP code 200
             }
         ]
     }
+    
+Where **users** is an array with short information about all users in this Nimble account (the response will include disabled users too, please refer to **is_active** flag). 
