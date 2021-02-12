@@ -72,7 +72,7 @@ Response example
        "notes" : "description 2",
        "owner" : {
           "avatar_url" : null,
-          "email" : "antonn@nimble.com",
+          "email" : "person@nimble.com",
           "is_active" : true,
           "name" : "fname lname",
           "user_id" : "6010abc0f92ea1334da2fe5c"
