@@ -22,7 +22,7 @@ All parameters are optional. Unrecognized parameters are ignored. Unrecognized v
 
 **meta** — default: 0
     When included and equal to 1, the meta parameter will add an additional component to the response which describes all fields, 
-    field types, and possible values available on the record. For further reference see :ref:`contacts-meta-response`. 
+    field types, and possible values available on the record. For further reference see :ref:`legacy_contacts-meta-response`.
 
 **fields** — default: all fields in contact
     Specifies a comma separated list of fields to return. If this parameter is excluded, all fields will be returned. 

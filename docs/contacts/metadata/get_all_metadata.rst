@@ -10,5 +10,5 @@ API endpoint::
 
 Response: OK
 ---------------
-Call to this API endpoint will return :ref:`metadata information<contacts-meta-response>`.
+Call to this API endpoint will return :ref:`metadata information<legacy_contacts-meta-response>`.
 

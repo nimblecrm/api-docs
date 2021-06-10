@@ -175,10 +175,10 @@ Here is a description of the response in detail:
 **owner_id**
     Id of the person owning the contact in BSON format
         
-.. _contacts-meta-response:
+.. _legacy_contacts-meta-response:
 
-Contacts metadata
-~~~~~~~~~~~~~~~~~
+Legacy contacts metadata
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Contact's metadata contains information about all basic and custom fields created in Nimble for a user. Below is it's typical structure. Please note that this listing doesn't contain all metadata as the full list is very big.  The typical records are shown here. All default contact fields are :ref:`described here <contact-fields>`.
 
@@ -284,7 +284,7 @@ Here is a description of the response in detail:
         * *modifier* — name of the field's modifier
         * *id* — unique id of the field in BSON format
         * *multiples* - indicates whether field could have multiple values (under different modifiers).
-        * *presentation* - dict with the information which should help to display this field on client. More details are at :ref:`described here <field-presentations>`.
+        * *presentation* - dict with the information which should help to display this field on client. More details are at :ref:`described here <legacy-field-presentations>`.
     
 **groups**
     Information about field groups. Represented by dictionary where keys are unique group names and values are dictionaries with more info. ``Basic Info`` represents typical group, and all default groups :ref:`described here <field-groups>`. Groups info dictionary contains following fields:
@@ -294,6 +294,85 @@ Here is a description of the response in detail:
         * *label* — unique name representing the field in human-readable form.
         * *is_standard* - whether this group belongs to standard Nimble groups.
         * *type* - type (belonging) of group, could be among ``person``, ``company``, ``both``.
+
+.. _contacts-meta-response:
+
+Contacts metadata
+~~~~~~~~~~~~~~~~~
+
+Contact's metadata contains information about all basic and custom fields created in Nimble for a user. Below is it's typical structure. All default contact fields are :ref:`described here <contact-fields>`.
+
+.. code-block:: javascript
+
+    {
+      "tabs": [
+        {
+          "tab_id": "string",
+          "tab_name": "string",
+          "contact_types": "person",
+          "is_standard": true,
+          "members": [
+            {
+              "type": "group",
+              "name": "string",
+              "group_id": "string",
+              "logo_id": "string",
+              "fields": [
+                {
+                  "type": "field",
+                  "name": "string",
+                  "field_id": "string",
+                  "modifier": "string",
+                  "multiples": true,
+                  "read_only": true,
+                  "field_type": {
+                    "field_kind": "string",
+                    "validation_rule": {
+                      "type": "email"
+                    }
+                  },
+                  "presentation": {
+                    "number_type": "integer"
+                  },
+                  "available_actions": "edit_all"
+                }
+              ]
+            }
+          ],
+          "available_actions": "edit_all"
+        }
+      ]
+    }
+
+Here is a description of the response in detail:
+
+**tabs**
+        * *tab_id* — unique id of the tab.
+        * *tab_name* — name representing the tab in human-readable form.
+        * *contact_types* — contact types that could have fields of the tab. Possible values: ``person``, ``company``
+        * *is_standard* — whether this tab belongs to standard Nimble tabs.
+        * *available_actions* - Possible values: ``edit_all``, ``rearrange_only``, ``view_only``.
+        * *members* - list of tab members. Its could be groups and fields without groups.
+
+
+**groups**
+        * *type* — tab member type. It is always "group" here.
+        * *name* — name representing group in human-readable form.
+        * *group_id* — unique id of the group.
+        * *logo_id* — id of logo to show
+        * *is_standard* - whether this group belongs to standard Nimble groups.
+        * *fields* - list of fields contained in group.
+
+**fields**
+        * *type* — tab member type. It is always "field" here.
+        * *name* — name representing field in human-readable form.
+        * *field_id* — unique id of the field.
+        * *modifier* — name of the field's modifier
+        * *multiples* - indicates whether field could have multiple values (under different modifiers).
+        * *read_only* - if field values available for editing
+        * *field_type* - sadsadsad
+        * *presentation* - sadsadsad
+        * *available_actions* - sadsadsad
 
 .. _contact-list-response:
 

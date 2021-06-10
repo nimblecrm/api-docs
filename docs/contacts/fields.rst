@@ -378,10 +378,10 @@ Nimble default field groups
         * lead type,
 
 
-.. _field-presentations:
+.. _legacy-field-presentations:
 
-Nimble fields presentation
---------------------------
+Nimble fields presentation (Deprecated)
+---------------------------------------
 
 To control, how contacts will look in Nimble, special parameter ``presentation`` included in fields metadata. Usually it is a dictionary with 2 fields:
 
@@ -396,34 +396,39 @@ To control, how contacts will look in Nimble, special parameter ``presentation``
 * **width** — integer value of 1 or 2, represents, how many columns will this field occupy in Nimble.
 
 
+.. _field-presentations:
+
+Nimble fields presentation
+--------------------------
+
+To control, how contacts will look in Nimble, special parameter ``presentation`` included in fields metadata. Usually it is a dictionary with few fields. You can change presentation after field creation
+
+.. _field-type:
+
+Nimble fields type
+--------------------------
+
+Show data about field type. You can't change it after creation. It is a dictionary with at least one field - field_kind.
+
+* **field_kind** — represents type of field in nimble. It can have one of the following values:
+
+    * string — simple field with one line of text
+    * long_string — field, containing multiline text
+    * choice — drop-down list with predefined values, require additional parameter ``values``.
+    * number
+    * datetime
+    * boolean
+    * address — field with address, that will allow input of address in Nimble default format
+    * attachment
+    * user
+    * employment
+
+
 Examples: 
 
 .. code-block:: javascript
     
-    {
-        width: 1,
-        type: "single-line-text-box"
+    "field_type": {
+        "field_kind": "string",
+        "validation_rule": {"type": "email"}
     }
-    
-.. code-block:: javascript
-    
-    {
-        width: 1,
-        values: [
-            {
-                id: 1,
-                value: "Yes"
-            },
-            {
-                id: 2,
-                value: "No"
-            },
-            {
-                id: 3,
-                value: "I don't know"
-            }
-        ],
-        type: "select-box"
-    }
-    
-  

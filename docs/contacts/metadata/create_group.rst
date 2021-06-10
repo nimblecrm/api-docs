@@ -6,46 +6,43 @@ Request
 -------
 Example::
 
-    POST https://api.nimble.com/api/v1/contacts/metadata/groups
+    POST https://api.nimble.com/api/v1/contacts/fields/groups
 
 Parameters
 ----------
 
 All parameters are passed as JSON in request body. All parameters are mandatory.
 
-**type**
-
-    type of fields group (only for contacts persons, only for companies or for both). Possible types are: `person`, `company`, `both`.
-
 **name**
 
     name for new fields group.
 
-    .. note:: Name should be unique.
+**insert_after**
+
+    If not null, inserts a new group after another group or field with specified id. If null, then tab is inserted as the first one
+
+**logo_id**
+
+    id of logo to show
+
+**tab_id**
+
+    id of fields tab, new group should belong to.
 
 Example:
 
 .. code-block:: javascript
 
     {
-        "type": "both",
-        "name": "grp123"
+      "insert_after": "string",
+      "logo_id": "string",
+      "name": "string",
+      "tab_id": "string"
     }
 
 Response: OK
 ------------
-On success, server returns response with HTTP code 201 and, newly created, encoded fields group.
-
-.. code-block:: javascript
-
-     {
-         "name": "grp123",
-         "label": "grp123",
-         "is_standard": false,
-         "order": [],
-         "type": "both",
-         "id": "50cf3ecce5ef833f4f000341"
-     }
+On success, server returns response with HTTP code 200 and fields metadata with newly created group.
 
 Response: Errors
 ----------------

@@ -6,7 +6,7 @@ Request
 -------
 Example::
 
-    DELETE https://api.nimble.com/api/v1/contacts/metadata/fields/<field_id>
+    DELETE https://api.nimble.com/api/v1/contacts/fields/<field_id>
 
 Parameters
 ----------
@@ -19,19 +19,9 @@ Parameters
 
 Other (single one) parameters are passed as JSON in request body.
 
-**force**
+**preflight_checks**
 
-    boolean, this parameter indicated whether we want to remove field even if it has values across some contacts.
-
-    If this parameter omitted in request it will counted as false.
-
-Example:
-
-.. code-block:: javascript
-
-    {
-        "force": true
-    }
+    boolean, this parameter indicated whether we want check if field has values across some contacts.
 
 Response: OK
 ------------

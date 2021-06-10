@@ -6,7 +6,7 @@ Request
 -------
 Example::
 
-    DELETE https://api.nimble.com/api/v1/contacts/metadata/groups/<group_id>
+    DELETE https://api.nimble.com/api/v1/contacts/fields/groups/<group_id>
 
 Parameters
 ----------
@@ -19,19 +19,9 @@ Parameters
 
 Other (single one) parameters are passed as JSON in request body.
 
-**force**
+**preflight_checks**
 
-    boolean, this parameter indicated whether we want to remove group even if it has some fields within itself.
-
-    If this parameter omitted in request it will counted as false.
-
-Example:
-
-.. code-block:: javascript
-
-    {
-        "force": false
-    }
+    boolean, this parameter indicated whether we want check if fields in this group has values across some contacts.
 
 Response: OK
 ------------
