@@ -378,24 +378,6 @@ Nimble default field groups
         * lead type,
 
 
-.. _legacy-field-presentations:
-
-Nimble fields presentation (Deprecated)
----------------------------------------
-
-To control, how contacts will look in Nimble, special parameter ``presentation`` included in fields metadata. Usually it is a dictionary with 2 fields:
-
-* **type** — represents type of field in nimble. It can have one of the following values:
-
-    * single-line-text-box — simple field with one line of text
-    * multi-line-text-box — field, containing multiline text
-    * select-box — drop-down list with predefined values, require additional parameter ``values``, containing list of dictionaries, representing list items (see examples below)
-    * separator — separator with heading, that could be used for logical fields grouping
-    * address — field with address, that will allow input of address in Nimble default format
-
-* **width** — integer value of 1 or 2, represents, how many columns will this field occupy in Nimble.
-
-
 .. _field-presentations:
 
 Nimble fields presentation

@@ -284,7 +284,7 @@ Here is a description of the response in detail:
         * *modifier* — name of the field's modifier
         * *id* — unique id of the field in BSON format
         * *multiples* - indicates whether field could have multiple values (under different modifiers).
-        * *presentation* - dict with the information which should help to display this field on client. More details are at :ref:`described here <legacy-field-presentations>`.
+        * *presentation* - dict with the information which should help to display this field on client.
     
 **groups**
     Information about field groups. Represented by dictionary where keys are unique group names and values are dictionaries with more info. ``Basic Info`` represents typical group, and all default groups :ref:`described here <field-groups>`. Groups info dictionary contains following fields:
