@@ -19,7 +19,7 @@ All parameters are passed as JSON in request body.
 
     .. note:: Name should be unique.
 
-**type**
+**field_type**
 
     dictionary describing field type. More details are at :ref:`described here <field-type>`.
 
@@ -46,10 +46,7 @@ Example:
 
     {
   "field_type": {
-    "field_kind": "string",
-    "validation_rule": {
-      "type": "email"
-    }
+    "field_kind": "string"
   },
   "group_id": "string",
   "insert_after": "string",
@@ -87,10 +84,7 @@ On success, server returns response with HTTP code 200 and fields metadata with 
           "multiples": true,
           "read_only": true,
           "field_type": {
-            "field_kind": "string",
-            "validation_rule": {
-              "type": "email"
-            }
+            "field_kind": "string"
           },
           "presentation": {
             "number_type": "integer"

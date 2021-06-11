@@ -401,7 +401,60 @@ To control, how contacts will look in Nimble, special parameter ``presentation``
 Nimble fields presentation
 --------------------------
 
-To control, how contacts will look in Nimble, special parameter ``presentation`` included in fields metadata. Usually it is a dictionary with few fields. You can change presentation after field creation
+To control, how contacts will look in Nimble, special parameter ``presentation`` included in fields metadata. Usually it is a dictionary with few fields. You can change presentation after field creation. Must match to corresponding field_type. Date and number fields must have an appropriate presentation. There is no presentation for other types
+
+* Date presentation:
+
+    * date_format — strftime-like format template as described in https://docs.python.org/2.7/library/datetime.html#strftime-and-strptime-behavior or null if client should use date format from user settings
+    * ignore_specific_time — show if time should be presented in the field. Applicable only if date_format is None. Must be null if date_format specified
+
+    Examples:
+
+    .. code-block:: javascript
+
+        "presentation": {
+            "date_format": null,
+            "ignore_specific_time": false
+        }
+
+    .. code-block:: javascript
+
+        "presentation": {
+            "date_format": "%Y-%m-%dT%H:%M:%S",
+            "ignore_specific_time": null
+        }
+* Number presentation:
+
+    * number_type — possible values: "integer", "decimal", "percentage", "financial"
+    * fraction_digits — integer >= 1 that shows count of digits after comma. Applicable for decimal and percentage only.
+
+    Examples:
+
+    .. code-block:: javascript
+
+        "presentation": {
+            "number_type": "integer",
+        }
+
+    .. code-block:: javascript
+
+        "presentation": {
+           "number_type": "decimal",
+           "fraction_digits": 2
+        }
+
+    .. code-block:: javascript
+
+        "presentation": {
+           "number_type": "percentage",
+           "fraction_digits": 1
+        }
+    .. code-block:: javascript
+
+        "presentation": {
+           "number_type": "financial"
+        }
+
 
 .. _field-type:
 
@@ -414,14 +467,12 @@ Show data about field type. You can't change it after creation. It is a dictiona
 
     * string — simple field with one line of text
     * long_string — field, containing multiline text
-    * choice — drop-down list with predefined values, require additional parameter ``values``.
-    * number
-    * datetime
-    * boolean
+    * choice — drop-down list with predefined values, require additional parameter ``values``. Value of the field contains id of one of choice values
+    * number - field with integer or decimal number
+    * datetime - string formatted in ISO 8601
+    * boolean - field with true/false value
     * address — field with address, that will allow input of address in Nimble default format
-    * attachment
-    * user
-    * employment
+    * user - field, containing id of the Nimble user
 
 
 Examples: 
@@ -429,6 +480,15 @@ Examples:
 .. code-block:: javascript
     
     "field_type": {
-        "field_kind": "string",
-        "validation_rule": {"type": "email"}
+        "field_kind": "string"
+    }
+
+.. code-block:: javascript
+
+    "field_type": {
+        "field_kind": "choice",
+        "values": {
+            "ordering_type": "ordinal",
+            "values": [{"id": "string", "value": "string"}]
+        }
     }

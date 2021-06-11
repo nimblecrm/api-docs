@@ -351,7 +351,7 @@ Here is a description of the response in detail:
         * *tab_name* — name representing the tab in human-readable form.
         * *contact_types* — contact types that could have fields of the tab. Possible values: ``person``, ``company``
         * *is_standard* — whether this tab belongs to standard Nimble tabs.
-        * *available_actions* - Possible values: ``edit_all``, ``rearrange_only``, ``view_only``.
+        * *available_actions* - possible values: ``edit_all``, ``rearrange_only``, ``view_only``.
         * *members* - list of tab members. Its could be groups and fields without groups.
 
 
@@ -370,9 +370,14 @@ Here is a description of the response in detail:
         * *modifier* — name of the field's modifier
         * *multiples* - indicates whether field could have multiple values (under different modifiers).
         * *read_only* - if field values available for editing
-        * *field_type* - sadsadsad
-        * *presentation* - sadsadsad
-        * *available_actions* - sadsadsad
+        * *field_type* - dictionary describing field type. More details are at :ref:`described here <field-type>`.
+        * *presentation* - dictionary describing how field should be presented in Nimble client. More details are at :ref:`described here <field-presentations>`.
+        * *available_actions* - possible values: ``edit_all``, ``edit_choices_only``, ``view_only``.
+
+The image below shows schema of fields metadata. Blue rectangle - tab, green rectangle - group, red rectangle - field. As you can see, fields could be a member of a tab or a group.
+
+.. image:: images/fields_metadata.png
+   :align: center
 
 .. _contact-list-response:
 
