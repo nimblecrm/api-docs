@@ -1,43 +1,230 @@
 =================================================
 Full description of Nimble default contact fields
-================================================= 
-
-.. _field-types:
-
-Field types
------------
-
-Here described basic field types in Nimble. For full list of Nimble default fields — :ref:`see below<contact-fields>`. 
+=================================================
 
 .. _default-type:
 
 Default fields
 ~~~~~~~~~~~~~~
 
-Simple text fields, like ``first name``, ``last name``, ``title``, ``description``, etc. 
-
-.. _address-type:
-
-Address
-~~~~~~~
-
-All values represented as dictionary with following keys: ``street``, ``city``, ``state``, ``zip``, ``country``. This dictionary should be dumped to JSON string, and this string should be used as field's value.
-
-Example:
-
-.. code-block:: javascript
-
-    {
-        "type": "person",
-        "fields": {
-            "address": [{
-                "value": "{\"street\":\"Test\", \"city\":\"Testing\", \"country\":\"Togo\"}",
-                "modifier": "other"
-            }]
-        }
-    }
+Simple text fields, like ``first name``, ``last name``, ``title``, ``description``, etc.
 
 
+.. _contact-fields:
+
+Nimble default fields
+---------------------
+.. list-table:: Full list of Nimble standard fields
+   :widths: 15 15 5 15 45
+   :header-rows: 1
+
+   * - Field Name
+     - Type
+     - Multiple field
+     - Modificators
+     - Notes
+   * - first name
+     - :ref:`default <default-type>`
+     - \-
+     - N/A
+     - For person contact
+   * - last name
+     - :ref:`default <default-type>`
+     - \-
+     - N/A
+     - For person contact
+   * - middle name
+     - :ref:`default <default-type>`
+     - \-
+     - N/A
+     -
+   * - company name
+     - :ref:`default <default-type>`
+     - \-
+     - N/A
+     - For company contact
+   * - title
+     - :ref:`default <default-type>`
+     - \-
+     - N/A
+     -
+   * - parent company
+     - :ref:`parent company <parent-company-type>`
+     - \-
+     - N/A
+     -
+   * - domain
+     - :ref:`domain <domain-type>`
+     - \-
+     - N/A
+     - Unique. For company contact
+   * - phone
+     - :ref:`default <default-type>`
+     - \+
+     - * work
+       * home
+       * mobile
+       * main
+       * home fax
+       * work fax
+       * other
+     -
+   * - email
+     - :ref:`default <default-type>`
+     - \+
+     - * work
+       * personal
+       * other
+     -
+   * - skype id
+     - :ref:`default <default-type>`
+     - \+
+     - N/A
+     -
+   * - twitter
+     - :ref:`social <social-type>`
+     - \+
+     - N/A
+     -
+   * - facebook
+     - :ref:`social <social-type>`
+     - \+
+     - N/A
+     -
+   * - linkedin
+     - :ref:`social <social-type>`
+     - \+
+     - N/A
+     -
+   * - google plus
+     - :ref:`social <social-type>`
+     - \+
+     - N/A
+     -
+   * - foursquare
+     - :ref:`social <social-type>`
+     - \+
+     - N/A
+     -
+   * - address
+     - :ref:`address <address-type>`
+     - \+
+     - * work
+       * home
+       * other
+     -
+   * - hubspot
+     - :ref:`default <default-type>`
+     - \-
+     - N/A
+     -
+   * - URL
+     - :ref:`default <default-type>`
+     - \+
+     - * work
+       * personal
+       * blog
+       * other
+     -
+   * - description
+     - :ref:`default <default-type>`
+     - \+
+     - * other
+       * twitter
+       * facebook
+       * linkedin
+       * google+
+       * foursquare
+     - If possible, fetches descriptions from social networks
+   * - annual revenue
+     - :ref:`default <default-type>`
+     - \-
+     - N/A
+     -
+   * - # of employees
+     - :ref:`dropdown <dropdown-type>`
+     - \-
+     - N/A
+     -
+   * - lead status
+     - :ref:`dropdown <dropdown-type>`
+     - \-
+     - N/A
+     -
+   * - rating
+     - :ref:`dropdown <dropdown-type>`
+     - \-
+     - N/A
+     -
+   * - lead source
+     - :ref:`dropdown <dropdown-type>`
+     - \-
+     - N/A
+     - 
+   * - lead type
+     - :ref:`dropdown <dropdown-type>`
+     - \-
+     - N/A
+     - 
+   * - birthday
+     - :ref:`default <default-type>`
+     - \-
+     - N/A
+     - 
+
+.. _field-tabs:
+
+Nimble default field tabs
+--------------------------
+
+.. list-table:: Nimble default field tabs
+   :widths: 10 20 15
+   :header-rows: 1
+
+   * - Tab Name
+     - Description
+     - Fields
+   * - Personal Info
+     - Personal contact's details
+     - * first name,
+       * last name,
+       * middle name,
+       * title,
+       * parent company,
+       * birthday
+       * employment
+   * - Company Info
+     - Extended information about contact's company
+     - * annual revenue,
+       * company name,
+       * domain,
+       * # of employees
+   * - Contact Info
+     - How to reach this contact
+     - * phone,
+       * email,
+       * skype id,
+       * twitter,
+       * facebook,
+       * linkedin,
+       * google+,
+       * foursquare,
+       * address,
+       * description,
+       * URL,
+       * hubspot
+   * - Lead Details
+     - Information about contact as lead
+     -  * rating,
+        * lead stage
+   * - Additional Lead Fields
+     - Legacy fields
+     -  * lead status,
+        * lead source,
+        * lead type
+   * - Extra Info
+     - Contact's extended information
+     - * Files
 .. _social-type:
 
 Social fields
@@ -110,273 +297,43 @@ This field satisfies the following conditions:
 
 .. _dropdown-type:
 
-Dropdown fields
-~~~~~~~~~~~~~~~
 
-Fields, showing as drop-down lists in Nimble. In metadata they have ``field_type`` equal ``select-box``. Also, their metadata contains field ``values``, representing drop-down content. This field contains list of dictionaries, having two keys:
+.. _field-type:
 
-**id**
-    Value, to be stored in field
-**value**
-    String, corresponding to this value
+Nimble fields type
+--------------------------
 
-Example:
+Show data about field type. You can't change it after creation. It is a dictionary with at least one field - field_kind.
+
+* **field_kind** — represents type of field in nimble. It can have one of the following values:
+
+    * string — simple field with one line of text
+    * long_string — field, containing multiline text
+    * choice — drop-down list with predefined values, require additional parameter ``values``. Value of the field contains id of one of choice values
+    * number - field with integer or decimal number
+    * datetime - string formatted in ISO 8601
+    * boolean - field with true/false value
+    * address — field with address, that will allow input of address in Nimble default format
+    * user - field, containing id of the Nimble user
+
+
+Examples:
 
 .. code-block:: javascript
 
-    "lead status": [
-        {
-            "field_type": "select-box",
-            "group": "Lead Details",
-            "label": "lead status",
-            "values": [
-                {
-                    "id": "1",
-                    "value": "Open"
-                },
-                {
-                    "id": "2",
-                    "value": "Contacted"
-                },
-                {
-                    "id": "3",
-                    "value": "Qualified"
-                },
-                {
-                    "id": "4",
-                    "value": "Unqualified"
-                }
-            ],
-            "modifier": "",
-            "id": "5049f697a694620a0700008d"
+    "field_type": {
+        "field_kind": "string"
+    }
+
+.. code-block:: javascript
+
+    "field_type": {
+        "field_kind": "choice",
+        "values": {
+            "ordering_type": "ordinal",
+            "values": [{"id": "string", "value": "string"}]
         }
-    ]
-
-
-.. _contact-fields:
-
-Nimble default fields
----------------------
-.. list-table:: Full list of Nimble default fields
-   :widths: 15 15 5 15 45
-   :header-rows: 1
-
-   * - Field Name
-     - Type
-     - Multiple field
-     - Modificators
-     - Notes
-   * - first name
-     - :ref:`default <default-type>`
-     - \-
-     - N/A
-     - For person contact
-   * - last name
-     - :ref:`default <default-type>`
-     - \- 
-     - N/A
-     - For person contact
-   * - middle name
-     - :ref:`default <default-type>`
-     - \- 
-     - N/A
-     - 
-   * - company name
-     - :ref:`default <default-type>`
-     - \- 
-     - N/A
-     - For company contact
-   * - title
-     - :ref:`default <default-type>`
-     - \-
-     - N/A
-     - 
-   * - parent company
-     - :ref:`parent company <parent-company-type>`
-     - \-
-     - N/A
-     -
-   * - domain
-     - :ref:`domain <domain-type>`
-     - \-
-     - N/A
-     - Unique. For company contact
-   * - source
-     - :ref:`default <default-type>`
-     - \-
-     - N/A
-     - Source of this contact (import, manual creation, etc.)
-   * - last contacted
-     - outdated
-     - \-
-     - N/A
-     - Replaced by corresponding field in contact resource
-   * - phone
-     - :ref:`default <default-type>`
-     - \+
-     - * work
-       * home
-       * mobile
-       * main
-       * home fax
-       * work fax
-       * other
-     - 
-   * - email
-     - :ref:`default <default-type>`
-     - \+
-     - * work
-       * personal
-       * other
-     - 
-   * - skype id
-     - :ref:`default <default-type>`
-     - \+
-     - N/A
-     -
-   * - twitter
-     - :ref:`social <social-type>`
-     - \+
-     - N/A
-     -
-   * - facebook
-     - :ref:`social <social-type>`
-     - \+
-     - N/A
-     -
-   * - linkedin
-     - :ref:`social <social-type>`
-     - \+
-     - N/A
-     -
-   * - google plus
-     - :ref:`social <social-type>`
-     - \+
-     - N/A
-     -
-   * - foursquare
-     - :ref:`social <social-type>`
-     - \+
-     - N/A
-     -
-   * - address
-     - :ref:`address <address-type>`
-     - \+
-     - * work
-       * home
-       * other
-     - 
-   * - hubspot
-     - :ref:`default <default-type>`
-     - \-  
-     - N/A
-     -
-   * - URL
-     - :ref:`default <default-type>`
-     - \+
-     - * work
-       * personal
-       * blog
-       * other
-     - 
-   * - description
-     - :ref:`default <default-type>`
-     - \+
-     - * other
-       * twitter
-       * facebook
-       * linkedin
-       * google+
-       * foursquare
-     - If possible, fetches descriptions from social networks
-   * - annual revenue
-     - :ref:`default <default-type>`
-     - \-
-     - N/A
-     - 
-   * - # of employees
-     - :ref:`dropdown <dropdown-type>`
-     - \-
-     - N/A
-     - 
-   * - lead status
-     - :ref:`dropdown <dropdown-type>`
-     - \-
-     - N/A
-     - 
-   * - rating
-     - :ref:`dropdown <dropdown-type>`
-     - \-
-     - N/A
-     - 
-   * - lead source
-     - :ref:`dropdown <dropdown-type>`
-     - \-
-     - N/A
-     - 
-   * - lead type
-     - :ref:`dropdown <dropdown-type>`
-     - \-
-     - N/A
-     - 
-   * - birthday
-     - :ref:`default <default-type>`
-     - \-
-     - N/A
-     - 
-
-.. _field-groups:
-
-Nimble default field groups
----------------------------
-
-.. list-table:: Nimble default field groups
-   :widths: 10 20 15
-   :header-rows: 1
-
-   * - Group Name
-     - Description
-     - Fields
-   * - Basic info
-     - Contact's basic info
-     - * first name, 
-       * last name,
-       * middle name,
-       * company name,
-       * title,
-       * parent company,
-       * source,
-       * last contacted
-   * - Personal Info    
-     - Personal contact's details
-     - * birthday
-   * - Extra Info
-     - Contact's extended information 
-     - * URL,
-       * description
-   * - Contact Info
-     - How to reach this contact
-     - * phone,
-       * email,
-       * skype id,
-       * twitter,
-       * facebook,
-       * linkedin,
-       * google+,
-       * foursquare,
-       * address,
-       * hubspot
-   * - Company Info
-     - Extended information about contact's company
-     - * annual revenue,
-       * # of employees
-   * - Lead Details
-     - Information abut contact as lead
-     -  * lead status,
-        * rating,
-        * lead source,
-        * lead type,
-
+    }
 
 .. _field-presentations:
 
@@ -438,39 +395,118 @@ To control, how contacts will look in Nimble, special parameter ``presentation``
         }
 
 
-.. _field-type:
 
-Nimble fields type
---------------------------
+Dropdown fields (Choice type)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Show data about field type. You can't change it after creation. It is a dictionary with at least one field - field_kind.
+Fields, showing as drop-down lists in Nimble. In metadata they have ``field_type`` equal ``choice``. Also, their metadata contains field ``values``, representing drop-down content. This field contains list of dictionaries, having two keys:
 
-* **field_kind** — represents type of field in nimble. It can have one of the following values:
+**id**
+    Value, to be stored in field
+**value**
+    String, corresponding to this value
 
-    * string — simple field with one line of text
-    * long_string — field, containing multiline text
-    * choice — drop-down list with predefined values, require additional parameter ``values``. Value of the field contains id of one of choice values
-    * number - field with integer or decimal number
-    * datetime - string formatted in ISO 8601
-    * boolean - field with true/false value
-    * address — field with address, that will allow input of address in Nimble default format
-    * user - field, containing id of the Nimble user
-
-
-Examples: 
+Example:
 
 .. code-block:: javascript
-    
-    "field_type": {
-        "field_kind": "string"
+
+    {
+  "read_only": false,
+  "field_type": {
+    "values": {
+      "ordering_type": "ordinal",
+      "values": [
+        {
+          "id": "1",
+          "value": "Analyst"
+        },
+        {
+          "id": "2",
+          "value": "Competitor"
+        },
+        {
+          "id": "3",
+          "value": "Customer"
+        },
+        {
+          "id": "4",
+          "value": "Investor"
+        },
+        {
+          "id": "5",
+          "value": "Lead"
+        },
+        {
+          "id": "6",
+          "value": "Partner"
+        },
+        {
+          "id": "7",
+          "value": "Press"
+        },
+        {
+          "id": "8",
+          "value": "Prospect"
+        },
+        {
+          "id": "9",
+          "value": "Reseller"
+        },
+        {
+          "id": "10",
+          "value": "Other"
+        },
+        {
+          "id": "12",
+          "value": "7"
+        }
+      ]
+    },
+    "field_kind": "choice"
+  },
+  "name": "lead type",
+  "available_actions": "edit_choices_only",
+  "field_id": "6023b729ec8d835bb32ee4c9",
+  "modifier": "",
+  "type": "field",
+  "multiples": false
     }
 
+.. _address-type:
+
+Address
+~~~~~~~
+
+All values represented as dictionary with following keys: ``street``, ``city``, ``state``, ``zip``, ``country``. This dictionary should be dumped to JSON string, and this string should be used as field's value.
+
+Example:
+
 .. code-block:: javascript
 
-    "field_type": {
-        "field_kind": "choice",
-        "values": {
-            "ordering_type": "ordinal",
-            "values": [{"id": "string", "value": "string"}]
+    {
+        "type": "person",
+        "fields": {
+            "address": [{
+                "value": "{\"street\":\"Test\", \"city\":\"Testing\", \"country\":\"Togo\"}",
+                "modifier": "other"
+            }]
         }
     }
+
+
+User
+~~~~
+
+
+Field, containing id of the Nimble user.
+Example of value:
+
+.. code-block:: javascript
+
+    [
+      {
+        "is_primary": false,
+        "modifier": "",
+        "value": "602aaa34f92ea11bb5cebae1",
+      }
+    ]

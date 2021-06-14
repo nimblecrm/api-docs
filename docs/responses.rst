@@ -287,7 +287,7 @@ Here is a description of the response in detail:
         * *presentation* - dict with the information which should help to display this field on client.
     
 **groups**
-    Information about field groups. Represented by dictionary where keys are unique group names and values are dictionaries with more info. ``Basic Info`` represents typical group, and all default groups :ref:`described here <field-groups>`. Groups info dictionary contains following fields:
+    Information about field groups. Represented by dictionary where keys are unique group names and values are dictionaries with more info. Groups info dictionary contains following fields:
         * *id* — unique id of the group in BSON format.
         * *order* — list containing names of the fields as they appeared in group.
         * *name* — unique name of the group. (Outdated: as we have field name as the key of ``groups`` dictionary.)
