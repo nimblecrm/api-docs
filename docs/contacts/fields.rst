@@ -43,13 +43,18 @@ Nimble default fields
      - \-
      - N/A
      - For company contact
-   * - title
+   * - title (deprecated, use :ref:`contact employment <contact-employment-type>` instead)
      - :ref:`default <default-type>`
      - \-
      - N/A
      -
-   * - parent company
+   * - parent company (deprecated, use :ref:`contact employment <contact-employment-type>` instead)
      - :ref:`parent company <parent-company-type>`
+     - \-
+     - N/A
+     -
+   * - contact employment 
+     - :ref:`contact employment <contact-employment-type>`
      - \-
      - N/A
      -
@@ -276,7 +281,7 @@ Example:
 
 .. _parent-company-type:
 
-Parent company
+Parent company (DEPRECEATED, use :ref:`contact employment <contact-employment-type>`)
 ~~~~~~~~~~~~~~
 
 Usual string, representing parent company for this person's contact. If company with corresponding name (search are case-insensitie) not found — it will be created. Value record for this field contains additional key ``extra_value``, holding unique ID of parent company.
@@ -492,6 +497,29 @@ Example:
             }]
         }
     }
+    
+.. _contact-employment-type:
+
+Contact Employment
+~~~~~~~
+
+All values represented as dictionary with following keys: ``company_name``, ``title``, ``start_date``, ``end_date``. Where ``start_date`` and ``end_date`` are dates (in the format mm/yyyy) to indicate in what period of time this employment took place. These fields are optional; however, at least one of ``company_name`` or ``title`` must have a non-null value. 
+
+This dictionary should be dumped to JSON string, and this string should be used as field's value.
+
+Example:
+
+.. code-block:: javascript
+
+    {
+        "type": "person",
+        "fields": {
+            "contact employment": [{
+                "value": "{\"company_name\": \"4tree GmbH (a wholly owned subsidiary of McKinsey & Company)\", \"end_date\": \"01/2022\", \"is_present\": false, \"start_date\": \"07/2019\", \"title\": \"HR\"}",
+            }]
+        }
+    }
+
 
 
 User
