@@ -55,7 +55,7 @@ Nimble default fields
      -
    * - contact employment 
      - :ref:`contact employment <contact-employment-type>`
-     - \-
+     - \+
      - N/A
      -
    * - domain
