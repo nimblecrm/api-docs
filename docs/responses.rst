@@ -194,7 +194,8 @@ Contact's metadata contains information about all basic and custom fields create
                     "modifier": "",
                     "presentation": {},
                     "id": "5049f697a694620a07000043",
-                    "multiples": false
+                    "multiples": false,
+                    "read_only": false
                 }
             ],
             "email": [
@@ -205,7 +206,8 @@ Contact's metadata contains information about all basic and custom fields create
                     "modifier": "other",
                     "presentation": {},
                     "id": "5049f697a694620a07000065",
-                    "multiples": true
+                    "multiples": true,
+                    "read_only": false
                 },
                 {
                     "group": "Contact Info",
@@ -214,7 +216,8 @@ Contact's metadata contains information about all basic and custom fields create
                     "modifier": "personal",
                     "presentation": {},
                     "id": "5049f697a694620a07000064",
-                    "multiples": true
+                    "multiples": true,
+                    "read_only": false
                 }
             ],
             "lead status": [
@@ -247,7 +250,8 @@ Contact's metadata contains information about all basic and custom fields create
                         "type": "select-box"
                     },
                     "id": "5049f697a694620a0700008d",
-                    "multiples": false
+                    "multiples": false,
+                    "read_only": false
                 }
             ]
         },
@@ -285,6 +289,7 @@ Here is a description of the response in detail:
         * *id* — unique id of the field in BSON format
         * *multiples* - indicates whether field could have multiple values (under different modifiers).
         * *presentation* - dict with the information which should help to display this field on client.
+        * *read_only* - if contacts field values is editable by user
     
 **groups**
     Information about field groups. Represented by dictionary where keys are unique group names and values are dictionaries with more info. Groups info dictionary contains following fields:
