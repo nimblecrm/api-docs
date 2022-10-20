@@ -4,16 +4,7 @@
 Examples and libraries
 ======================
 
-Here we collected list of exa
-
-Javascript
-~~~~~~~~~~
-**Javascript example for Nimble REST API**
-
-https://github.com/nimblecrm/javascript-example
-
-Requires PHP for proxying OAuth login, uses jQuery to fetch contact list via JSONP requests.
-
+Here we collected list of examples
 
 NodeJS
 ~~~~~~
