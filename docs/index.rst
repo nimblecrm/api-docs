@@ -1,7 +1,7 @@
 Nimble API documentation contents
 =================================
 
-Actual Nimble API version - :ref:`1.3<changelog>`
+Actual Nimble API documentation: https://nimble.com/developers/docs
 
 Contents:
 
