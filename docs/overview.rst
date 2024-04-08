@@ -2,6 +2,8 @@
 Overview
 ========
 
+Please pay attention! This is the old version of our documentation. The current version can be found at: https://nimble.com/developers/docs
+
 Nimble is a social relationship management tool that brings together your contacts from many disparate locations into one place; gives you a dynamic, 360º view of each contact; and helps you nurture the new and important contacts in your network. The Nimble platform offers access to the stored data via our APIs.
 Currently, only contact data is accessible via our REST API, and this data is available with limited functionality under the "beta" label. We plan on releasing additional functionality in the following order:
 
