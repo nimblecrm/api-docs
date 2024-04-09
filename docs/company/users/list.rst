@@ -1,6 +1,6 @@
-====================
+====================================
 Get company users short information
-====================
+====================================
 
 We provide an opportunity to get shortened information about the users of the company.
 

@@ -282,7 +282,7 @@ Example:
 .. _parent-company-type:
 
 Parent company (DEPRECEATED, use :ref:`contact employment <contact-employment-type>`)
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Usual string, representing parent company for this person's contact. If company with corresponding name (search are case-insensitie) not found — it will be created. Value record for this field contains additional key ``extra_value``, holding unique ID of parent company.
 
@@ -501,7 +501,7 @@ Example:
 .. _contact-employment-type:
 
 Contact Employment
-~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 All values represented as dictionary with following keys: ``company_name``, ``title``, ``start_date``, ``end_date``. Where ``start_date`` and ``end_date`` are dates (in the format mm/yyyy) to indicate in what period of time this employment took place. These fields are optional; however, at least one of ``company_name`` or ``title`` must have a non-null value. 
 

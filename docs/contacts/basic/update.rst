@@ -38,6 +38,7 @@ Parameters
                 ]
             }
         }
+
     then update it with:
 
     .. code-block:: javascript
@@ -52,6 +53,7 @@ Parameters
                 ]
             }
         }
+
     will update field value with modifier "personal", but leave fields with other modifiers untouched. Result will be: 
 
     .. code-block:: javascript
@@ -76,6 +78,7 @@ Parameters
                 ]
             }
         }
+
     With ``replace`` parameter set to 1 if contacts that has:
 
     .. code-block:: javascript
@@ -100,6 +103,7 @@ Parameters
                 ]
             }
         }
+
     and then UPDATE with:
 
     .. code-block:: javascript
@@ -114,6 +118,7 @@ Parameters
                 ]
             }
         }
+
     will replace ``email`` fields with all modifiers. Result will be: 
 
     .. code-block:: javascript
