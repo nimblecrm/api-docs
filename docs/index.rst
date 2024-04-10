@@ -1,9 +1,13 @@
 Nimble API documentation contents
 =================================
 
-Actual Nimble API documentation: https://nimble.com/developers/docs
 
-Contents:
+**Please, pay attention! This is the old version of our documentation.**
+
+**The current version can be found at:** https://nimble.com/developers/docs
+
+Contents
+--------
 
 .. toctree::
    :maxdepth: 2
